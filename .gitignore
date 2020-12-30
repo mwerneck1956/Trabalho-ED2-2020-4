@@ -7,6 +7,9 @@
 *.o
 *.obj
 
+#Covid csv
+*brazil_covid19_cities.csv
+
 # Precompiled Headers
 *.gch
 *.pch
@@ -30,4 +33,3 @@
 *.exe
 *.out
 *.app
-*Makefile
