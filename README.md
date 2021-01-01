@@ -42,12 +42,12 @@
 cd src
 ```
 
-2. Para dar autorização ao shellscript digite no terminal chmod +x compile.sh 
+2. Para dar autorização ao shellscript digite no terminal 
 ```
 chmod +x compile.sh 
 ```
 
-3. Por fim execute no terminal ./compile.sh
+3. Por fim execute no terminal
 ```
 ./compile.sh
 ```
