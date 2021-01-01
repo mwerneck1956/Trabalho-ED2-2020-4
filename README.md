@@ -1,4 +1,4 @@
-# Como rodar o arquivo em ambiente linux
+# Como rodar o projeto em ambiente linux
 
 1. Navegue até a pasta src
 ```
