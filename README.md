@@ -12,7 +12,7 @@ chmod +x compile.sh
 
 3. Por fim execute no terminal ./compile.sh
 ```
-compile.sh
+./compile.sh
 ```
 
 
