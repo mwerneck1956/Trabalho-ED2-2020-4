@@ -1,8 +1,9 @@
 # Como rodar o arquivo em ambiente linux
-Navegue até a pasta src (cd src)
 
-Para dar autorização ao shellscript digite no terminal chmod +x compile.sh 
+1. Navegue até a pasta src (cd src)
 
-Por fim execute no terminal ./compile.sh
+2. Para dar autorização ao shellscript digite no terminal chmod +x compile.sh 
+
+3. Por fim execute no terminal ./compile.sh
 
 
