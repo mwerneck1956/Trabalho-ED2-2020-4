@@ -9,6 +9,7 @@
 
 #Covid csv
 *brazil_covid19_cities.csv
+*main
 
 # Precompiled Headers
 *.gch
@@ -18,6 +19,7 @@
 *.so
 *.dylib
 *.dll
+
 
 # Fortran module files
 *.mod

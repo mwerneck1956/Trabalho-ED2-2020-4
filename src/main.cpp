@@ -9,6 +9,6 @@ using namespace std;
 int main(int argc, char** argv)
 {  
   FileHandler *FileReader = new FileHandler();
-  FileReader->csvHandler("teste",100);
+  FileReader->csvHandler("brazil_covid19_cities.csv");
   return 0;
 }

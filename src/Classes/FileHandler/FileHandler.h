@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+
 using namespace std;
 
 class FileHandler
@@ -15,7 +16,10 @@ private:
 
 public:
   //Função de processamento do csv
-  void static csvHandler(string filename , int );
+  void  csvHandler(string filename);
+  void  printLine(string line);
+  void  printFile(vector<string> file);
+  
 
   
 };
