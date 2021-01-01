@@ -1,8 +1,8 @@
 # Como rodar o arquivo em ambiente linux
 Navegue até a pasta src (cd src)
-chmod +x compile.sh ( Para dar autorização ao shellscript)
-Por fim execute
-./compile.sh
+
+Para dar autorização ao shellscript digite no terminal chmod +x compile.sh 
+
+Por fim execute no terminal ./compile.sh
 
 
-Custo operacional mergeSort: Logn
