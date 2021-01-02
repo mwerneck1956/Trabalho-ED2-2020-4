@@ -1,5 +1,7 @@
-#include "mergeSort.h"
+#include "./mergeSort.h"
 #include <iostream>
+#include <vector>
+#include <fstream>
 
 using namespace std;
 

@@ -1,15 +1,25 @@
+#ifndef MERGESORT_H_INCLUDED
+#define MERGESORT_H_INCLUDED
 #include <iostream>
+#include <vector>
+#include <fstream>
+#include <stdlib.h>
+#include <stdio.h>
 
 using namespace std;
 
 class mergeSort 
 {
+    private:
+    
     public:
         mergeSort();
         void merge(int vet[], int p, int q, int r);
         void mergeSort(int vet[], int p, int r);
 
-}
+};
+
+#endif
 
 //Teste feito na main()
 
