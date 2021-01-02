@@ -28,8 +28,8 @@
 
 👤 **Pedro Henrique**
 
-* Github: []()
-* LinkedIn: []()
+* Github: [@PHenriqueCEC](https://github.com/PHenriqueCEC)
+* LinkedIn: [https://www.linkedin.com/in/pedro-henrique-77baa01a9/](https://www.linkedin.com/in/pedro-henrique-77baa01a9/)
 
 
 
