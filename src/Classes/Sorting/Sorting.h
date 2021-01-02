@@ -1,5 +1,5 @@
-#ifndef MERGESORT_H_INCLUDED
-#define MERGESORT_H_INCLUDED
+#ifndef SORTING_H_INCLUDED
+#define SORTING_H_INCLUDED
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -8,12 +8,12 @@
 
 using namespace std;
 
-class mergeSort 
+class Sorting 
 {
     private:
     
     public:
-        mergeSort();
+        Sorting();
         void merge(int vet[], int p, int q, int r);
         void mergeSort(int vet[], int p, int r);
 
