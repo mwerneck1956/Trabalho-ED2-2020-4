@@ -37,7 +37,7 @@
 
 # Como rodar o projeto em ambiente linux
 
-**Certifique-se de ter o g++ instalando no seu ambiente de desenvolvimento**
+**Certifique-se de ter o g++ instalado no seu ambiente de desenvolvimento**
 
 1. Navegue até a pasta src
 ```
