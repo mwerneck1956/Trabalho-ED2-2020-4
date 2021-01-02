@@ -1,9 +1,16 @@
+#include "./Sorting.h"
 #include <iostream>
+#include <vector>
+#include <fstream>
 
 using namespace std;
 
+Sorting::Sorting()
+{
+    cout << "Objeto sorting montado" << endl;
+}
 
-void merge(int vet[], int p, int q, int r)
+void Sorting::merge(int vet[], int p, int q, int r)
 {
     int aux[8];
     int i = p;
@@ -46,7 +53,7 @@ void merge(int vet[], int p, int q, int r)
 }
 
 ///Funcao recursiva
-void mergeSort(int vet[], int p, int r)
+void Sorting::mergeSort(int vet[], int p, int r)
 {
     if(p < r - 1)
     {
@@ -58,6 +65,9 @@ void mergeSort(int vet[], int p, int r)
 
 }
 
+//Teste feito na main()
+
+/*
 int main()
 {
     int tam = 8;
@@ -74,4 +84,5 @@ int main()
     cout<<endl;
 
     return 0;
-}
+}*/
+
