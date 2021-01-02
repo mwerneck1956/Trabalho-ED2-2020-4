@@ -37,6 +37,8 @@
 
 # Como rodar o projeto em ambiente linux
 
+**Certifique-se de ter o g++ instalando no seu ambiente de desenvolvimento**
+
 1. Navegue até a pasta src
 ```
 cd src
@@ -47,9 +49,16 @@ cd src
 chmod +x compile.sh 
 ```
 
-3. Por fim execute no terminal
+3. execute no terminal
 ```
 ./compile.sh
 ```
+
+4. Sera pedido para informar o caminho do arquivo .csv para processamento
+```
+Digite o caminho do arquivo txt
+./brazil_covid19_cities
+```
+5. Por fim sera informado se a ação ocorreu com sucesso ou erro
 
 
