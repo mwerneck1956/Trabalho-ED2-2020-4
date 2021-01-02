@@ -9,21 +9,10 @@ using namespace std;
 
 int main(int argc, char** argv)
 {  
-
   Sorting *Sort = new Sorting();
   FileHandler *FileReader = new FileHandler();
-  FileReader->csvHandler("brazil_covid19_cities.csv");
+  //O arquivo de texto passado pelo usuário fica no argv[1]
+  FileReader->csvHandler(argv[1] != NULL ? argv[1] : "brazil_covid19_cities.csv");
 
   return 0;
 }
-/* Teste do Merge Sort */
-
-/*  Sorting *Sort = new Sorting();
-  int tam = 8;
-  int vet[tam] = {39, 5, 12, 1, 34, 64, 7, 76};
-   Sort->mergeSort(vet,0,tam);
-  for(int i = 0 ; i < 8 ; i++)
-  cout << vet[i] << ",";
-
-  cout << endl;
-*/

@@ -1,10 +1,7 @@
-echo "Digite o caminho do arquivo txt"
-read txt_path
-
 g++ -o main *.cpp
 if [ $? -eq 0 ];then 
    echo "compilado com sucesso!"
-   ./main $txt_path
+   ./main 
 else
    echo "nao compilado"
 fi
