@@ -1,4 +1,5 @@
 #include "./FileHandler.h"
+#include "../CovidStatistics/CovidStatistics.cpp"
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -17,8 +18,6 @@ void FileHandler::printFile(vector<string> file){
       }
     }
 }
-
-
 
 void FileHandler::csvHandler(string filename)
 {
@@ -45,8 +44,8 @@ void FileHandler::csvHandler(string filename)
       count++;
     }
     cout << "Arquivo processado com sucesso" << endl;
-    //printFile(processedCsv);
-  
+    CovidStatistics *CovidFile = new CovidStatistics(processedCsv);
+    CovidFile->printDates();
   }
   else
   {
