@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
-
+#include <string>
 using namespace std;
 
 
@@ -30,7 +30,7 @@ void FileHandler::csvHandler(string filename)
   {
     while (!arq.eof())
     {
-      getline(arq, line);
+        getline(arq, line);
       for (int i = 0; i < line.size(); i++)
       {
           lineItem = "";
