@@ -57,7 +57,7 @@ chmod +x compile.sh
 4. Sera pedido para informar o caminho do arquivo .csv para processamento
 ```
 Digite o caminho do arquivo csv : 
-./brazil_covid19_cities
+./brazil_covid19_cities.csv
 ```
 5. Por fim sera informado se a ação ocorreu com sucesso ou erro
 
