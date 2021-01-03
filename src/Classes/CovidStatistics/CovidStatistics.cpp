@@ -24,8 +24,7 @@ CovidStatistics::CovidStatistics(vector<string> processedCsv)
   int cases = 0, deaths = 0, j = 0;
   for (int i = 6; i < processedCsv.size(); i++)
   {
-    if (i == 6)
-      cout << processedCsv.at(i) << endl;
+  
     if (j == 0)
       date = processedCsv.at(i);
     else if (j == 1)
@@ -37,18 +36,21 @@ CovidStatistics::CovidStatistics(vector<string> processedCsv)
 
     else if (j == 3)
     {
+      cout << "code " << processedCsv.at(i) << endl;
       if (isNumber(processedCsv.at(i)))
         code = stoi(processedCsv.at(i));
     }
 
     else if (j == 4)
     {
+      cout << "cases " << processedCsv.at(i) << endl;
       if (isNumber(processedCsv.at(i)))
         cases = std::stoi(processedCsv.at(i));
     }
 
     else if (j == 5)
     {
+      cout << "deaths " << processedCsv.at(i) << endl;
       if (isNumber(processedCsv.at(i)))
         deaths = std::stoi(processedCsv.at(i));
     }
