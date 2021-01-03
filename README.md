@@ -11,7 +11,7 @@
 👤 **Matheus Werneck**
 
 * Github: [@mwerneck1956](https://github.com/mwerneck1956)
-* LinkedIn: [@https:\/\/www.linkedin.com\/in\/matheus-werneck-2aa222178\/](https://linkedin.com/in/https:\/\/www.linkedin.com\/in\/matheus-werneck-2aa222178\/)
+* LinkedIn: [Matheus Werneck](https://www.linkedin.com/in/matheus-werneck-2aa222178/)
 
 
 👤 **Gabriel Martins**
