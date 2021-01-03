@@ -34,11 +34,14 @@ void FileHandler::csvHandler(string filename)
       for (int i = 0; i < line.size(); i++)
       {
           lineItem = "";
+          //Separa cada item do csv por , 
           while (line[i] != ',' &&  i < line.size() - 1)
           {
+            if(line[i] != '\n')
             lineItem.push_back(line[i]);
             i++;
           }
+          //Coloca cada item em um vetor auxiliar para posterior sep
           processedCsv.push_back(lineItem);
       }
       count++;
