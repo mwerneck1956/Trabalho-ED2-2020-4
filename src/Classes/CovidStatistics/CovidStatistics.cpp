@@ -2,17 +2,30 @@
 #include "../CovidInfo/CovidInfo.h"
 #include <iostream>
 #include <vector>
+#include <locale.h>
 #include <fstream>
 
 using namespace std;
 
+bool CovidStatistics::isNumber(string s)
+{
+  for (int i = 0; i < s.length(); i++)
+    if (isdigit(s[i]) == false)
+      return false;
+
+  return true;
+}
+
 CovidStatistics::CovidStatistics(vector<string> processedCsv)
 {
-  string date = "", state = "", city = "";
+
+  std::string date = "", state = "", city = "";
   int code = 0.0;
   int cases = 0, deaths = 0, j = 0;
   for (int i = 6; i < processedCsv.size(); i++)
   {
+    if (i == 6)
+      cout << processedCsv.at(i) << endl;
     if (j == 0)
       date = processedCsv.at(i);
     else if (j == 1)
@@ -24,16 +37,21 @@ CovidStatistics::CovidStatistics(vector<string> processedCsv)
 
     else if (j == 3)
     {
-      code = stoi(processedCsv.at(i));
+      if (isNumber(processedCsv.at(i)))
+        code = stoi(processedCsv.at(i));
     }
 
     else if (j == 4)
     {
-      cases = stoi(processedCsv.at(i));
+      if (isNumber(processedCsv.at(i)))
+        cases = std::stoi(processedCsv.at(i));
     }
 
     else if (j == 5)
-      deaths = stoi(processedCsv[i]);
+    {
+      if (isNumber(processedCsv.at(i)))
+        deaths = std::stoi(processedCsv.at(i));
+    }
 
     if (j == 6)
     {
@@ -53,7 +71,7 @@ void CovidStatistics::printDates()
 {
   for (int i = 0; i < this->covidInfoList.size(); i++)
   {
-    if(i > 1111615 && i < 1111715 )
-    cout << "Cidade : " << covidInfoList.at(i).city << " Casos : " <<  covidInfoList.at(i).cases << endl;
+    if (i > 1111615 && i < 1111715)
+      cout << "Cidade : " << covidInfoList.at(i).city << " Casos : " << covidInfoList.at(i).cases << endl;
   }
 }

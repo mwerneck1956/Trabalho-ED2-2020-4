@@ -19,6 +19,7 @@ public:
   CovidStatistics(vector<string> processedCsv);
   ~CovidStatistics();
   void printDates();
+  bool isNumber(string s);
 };
 
 #endif
