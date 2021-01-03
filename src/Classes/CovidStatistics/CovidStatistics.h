@@ -16,10 +16,10 @@ private:
   vector<CovidInfo> covidInfoList;
 public:
   //Função de processamento do csv
-  CovidStatistics(vector<string> processedCsv);
+  CovidStatistics();
   ~CovidStatistics();
+  void push(CovidInfo* line);
   void printDates();
-  bool isNumber(string s);
 };
 
 #endif
