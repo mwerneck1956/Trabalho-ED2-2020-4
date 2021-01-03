@@ -1,4 +1,4 @@
-echo "Digite o caminho do arquivo txt"
+echo "Digite o caminho do arquivo csv"
 read txt_path
 
 g++ -o main *.cpp
