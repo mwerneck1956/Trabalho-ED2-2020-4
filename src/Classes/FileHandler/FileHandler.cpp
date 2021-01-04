@@ -1,55 +1,61 @@
 #include "./FileHandler.h"
 #include "../CovidStatistics/CovidStatistics.cpp"
+#include "../CovidInfo/CovidInfo.h"
 #include <iostream>
 #include <vector>
 #include <fstream>
 
 using namespace std;
 
-
-void FileHandler::printFile(vector<string> file){
+void FileHandler::printFile(vector<string> file)
+{
   int j = 0;
-  for(int i = 0 ; i < file.size() ; i++){
+  for (int i = 0; i < file.size(); i++)
+  {
     cout << file.at(i) << ",";
     j++;
-    if(j == 6){
-       cout << endl;
-        j = 0;
-      }
+    if (j == 6)
+    {
+      cout << endl;
+      j = 0;
     }
+  }
 }
 
 void FileHandler::csvHandler(string filename)
 {
 
-  string line, lineItem;
-  vector<string> processedCsv;
+  string date, state, name, code, cases, deaths;
+  CovidStatistics *CovidFile = new CovidStatistics();
   ifstream arq(filename);
-  int count = 0;
+
+  int line = 0;
   if (arq.is_open())
   {
+    //Vai ate o final do arquivo separando cada elemento do csv por , 
     while (!arq.eof())
     {
-      getline(arq, line);
-      for (int i = 0; i < line.size(); i++)
+
+      getline(arq, date, ',');
+      getline(arq, state, ',');
+      getline(arq, name, ',');
+      getline(arq, code, ',');
+      getline(arq, cases, ',');
+      getline(arq, deaths);
+
+      if (line >= 1)
       {
-          lineItem = "";
-          //Separa cada item do csv por , 
-          while (line[i] != ',' &&  i < line.size() - 1)
-          {
-            if(line[i] != '\n')
-            lineItem.push_back(line[i]);
-            i++;
-          }
-          //Coloca cada item em um vetor auxiliar para posterior sep
-          processedCsv.push_back(lineItem);
+        //Criado objeto covid info e feito as transformações para int necessarias
+        CovidInfo *line = new CovidInfo(date, state, name, stoi(code), stoi(cases), stoi(deaths));
+        CovidFile->push(line);
+        line = NULL;
       }
-      count++;
+      line ++;
     }
     cout << "Arquivo processado com sucesso" << endl;
-    CovidStatistics *CovidFile = new CovidStatistics(processedCsv);
     CovidFile->printDates();
   }
+
   else
   {
     cout << "Nao foi possivel abrir o arquivo" << endl;
