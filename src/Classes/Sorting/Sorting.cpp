@@ -1,4 +1,8 @@
 #include "./Sorting.h"
+#include "../CovidStatistics/CovidStatistics.h"
+//#include "../CovidStatistics/CovidStatistics.cpp"
+#include "../CovidInfo/CovidInfo.h"
+//#include "../CovidInfo/CovidInfo.cpp"
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -10,23 +14,26 @@ Sorting::Sorting()
     cout << "Objeto sorting montado" << endl;
 }
 
-void Sorting::merge(int vet[], int p, int q, int r)
+void Sorting::merge(vector<CovidInfo> covidInfoList, int p, int q, int r)
 {
-    int aux[8];
+    cout << "aqui" << endl;
+    vector<CovidInfo> auxCovidInfoList;
     int i = p;
     int j = q;
     int k = 0;
 
     while(i < q && j < r)
     {
-        if (vet[i] < vet[j])
+        if ((covidInfoList.at(i).state < covidInfoList.at(j).state) && (covidInfoList.at(i).city < covidInfoList.at(j).city))
         {
-            aux[k] = vet[i];
+            auxCovidInfoList.at(k).state = covidInfoList.at(i).state;
+            auxCovidInfoList.at(k).city = covidInfoList.at(i).city;
             i++;
         }
         else
         {
-            aux[k] = vet[j];
+            auxCovidInfoList.at(k).state = covidInfoList.at(j).state;
+            auxCovidInfoList.at(k).city = covidInfoList.at(j).city;
             j++;
         }
         k++;
@@ -34,33 +41,36 @@ void Sorting::merge(int vet[], int p, int q, int r)
 
     while(i < q)
     {
-        aux[k] = vet[i];
+        auxCovidInfoList.at(k).state = covidInfoList.at(i).state;
+        auxCovidInfoList.at(k).city = covidInfoList.at(i).city;
         i++;
         k++;
     }
 
     while(j < r)
     {
-        aux[k] = vet[j];
+        auxCovidInfoList.at(k).state = covidInfoList.at(j).state;
+        auxCovidInfoList.at(k).city = covidInfoList.at(j).city;
         j++;
         k++;
     }
 
     for(i = p; i < r; i++)
     {
-        vet[i] = aux[i - p];
+        covidInfoList.at(i).state = auxCovidInfoList.at(i - p).state;
+        covidInfoList.at(i).city = auxCovidInfoList.at(i - p).city;
     }
 }
 
 ///Funcao recursiva
-void Sorting::mergeSort(int vet[], int p, int r)
+void Sorting::mergeSort(vector<CovidInfo> covidInfoList, int p, int r)
 {
     if(p < r - 1)
     {
         int q = (p + r) / 2;
-        mergeSort(vet, p, q); ///chama de p a q
-        mergeSort(vet, q, r);  ///chama de q a r
-        merge(vet, p, q, r);
+        mergeSort(covidInfoList, p, q); ///chama de p a q
+        mergeSort(covidInfoList, q, r);  ///chama de q a r
+        merge(covidInfoList, p, q, r);
     }
 
 }

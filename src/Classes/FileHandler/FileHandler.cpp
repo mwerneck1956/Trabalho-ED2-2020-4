@@ -22,7 +22,7 @@ void FileHandler::printFile(vector<string> file)
   }
 }
 
-void FileHandler::csvHandler(string filename)
+vector<CovidInfo> FileHandler::csvHandler(string filename)
 {
 
   string date, state, name, code, cases, deaths;
@@ -52,8 +52,10 @@ void FileHandler::csvHandler(string filename)
       }
       line ++;
     }
+    return CovidFile;
     cout << "Arquivo processado com sucesso" << endl;
     CovidFile->printDates();
+    
   }
 
   else

@@ -7,8 +7,6 @@
 
 using namespace std;
 
-
-
 CovidStatistics::CovidStatistics()
 {
 
@@ -17,6 +15,14 @@ CovidStatistics::CovidStatistics()
 CovidStatistics::~CovidStatistics()
 {
 }
+
+/*
+vector CovidStatistics::getCovidInfoList()
+{
+  return covidInfoList;
+}
+*/
+
 
 void CovidStatistics::push(CovidInfo* line){
   this->covidInfoList.push_back(*line);

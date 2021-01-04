@@ -1,4 +1,3 @@
-
 #ifndef COVIDSTATISTICS_H_INCLUDED
 #define COVIDSTATISTICS_H_INCLUDED
 #include "../CovidInfo/CovidInfo.cpp"
@@ -12,14 +11,20 @@ using namespace std;
 
 class CovidStatistics
 {
-private:
-  vector<CovidInfo> covidInfoList;
-public:
-  //Função de processamento do csv
-  CovidStatistics();
-  ~CovidStatistics();
-  void push(CovidInfo* line);
-  void printDates();
+
+  private:
+    //vector<CovidInfo> covidInfoList;
+
+  public:
+    //Função de processamento do csv
+    CovidStatistics();
+    ~CovidStatistics();
+    //int getCovidInfoList();
+    void push(CovidInfo* line);
+    void printDates();
+
+    vector<CovidInfo> covidInfoList;
+
 };
 
 #endif

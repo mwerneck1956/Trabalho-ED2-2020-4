@@ -62,3 +62,28 @@ Digite o caminho do arquivo csv :
 5. Por fim sera informado se a ação ocorreu com sucesso ou erro
 
 
+# Como rodar o projeto no Windows
+
+**Certifique-se de ter o g++ instalado no seu ambiente de desenvolvimento**
+
+1. Navegue até a pasta src
+```
+cd src
+```
+
+2. Para dar autorização ao shellscript digite no terminal 
+```
+attrib +x compile.sh 
+```
+
+3. execute no terminal
+```
+./compile.sh
+```
+
+4. Sera pedido para informar o caminho do arquivo .csv para processamento
+```
+Digite o caminho do arquivo csv : 
+./brazil_covid19_cities.csv
+```
+5. Por fim sera informado se a ação ocorreu com sucesso ou erro
