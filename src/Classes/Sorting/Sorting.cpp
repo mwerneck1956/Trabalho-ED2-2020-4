@@ -1,11 +1,10 @@
 #include "./Sorting.h"
 #include "../CovidStatistics/CovidStatistics.h"
-//#include "../CovidStatistics/CovidStatistics.cpp"
 #include "../CovidInfo/CovidInfo.h"
-//#include "../CovidInfo/CovidInfo.cpp"
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include <string>
 
 using namespace std;
 
@@ -20,45 +19,41 @@ void Sorting::merge(vector<CovidInfo> covidInfoList, int p, int q, int r)
     vector<CovidInfo> auxCovidInfoList;
     int i = p;
     int j = q;
-    int k = 0;
 
     while(i < q && j < r)
     {
         if ((covidInfoList.at(i).state < covidInfoList.at(j).state) && (covidInfoList.at(i).city < covidInfoList.at(j).city))
         {
-            auxCovidInfoList.at(k).state = covidInfoList.at(i).state;
-            auxCovidInfoList.at(k).city = covidInfoList.at(i).city;
+            //auxCovidInfoList.at(k).state = covidInfoList.at(i).state;
+            auxCovidInfoList.push_back(covidInfoList.at(i));
             i++;
         }
         else
         {
-            auxCovidInfoList.at(k).state = covidInfoList.at(j).state;
-            auxCovidInfoList.at(k).city = covidInfoList.at(j).city;
+            auxCovidInfoList.push_back(covidInfoList.at(j));
             j++;
         }
-        k++;
+     
     }
 
     while(i < q)
     {
-        auxCovidInfoList.at(k).state = covidInfoList.at(i).state;
-        auxCovidInfoList.at(k).city = covidInfoList.at(i).city;
+        auxCovidInfoList.push_back( covidInfoList.at(i));
+
         i++;
-        k++;
+      
     }
 
     while(j < r)
     {
-        auxCovidInfoList.at(k).state = covidInfoList.at(j).state;
-        auxCovidInfoList.at(k).city = covidInfoList.at(j).city;
+        auxCovidInfoList.push_back(covidInfoList.at(j));
         j++;
-        k++;
     }
 
     for(i = p; i < r; i++)
     {
-        covidInfoList.at(i).state = auxCovidInfoList.at(i - p).state;
-        covidInfoList.at(i).city = auxCovidInfoList.at(i - p).city;
+        covidInfoList.push_back(auxCovidInfoList.at(i - p));
+
     }
 }
 
@@ -73,6 +68,11 @@ void Sorting::mergeSort(vector<CovidInfo> covidInfoList, int p, int r)
         merge(covidInfoList, p, q, r);
     }
 
+    for(int i = 0 ; i < r ; i++){
+        cout << covidInfoList.at(i).city << endl;
+    }
+    
+    cout << endl;
 }
 
 //Teste feito na main()

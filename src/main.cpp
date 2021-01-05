@@ -18,24 +18,14 @@ int main(int argc, char** argv)
   //O arquivo de texto passado pelo usuário fica no argv[1]
   //FileReader->csvHandler(argv[1] != NULL ? argv[1] : "brazil_covid19_cities.csv");
 
-  vector<CovidInfo> *CovidInfoList = FileReader->csvHandler(argv[1] != NULL ? argv[1] : "brazil_covid19_cities.csv");
+  vector<CovidInfo> CovidInfoList = FileReader->csvHandler(argv[1] != NULL ? argv[1] : "brazil_covid19_cities.csv");
 
   CovidStatistics *naoSei = new CovidStatistics();
   Sorting *mergeSorte = new Sorting();
   
-  /*
-  vector<CovidInfo> auxVector;
-
-  for(int i = 0; i < 8; i++)
-  {
-    auxVector.push_back(naoSei->covidInfoList.at(i));
-
-  }
-*/
-  int tam = naoSei->covidInfoList.size(); 
   
-  cout<<"Tam = "<<tam<<endl;
-  mergeSorte->mergeSort(naoSei->covidInfoList, 0, tam);
+  //CovidInfoList.size();
+  mergeSorte->mergeSort(CovidInfoList, 0, 8);
 
   return 0;
 }

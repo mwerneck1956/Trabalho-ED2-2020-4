@@ -13,17 +13,16 @@ class CovidStatistics
 {
 
   private:
-    //vector<CovidInfo> covidInfoList;
+    vector<CovidInfo> covidInfoList;
 
   public:
     //Função de processamento do csv
     CovidStatistics();
     ~CovidStatistics();
-    //int getCovidInfoList();
+    vector<CovidInfo> getCovidInfoList();
     void push(CovidInfo* line);
     void printDates();
-
-    vector<CovidInfo> covidInfoList;
+   
 
 };
 

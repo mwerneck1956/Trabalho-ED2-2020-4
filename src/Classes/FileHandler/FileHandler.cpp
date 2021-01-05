@@ -52,7 +52,7 @@ vector<CovidInfo> FileHandler::csvHandler(string filename)
       }
       line ++;
     }
-    return CovidFile;
+    return CovidFile->getCovidInfoList();
     cout << "Arquivo processado com sucesso" << endl;
     CovidFile->printDates();
     

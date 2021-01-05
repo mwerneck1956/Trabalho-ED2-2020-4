@@ -16,12 +16,12 @@ CovidStatistics::~CovidStatistics()
 {
 }
 
-/*
-vector CovidStatistics::getCovidInfoList()
+
+vector<CovidInfo> CovidStatistics::getCovidInfoList()
 {
-  return covidInfoList;
+  return this->covidInfoList;
 }
-*/
+
 
 
 void CovidStatistics::push(CovidInfo* line){
