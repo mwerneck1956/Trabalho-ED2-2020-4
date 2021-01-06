@@ -15,7 +15,7 @@ Sorting::Sorting()
 
 void Sorting::merge(vector<CovidInfo> covidInfoList, int p, int q, int r)
 {
-    cout << "aqui" << endl;
+
     vector<CovidInfo> auxCovidInfoList;
     int i = p;
     int j = q;
@@ -74,6 +74,17 @@ void Sorting::mergeSort(vector<CovidInfo> covidInfoList, int p, int r)
     
     cout << endl;
 }
+
+/*void Sorting::imprimir(int tam)
+{
+    for(int i = 0; i < tam; i++)
+    {
+        cout << covidInfoList.at(i).city << endl;
+    }
+
+}*/
+
+
 
 //Teste feito na main()
 

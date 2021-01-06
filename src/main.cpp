@@ -23,8 +23,6 @@ int main(int argc, char** argv)
   CovidStatistics *naoSei = new CovidStatistics();
   Sorting *mergeSorte = new Sorting();
   
-  
-  //CovidInfoList.size();
   mergeSorte->mergeSort(CovidInfoList, 0, 8);
 
   return 0;

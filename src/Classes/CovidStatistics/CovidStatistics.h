@@ -1,6 +1,7 @@
 #ifndef COVIDSTATISTICS_H_INCLUDED
 #define COVIDSTATISTICS_H_INCLUDED
 #include "../CovidInfo/CovidInfo.cpp"
+#include "../Sorting/Sorting.h"
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -23,7 +24,6 @@ class CovidStatistics
     void push(CovidInfo* line);
     void printDates();
    
-
 };
 
 #endif
