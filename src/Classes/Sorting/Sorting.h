@@ -16,7 +16,7 @@ class Sorting
         Sorting();
         void merge(vector<CovidInfo> covidInfoList, int p, int q, int r);
         void mergeSort(vector<CovidInfo> covidInfoList, int p, int r);
-        void imprimir(int tam);
+        void imprimir(vector<CovidInfo> covidInfoList, int tam);
 
 };
 

@@ -22,7 +22,7 @@ void Sorting::merge(vector<CovidInfo> covidInfoList, int p, int q, int r)
 
     while(i < q && j < r)
     {
-        if ((covidInfoList.at(i).state < covidInfoList.at(j).state) && (covidInfoList.at(i).city < covidInfoList.at(j).city))
+        if ((covidInfoList.at(i).date < covidInfoList.at(j).date))
         {
             //auxCovidInfoList.at(k).state = covidInfoList.at(i).state;
             auxCovidInfoList.push_back(covidInfoList.at(i));
@@ -38,7 +38,7 @@ void Sorting::merge(vector<CovidInfo> covidInfoList, int p, int q, int r)
 
     while(i < q)
     {
-        auxCovidInfoList.push_back( covidInfoList.at(i));
+        auxCovidInfoList.push_back(covidInfoList.at(i));
 
         i++;
       
@@ -55,6 +55,11 @@ void Sorting::merge(vector<CovidInfo> covidInfoList, int p, int q, int r)
         covidInfoList.push_back(auxCovidInfoList.at(i - p));
 
     }
+
+    /*for(int i = 0; i < r; i++)
+    {
+        cout<<"Imprimindo vetor auxiliar!"<<auxCovidInfoList.at(i).cases;
+    }*/
 }
 
 ///Funcao recursiva
@@ -67,21 +72,20 @@ void Sorting::mergeSort(vector<CovidInfo> covidInfoList, int p, int r)
         mergeSort(covidInfoList, q, r);  ///chama de q a r
         merge(covidInfoList, p, q, r);
     }
-
+    
     for(int i = 0 ; i < r ; i++){
-        cout << covidInfoList.at(i).city << endl;
+        cout << covidInfoList.at(i).date << endl;
     }
     
     cout << endl;
 }
 
-/*void Sorting::imprimir(int tam)
+/*void Sorting::imprimir(vector<CovidInfo> covidInfoList, int tam)
 {
     for(int i = 0; i < tam; i++)
     {
-        cout << covidInfoList.at(i).city << endl;
+        cout << covidInfoList.at(i).state << endl;
     }
-
 }*/
 
 
