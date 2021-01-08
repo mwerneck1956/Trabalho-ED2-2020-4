@@ -10,7 +10,7 @@ CovidInfo::CovidInfo(string date,string state,string city , int code , int cases
 {
 
   this->date = date;
-  this->cases = cases;
+  this->state = state;
   this->city = city;
   this->code = code;
   this->cases = cases;

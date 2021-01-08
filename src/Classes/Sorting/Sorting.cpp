@@ -23,15 +23,15 @@ void Sorting::merge(vector<CovidInfo> &covidInfoList, int p, int q, int r)
 
     while (i < q && j < r){
         
-        cout << "no i " << covidInfoList.at(i).city << endl;
+        /*cout << "no i " << covidInfoList.at(i).city << endl;
         cout << "no j " << covidInfoList.at(j).city << endl;
-        cout << "Comparando "  << covidInfoList.at(i).city.compare(covidInfoList.at(j).city) << endl;
+        cout << "Comparando "  << covidInfoList.at(i).city.compare(covidInfoList.at(j).city) << endl;*/
 
 
-        if (covidInfoList.at(i).city.compare(covidInfoList.at(j).city) == 1)
+        if ((covidInfoList.at(i).state.compare(covidInfoList.at(j).state) == -1))
         {
-            int teste = covidInfoList.at(i).city.compare(covidInfoList.at(j).city);
-            cout << teste << endl;
+            /*int teste = covidInfoList.at(i).city.compare(covidInfoList.at(j).city);
+            cout << teste << endl;*/
            
             auxCovidInfoList.push_back(covidInfoList.at(i));
             i++;

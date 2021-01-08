@@ -30,13 +30,13 @@ int main(int argc, char** argv)
   //naoSei->setCovidInfoList(CovidInfoList);
   //naoSei->printDates();
   
-  /*
-  string a = "Brasiléia" , b = "Bujari";
+  
+  //string a = "Brasiléia" , b = "Bujari";
   //0 Se são iguais
   //1 se o atual for maior que comparado
   //-1 se o atual for menor do que o comparado
-  cout << a.compare(b);
-  */
+  //cout << a.compare(b);
+  
   
  
  
