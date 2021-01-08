@@ -16,13 +16,15 @@ CovidStatistics::~CovidStatistics()
 {
 }
 
+void CovidStatistics::setCovidInfoList(vector<CovidInfo> covidList){
+  this->covidInfoList = covidList;
+}
+
 
 vector<CovidInfo> CovidStatistics::getCovidInfoList()
 {
   return this->covidInfoList;
 }
-
-
 
 void CovidStatistics::push(CovidInfo* line){
   this->covidInfoList.push_back(*line);
@@ -31,9 +33,8 @@ void CovidStatistics::push(CovidInfo* line){
 void CovidStatistics::printDates()
 {
   cout << "Cidades com mais de 100k casos " << endl;
-  for (int i = 0; i < covidInfoList.size(); i++)
+  for (int i = 0; i < 8 ; i++)
   { 
-      if(covidInfoList.at(i).cases > 100000)
-      cout << "Cidade : " << covidInfoList.at(i).city << " Casos : " << covidInfoList.at(i).cases << endl;
+      cout << "Cidade : " << covidInfoList.at(i).city << " Estado : " << covidInfoList.at(i).state << endl;
   }
 }
