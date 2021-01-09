@@ -27,6 +27,7 @@ int main(int argc, char** argv)
   Sorting *mergeSorte = new Sorting();
   
   mergeSorte->mergeSort(CovidInfoList, 0, 8);
+  mergeSorte->imprimir(CovidInfoList, 8);
   //naoSei->setCovidInfoList(CovidInfoList);
   //naoSei->printDates();
   
