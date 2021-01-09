@@ -89,7 +89,8 @@ void Sorting::mergeSort(vector<CovidInfo> &covidInfoList, int p, int r)
     cout << "---------------------------------------";
     cout << endl;
     for (int i = 0; i < r; i++)
-        cout << covidInfoList.at(i).city + "," + covidInfoList.at(i).state << endl;
+        cout << covidInfoList.at(i).date << "," << covidInfoList.at(i).state << "," << covidInfoList.at(i).city << "," << 
+        covidInfoList.at(i).code << "," << covidInfoList.at(i).cases << "," << covidInfoList.at(i).deaths << endl;
 }
 
 /*void Sorting::imprimir(vector<CovidInfo> covidInfoList, int tam)
