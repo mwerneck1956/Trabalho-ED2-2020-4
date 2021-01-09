@@ -16,7 +16,7 @@ private:
 
 public:
   //Função de processamento do csv
-  void  csvHandler(string filename);
+  vector<CovidInfo> csvHandler(string filename);
   void  printLine(string line);
   void  printFile(vector<string> file);
   

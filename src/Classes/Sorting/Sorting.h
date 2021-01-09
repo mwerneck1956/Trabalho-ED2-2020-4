@@ -14,8 +14,9 @@ class Sorting
     
     public:
         Sorting();
-        void merge(int vet[], int p, int q, int r);
-        void mergeSort(int vet[], int p, int r);
+        void merge(vector<CovidInfo> &covidInfoList, int p, int q, int r);
+        void mergeSort(vector<CovidInfo> &covidInfoList, int p, int r);
+        void imprimir(vector<CovidInfo> covidInfoList, int tam);
 
 };
 

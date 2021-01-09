@@ -16,7 +16,7 @@ public:
   string date;
   string state;
   string city;
-  int code;
+  float code;
   int cases;
   int deaths;
   //Função de processamento do csv
