@@ -25,9 +25,10 @@ int main(int argc, char** argv)
 
   CovidStatistics *naoSei = new CovidStatistics();
   Sorting *mergeSorte = new Sorting();
-  
-  mergeSorte->mergeSort(CovidInfoList, 0, 8);
-  mergeSorte->imprimir(CovidInfoList, 8);
+  Sorting *shellSorte = new Sorting();
+  //mergeSorte->mergeSort(CovidInfoList, 0, 8);
+  shellSorte->shellSort(CovidInfoList);
+  shellSorte->imprimir(CovidInfoList, 8);
   //naoSei->setCovidInfoList(CovidInfoList);
   //naoSei->printDates();
   

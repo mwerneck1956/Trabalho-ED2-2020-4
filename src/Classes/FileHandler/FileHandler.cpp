@@ -32,6 +32,7 @@ vector<CovidInfo> FileHandler::csvHandler(string filename)
   int line = 0;
   if (arq.is_open())
   {
+    
     //Vai ate o final do arquivo separando cada elemento do csv por , 
     while (!arq.eof())
     {
@@ -57,9 +58,12 @@ vector<CovidInfo> FileHandler::csvHandler(string filename)
     CovidFile->printDates();
     
   }
-
   else
   {
+    
     cout << "Nao foi possivel abrir o arquivo" << endl;
+    
   }
+  vector<CovidInfo> teste;
+  return teste;
 }
