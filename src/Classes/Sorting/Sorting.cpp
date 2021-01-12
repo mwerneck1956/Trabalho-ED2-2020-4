@@ -104,7 +104,7 @@ void Sorting::shellSort(vector<CovidInfo> &covidInfoList){
             CovidInfo aux = covidInfoList.at(i); 
   
             // shift earlier gap-sorted elements up until the correct  
-            // location for a[i] is found 
+            // location for a[i] is founde 
             int j;             
             for (j = i; j >= gap && covidInfoList.at(j-gap).city > aux.city; j -= gap) 
                 covidInfoList.at(j) = covidInfoList.at(j-gap); 
