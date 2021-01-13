@@ -28,25 +28,38 @@ void Sorting::merge(vector<CovidInfo> &covidInfoList, int p, int q, int r)
         cout << "no j " << covidInfoList.at(j).city << endl;
         cout << "Comparando "  << covidInfoList.at(i).city.compare(covidInfoList.at(j).city) << endl;*/
 
-        if ((covidInfoList.at(i).state.compare(covidInfoList.at(j).state) == -1))
+        if ((covidInfoList.at(i).date.compare(covidInfoList.at(j).date) == 0))
         {
-            auxCovidInfoList.push_back(covidInfoList.at(i));
-            i++;
-            
-        }
-        else if((covidInfoList.at(i).state.compare(covidInfoList.at(j).state) == 0))
-        {
-            if((covidInfoList.at(i).city.compare(covidInfoList.at(j).city) == -1))
+
+            if ((covidInfoList.at(i).state.compare(covidInfoList.at(j).state) == -1))
             {
                 auxCovidInfoList.push_back(covidInfoList.at(i));
                 i++;
+            }
+            else if ((covidInfoList.at(i).state.compare(covidInfoList.at(j).state) == 0))
+            {
+                if ((covidInfoList.at(i).city.compare(covidInfoList.at(j).city) == -1))
+                {
+                    auxCovidInfoList.push_back(covidInfoList.at(i));
+                    i++;
+                }
+                else
+                {
+                    auxCovidInfoList.push_back(covidInfoList.at(j));
+                    j++;
+                }
             }
             else
             {
                 auxCovidInfoList.push_back(covidInfoList.at(j));
                 j++;
             }
-            
+        }
+
+        else if ((covidInfoList.at(i).date.compare(covidInfoList.at(j).date) == -1))
+        {
+            auxCovidInfoList.push_back(covidInfoList.at(i));
+            i++;
         }
         else
         {
@@ -73,13 +86,12 @@ void Sorting::merge(vector<CovidInfo> &covidInfoList, int p, int q, int r)
     {
         covidInfoList.at(i) = auxCovidInfoList.at(i - p);
     }
-
 }
 
 ///Funcao recursiva
 void Sorting::mergeSort(vector<CovidInfo> &covidInfoList, int p, int r)
 {
-    
+
     if (p < r - 1)
     {
         int q = (p + r) / 2;
@@ -87,7 +99,6 @@ void Sorting::mergeSort(vector<CovidInfo> &covidInfoList, int p, int r)
         mergeSort(covidInfoList, q, r); ///chama de q a r
         merge(covidInfoList, p, q, r);
     }
-        
 }
 
 void Sorting::imprimir(vector<CovidInfo> covidInfoList, int r)
@@ -96,19 +107,16 @@ void Sorting::imprimir(vector<CovidInfo> covidInfoList, int r)
 
     cout << endl;
 
-     for (int i = 0; i < r; i++)
+    for (int i = 0; i < r; i++)
     {
-        cout << covidInfoList.at(i).date << "," << covidInfoList.at(i).state << "," << covidInfoList.at(i).city << "," << 
-        covidInfoList.at(i).code << "," << covidInfoList.at(i).cases << "," << covidInfoList.at(i).deaths << endl;
-        
-        totalCasos += covidInfoList.at(i).cases;
+        cout << covidInfoList.at(i).date << "," << covidInfoList.at(i).state << "," << covidInfoList.at(i).city << "," << covidInfoList.at(i).code << "," << covidInfoList.at(i).cases << "," << covidInfoList.at(i).deaths << endl;
 
+        totalCasos += covidInfoList.at(i).cases;
     }
 
     cout << endl;
 
-    cout << " O numero total de casos diarios eh de: " << totalCasos << endl;
-
+    cout << " O numero total de casos diarios eh: " << totalCasos << endl;
 }
 
 //Teste feito na main()
