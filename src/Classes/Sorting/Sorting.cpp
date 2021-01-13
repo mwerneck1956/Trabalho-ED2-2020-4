@@ -8,6 +8,9 @@
 
 using namespace std;
 
+int numComparacoes = 0;
+int numCopias = 0;
+
 Sorting::Sorting()
 {
     cout << "Objeto sorting montado" << endl;
@@ -23,6 +26,7 @@ void Sorting::merge(vector<CovidInfo> &covidInfoList, int p, int q, int r)
 
     while (i < q && j < r)
     {
+        numComparacoes++;
 
         /*cout << "no i " << covidInfoList.at(i).city << endl;
         cout << "no j " << covidInfoList.at(j).city << endl;
@@ -35,6 +39,7 @@ void Sorting::merge(vector<CovidInfo> &covidInfoList, int p, int q, int r)
             {
                 auxCovidInfoList.push_back(covidInfoList.at(i));
                 i++;
+                numCopias++;
             }
             else if ((covidInfoList.at(i).state.compare(covidInfoList.at(j).state) == 0))
             {
@@ -42,17 +47,20 @@ void Sorting::merge(vector<CovidInfo> &covidInfoList, int p, int q, int r)
                 {
                     auxCovidInfoList.push_back(covidInfoList.at(i));
                     i++;
+                    numCopias++;
                 }
                 else
                 {
                     auxCovidInfoList.push_back(covidInfoList.at(j));
                     j++;
+                    numCopias++;
                 }
             }
             else
             {
                 auxCovidInfoList.push_back(covidInfoList.at(j));
                 j++;
+                numCopias++;
             }
         }
 
@@ -60,26 +68,28 @@ void Sorting::merge(vector<CovidInfo> &covidInfoList, int p, int q, int r)
         {
             auxCovidInfoList.push_back(covidInfoList.at(i));
             i++;
+            numCopias++;
         }
         else
         {
             auxCovidInfoList.push_back(covidInfoList.at(j));
             j++;
+            numCopias++;
         }
     }
 
     while (i < q)
     {
         auxCovidInfoList.push_back(covidInfoList.at(i));
-        k++;
         i++;
+        numCopias++;
     }
 
     while (j < r)
     {
         auxCovidInfoList.push_back((covidInfoList.at(j)));
-        k++;
         j++;
+        numCopias++;
     }
 
     for (i = p; i < r; i++)
@@ -114,28 +124,14 @@ void Sorting::imprimir(vector<CovidInfo> covidInfoList, int r)
         totalCasos += covidInfoList.at(i).cases;
     }
 
+    cout << "O numero total de casos diarios eh: " << totalCasos << endl;
+
+    cout << "O numero de comparacoes foi: " << numComparacoes << endl;
+
+    cout << "O numero de copias foi: " << numCopias << endl;
+
+    numComparacoes = 0;
+    numCopias = 0;
+
     cout << endl;
-
-    cout << " O numero total de casos diarios eh: " << totalCasos << endl;
 }
-
-//Teste feito na main()
-
-/*
-int main()
-{
-    int tam = 8;
-    int vet[tam] = {39, 5, 12, 1, 34, 64, 7, 76};
-
-    mergeSort(vet, 0, tam);
-
-    cout<<"Vetor ordenado: "<<endl;
-    for(int i = 0; i < tam; i++)
-    {
-        cout<<" "<<vet[i];
-    }
-
-    cout<<endl;
-
-    return 0;
-}*/
