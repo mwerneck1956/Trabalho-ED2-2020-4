@@ -16,8 +16,8 @@
 
 👤 **Gabriel Martins**
 
-* Github: []()
-* LinkedIn: []()
+* Github: [hdnexus](https://github.com/hdnexus)
+* LinkedIn: [Gabriel Martins](https://www.linkedin.com/in/gabriel-martins-616874161/)
 
 
 👤 **Bryan Barbosa**
