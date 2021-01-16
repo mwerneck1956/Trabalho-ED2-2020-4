@@ -113,26 +113,19 @@ void Sorting::shellSort(vector<CovidInfo> &covidInfoList, int n){
                    }
                    
                }
-               else
+               else if(covidInfoList.at(k).state > covidInfoList.at(k+i).state)
                {
-                   if(covidInfoList.at(k).state > covidInfoList.at(k+i).state)
-                   {
                       aux = covidInfoList.at(k);
                       covidInfoList.at(k) = covidInfoList.at(k + i);
                       covidInfoList.at(k + i) = aux;
-                      chave = 0;   
-                   }
+                      chave = 0;      
                }
-               
-
             }
-            else{
-                if(covidInfoList.at(k).date > covidInfoList.at(k+i).date){
-                    aux = covidInfoList.at(k+i);
+            else if(covidInfoList.at(k).date > covidInfoList.at(k+i).date){
+                    aux = covidInfoList.at(k);
                     covidInfoList.at(k) = covidInfoList.at(k+i);
                     covidInfoList.at(k+i) = aux;
                     chave = 0;
-                }
             }
          }
       }while(chave == 0);

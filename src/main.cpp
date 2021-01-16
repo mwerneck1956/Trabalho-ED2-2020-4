@@ -26,22 +26,8 @@ int main(int argc, char** argv)
   CovidStatistics *naoSei = new CovidStatistics();
   Sorting *mergeSorte = new Sorting();
   Sorting *shellSorte = new Sorting();
-  //mergeSorte->mergeSort(CovidInfoList, 0, 8);
-  shellSorte->shellSort(CovidInfoList, 100000);
-  shellSorte->imprimir(CovidInfoList, 8);
-  //naoSei->setCovidInfoList(CovidInfoList);
-  //naoSei->printDates();
-  
-  
-  //string a = "Brasiléia" , b = "Bujari";
-  //0 Se são iguais
-  //1 se o atual for maior que comparado
-  //-1 se o atual for menor do que o comparado
-  //cout << a.compare(b);
-  
-  
- 
- 
+  shellSorte->shellSort(CovidInfoList, CovidInfoList.size());
+  shellSorte->imprimir(CovidInfoList,10);
 
   return 0;
 }
