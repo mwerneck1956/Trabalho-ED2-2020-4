@@ -16,7 +16,7 @@
 
 👤 **Gabriel Martins**
 
-* Github: [hdnexus](https://github.com/hdnexus)
+* Github: [@hdnexus](https://github.com/hdnexus)
 * LinkedIn: [Gabriel Martins](https://www.linkedin.com/in/gabriel-martins-616874161/)
 
 
