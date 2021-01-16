@@ -89,31 +89,55 @@ void Sorting::mergeSort(vector<CovidInfo> &covidInfoList, int p, int r)
     }
         
 }
-void Sorting::shellSort(vector<CovidInfo> &covidInfoList){
-     // Start with a big gap, then reduce the gap 
-      for (int gap = 8/2; gap > 0; gap /= 2) 
-        { 
-        // Do a gapped insertion sort for this gap size. 
-        // The first gap elements a[0..gap-1] are already in gapped order 
-        // keep adding one more element until the entire array is 
-        // gap sorted  
-        for (int i = gap; i < 8; i += 1) 
-        { 
-            // add a[i] to the elements that have been gap sorted 
-            // save a[i] in temp and make a hole at position i 
-            CovidInfo aux = covidInfoList.at(i); 
-  
-            // shift earlier gap-sorted elements up until the correct  
-            // location for a[i] is founde 
-            int j;             
-            for (j = i; j >= gap && covidInfoList.at(j-gap).city > aux.city; j -= gap) 
-                covidInfoList.at(j) = covidInfoList.at(j-gap); 
+void Sorting::shellSort(vector<CovidInfo> &covidInfoList, int n){
+   int i = (n - 1)/ 2;
+   int chave, k;
+   CovidInfo aux = covidInfoList.at(i);
 
-            //  put temp (the original a[i]) in its correct location 
-            covidInfoList.at(j) = aux; 
-        } 
-    } 
- 
+   while(i != 0)
+   {
+      do
+      {
+         chave = 1;
+         for(k = 0; k< n - i; ++k){
+            if(covidInfoList.at(k).date == covidInfoList.at(k + i).date)
+            {
+               if(covidInfoList.at(k).state == covidInfoList.at(k+i).state)
+               {
+                   if(covidInfoList.at(k).city > covidInfoList.at(k+i).city)
+                   {
+                      aux = covidInfoList.at(k);
+                      covidInfoList.at(k) = covidInfoList.at(k + i);
+                      covidInfoList.at(k + i) = aux;
+                      chave = 0; 
+                   }
+                   
+               }
+               else
+               {
+                   if(covidInfoList.at(k).state > covidInfoList.at(k+i).state)
+                   {
+                      aux = covidInfoList.at(k);
+                      covidInfoList.at(k) = covidInfoList.at(k + i);
+                      covidInfoList.at(k + i) = aux;
+                      chave = 0;   
+                   }
+               }
+               
+
+            }
+            else{
+                if(covidInfoList.at(k).date > covidInfoList.at(k+i).date){
+                    aux = covidInfoList.at(k+i);
+                    covidInfoList.at(k) = covidInfoList.at(k+i);
+                    covidInfoList.at(k+i) = aux;
+                    chave = 0;
+                }
+            }
+         }
+      }while(chave == 0);
+      i = i / 2;
+   }
 }
 void Sorting::imprimir(vector<CovidInfo> covidInfoList, int r)
 {
