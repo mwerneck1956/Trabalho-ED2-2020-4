@@ -111,6 +111,41 @@ void Sorting::imprimir(vector<CovidInfo> covidInfoList, int r)
 
 }
 
+void Sorting::quickSort(vector<CovidInfo> &covidInfoList, int b, int e)
+{
+    int p;
+
+    if (e == -1)
+        e = covidInfoList.size() - 1;
+    
+    if (b < 3)
+        p = particao(covidInfoList, b, e);
+        quickSort(covidInfoList, b, p-1);
+        quickSort(covidInfoList, p+1, e);
+}
+
+int Sorting::particao(vector<CovidInfo> &covidInfoList, int b, int e)
+{
+    CovidInfo pivo = covidInfoList.back();
+    int i = b;
+
+    for (int j = 0; j < covidInfoList.size(); j++)
+    {
+        if (covidInfoList[j] <= pivo)
+        {
+            CovidInfo aux = covidInfoList[i];
+            covidInfoList[i] = covidInfoList[j];
+            covidInfoList[j] = aux;
+            i++;
+        }
+    }
+    CovidInfo aux2 = covidInfoList[i];
+    covidInfoList[i] = covidInfoList[e];
+    covidInfoList[e] = aux2;
+
+    return i;
+}
+
 //Teste feito na main()
 
 /*
