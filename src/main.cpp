@@ -16,19 +16,16 @@ int main(int argc, char** argv)
 {  
   setlocale(LC_ALL,"");
   
-  //Sorting *Sort = new Sorting();
+  Sorting *Sort = new Sorting();
   FileHandler *FileReader = new FileHandler();
 
 
   vector<CovidInfo> CovidInfoList = FileReader->csvHandler(argv[1] != NULL ? argv[1] : "brazil_covid19_cities.csv");
-  cout << "Acabou o processamento" << endl;
   CovidStatistics *statistic = new CovidStatistics();
   statistic->setCovidInfoList(CovidInfoList);
-  //for(int i = 0 ; i < 50 ; i++)
-  //cout << "Cidade : " << CovidInfoList.at(i).city << " Casos : " << CovidInfoList.at(i).cases << endl;
-  statistic->dailyCasesTotalizers();
-
-  delete statistic;
-
-  return 0;
+  vector<CovidInfo> sorted =  FileReader->getNCovidInfos(1000000);
+  cout << "indo pro merge sort";
+  Sort->mergeSort(sorted,0,sorted.size());
+  Sort->imprimirInformacoes(sorted,10);
+  
 }
