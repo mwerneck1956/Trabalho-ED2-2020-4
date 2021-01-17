@@ -14,16 +14,12 @@ CovidStatistics::CovidStatistics()
 
 CovidStatistics::~CovidStatistics()
 {
-  /*
-  cout << "antes do destrutor" << sizeof(this->covidInfoList) << endl;
-  int i =0;
-  for(CovidInfo p : this->covidInfoList){
-     delete &this->covidInfoList.at(i);
-     i++;
-  }
-  cout << "depois do destrutor" << sizeof(this->covidInfoList) << endl;
-  */
-  
+  vector<CovidInfo> t;
+  //cout << "before clear" << sizeof(std::vector<CovidInfo>) + (sizeof(CovidInfo) * covidInfoList.size());
+  //Utilizando o swap o vector desaloca os elementos anteriores da memória.
+  covidInfoList.swap(t);
+  //cout << "after clear" << sizeof(std::vector<CovidInfo>) + (sizeof(CovidInfo) * covidInfoList.size());
+
 }
 
 void CovidStatistics::setCovidInfoList(vector<CovidInfo> covidList){

@@ -17,6 +17,9 @@ CovidInfo::CovidInfo(string date,string state,string city , int code , int cases
   this->deaths = deaths;
 }
 
+CovidInfo::~CovidInfo(){
+ 
+}
 
 void CovidInfo::printInfo()
 {

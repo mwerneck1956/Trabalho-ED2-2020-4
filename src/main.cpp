@@ -27,13 +27,8 @@ int main(int argc, char** argv)
   //for(int i = 0 ; i < 50 ; i++)
   //cout << "Cidade : " << CovidInfoList.at(i).city << " Casos : " << CovidInfoList.at(i).cases << endl;
   statistic->dailyCasesTotalizers();
-  //statistic->~CovidStatistics();
 
-  
-  
-  
- 
- 
+  delete statistic;
 
   return 0;
 }
