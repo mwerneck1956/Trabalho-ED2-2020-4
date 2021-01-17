@@ -49,16 +49,24 @@ void CovidStatistics::printDates()
   }
 }
 
-void CovidStatistics::getDailyCasesTotalizers(){
+void CovidStatistics::dailyCasesTotalizers(){
+    std::ofstream outfile("dailyCases.txt");
     int index = 0;
-    for (int i = 0 ; i < this->covidInfoList.size() ; i++){
+    int lastDayCases = 0 , dailyTotalCases = 0;
+    for (int i = 0 ; i < covidInfoList.size() ; i++){
         string baseDate = covidInfoList.at(i).date;
-        int diaryCases = 0;
-        while(covidInfoList.at(i).date == baseDate){
-          diaryCases += covidInfoList.at(i).cases;
+        lastDayCases = dailyTotalCases;
+        dailyTotalCases = 0;
+        while(covidInfoList.at(i).date == baseDate && i < covidInfoList.size()){
+          dailyTotalCases += covidInfoList.at(i).cases;
           i++;
         }
-        cout << "Total do dia " << baseDate << " : " << diaryCases << endl;;
+        outfile << "---------------------------------------------------------------" << endl;
+        outfile << "Dia " << baseDate << endl;
+        outfile << " Casos Diarios : " <<  dailyTotalCases - lastDayCases << endl;
+        outfile << " Casos Totais : " << dailyTotalCases << endl;
+        outfile << "---------------------------------------------------------------" << endl;
+        lastDayCases =0;
     }
   
 }

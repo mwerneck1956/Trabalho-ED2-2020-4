@@ -26,7 +26,7 @@ int main(int argc, char** argv)
   statistic->setCovidInfoList(CovidInfoList);
   //for(int i = 0 ; i < 50 ; i++)
   //cout << "Cidade : " << CovidInfoList.at(i).city << " Casos : " << CovidInfoList.at(i).cases << endl;
-  statistic->getDailyCasesTotalizers();
+  statistic->dailyCasesTotalizers();
   //statistic->~CovidStatistics();
 
   
