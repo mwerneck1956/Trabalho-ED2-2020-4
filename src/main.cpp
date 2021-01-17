@@ -10,7 +10,33 @@
 
 using namespace std;
 
-int selecionarAlgoritmo()
+int SelecionarSaida()
+{
+  int saidaSelecionada;
+
+  cout << "----------------------------------------------------" << endl;
+  cout << "Selecione a saida dos resultados de teste: " << endl;
+  cout << "----------------------------------------------------" << endl;
+
+  cout << "Digite 10 para escrever a saida em um arquivo txt;" << endl;
+  cout << "Digite 100 para escrever a saida no console;" << endl;
+
+  cout << "----------------------------------------------------" << endl;
+
+   cin >> saidaSelecionada;
+
+  while (saidaSelecionada != 10 && saidaSelecionada != 100)
+  {
+
+    cout << "Digite um numero valido!" << endl;
+    cin >> saidaSelecionada;
+  }
+
+  return saidaSelecionada;
+
+}
+
+int SelecionarAlgoritmo()
 {
   int algoritmoSelecionado;
 
@@ -26,28 +52,26 @@ int selecionarAlgoritmo()
 
   cin >> algoritmoSelecionado;
 
-  while(algoritmoSelecionado != 1 && algoritmoSelecionado != 2 && algoritmoSelecionado != 3)
-  {  
-    
+  while (algoritmoSelecionado != 1 && algoritmoSelecionado != 2 && algoritmoSelecionado != 3)
+  {
+
     cout << "Digite um numero valido!" << endl;
     cin >> algoritmoSelecionado;
-
   }
 
   return algoritmoSelecionado;
-
 }
 
-int main(int argc, char** argv)
-{  
+int main(int argc, char **argv)
+{
 
   int algoritmoSelecionado = -1;
+  int saidaSelecionada = -1;
 
-  setlocale(LC_ALL,"");
-  
+  setlocale(LC_ALL, "");
+
   //Sorting *Sort = new Sorting();
   FileHandler *FileReader = new FileHandler();
-
 
   vector<CovidInfo> CovidInfoList = FileReader->csvHandler(argv[1] != NULL ? argv[1] : "brazil_covid19_cities.csv");
   cout << "Acabou o processamento" << endl;
@@ -59,9 +83,11 @@ int main(int argc, char** argv)
 
   Sorting *Sort = new Sorting();
 
-  algoritmoSelecionado = selecionarAlgoritmo();
+  algoritmoSelecionado = SelecionarAlgoritmo();
 
-  if(algoritmoSelecionado == 1)
+  saidaSelecionada = SelecionarSaida();
+
+      if (algoritmoSelecionado == 1)
   {
     cout << "Algoritmo MergeSort selecionado" << endl;
 
@@ -69,7 +95,7 @@ int main(int argc, char** argv)
     Sort->imprimirInformacoes(CovidInfoList, 12);
   }
 
-  if(algoritmoSelecionado == 2)
+  if (algoritmoSelecionado == 2)
   {
     cout << "Algoritmo QuickSort selecionado" << endl;
 
@@ -77,17 +103,13 @@ int main(int argc, char** argv)
     //Sort->imprimirInformacoes(CovidInfoList, 12);
   }
 
-  if(algoritmoSelecionado == 3)
+  if (algoritmoSelecionado == 3)
   {
     cout << "Algoritmo ShellSort selecionado" << endl;
 
     //Sort->shellSort(CovidInfoList, 0, 12);
     //Sort->imprimirInformacoes(CovidInfoList, 12);
   }
-
-
-
-
 
   delete statistic;
 
