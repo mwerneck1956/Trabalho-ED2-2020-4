@@ -18,29 +18,17 @@ int main(int argc, char** argv)
   
   //Sorting *Sort = new Sorting();
   FileHandler *FileReader = new FileHandler();
-  //O arquivo de texto passado pelo usuário fica no argv[1]
-  //FileReader->csvHandler(argv[1] != NULL ? argv[1] : "brazil_covid19_cities.csv");
+
 
   vector<CovidInfo> CovidInfoList = FileReader->csvHandler(argv[1] != NULL ? argv[1] : "brazil_covid19_cities.csv");
+  cout << "Acabou o processamento" << endl;
+  CovidStatistics *statistic = new CovidStatistics();
+  statistic->setCovidInfoList(CovidInfoList);
+  //for(int i = 0 ; i < 50 ; i++)
+  //cout << "Cidade : " << CovidInfoList.at(i).city << " Casos : " << CovidInfoList.at(i).cases << endl;
+  statistic->dailyCasesTotalizers();
 
-  CovidStatistics *naoSei = new CovidStatistics();
-  Sorting *mergeSorte = new Sorting();
-  
-  mergeSorte->mergeSort(CovidInfoList, 0, 12);
-  mergeSorte->imprimirInformacoes(CovidInfoList, 12);
-  //naoSei->setCovidInfoList(CovidInfoList);
-  //naoSei->printDates();
-  
-  
-  //string a = "Brasiléia" , b = "Bujari";
-  //0 Se são iguais
-  //1 se o atual for maior que comparado
-  //-1 se o atual for menor do que o comparado
-  //cout << a.compare(b);
-  
-  
- 
- 
+  delete statistic;
 
   return 0;
 }
