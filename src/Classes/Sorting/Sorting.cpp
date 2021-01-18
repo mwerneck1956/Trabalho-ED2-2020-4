@@ -131,12 +131,29 @@ int Sorting::particao(vector<CovidInfo> &covidInfoList, int b, int e)
 
     for (int j = 0; j < covidInfoList.size(); j++)
     {
-        if (covidInfoList[j] <= pivo)
+        if (covidInfoList[j].date <= pivo.date)
         {
             CovidInfo aux = covidInfoList[i];
             covidInfoList[i] = covidInfoList[j];
             covidInfoList[j] = aux;
             i++;
+        }
+        else if(covidInfoList[j].date == pivo.date)
+        {
+            if(covidInfoList[j].state <= pivo.state)
+            {
+                CovidInfo aux = covidInfoList[i];
+                covidInfoList[i] = covidInfoList[j];
+                covidInfoList[j] = aux;
+                i++;
+            }
+            else if(covidInfoList[j].state == pivo.state and covidInfoList[j].city <= pivo.city)
+            {
+                CovidInfo aux = covidInfoList[i];
+                covidInfoList[i] = covidInfoList[j];
+                covidInfoList[j] = aux;
+                i++;
+            }
         }
     }
     CovidInfo aux2 = covidInfoList[i];
