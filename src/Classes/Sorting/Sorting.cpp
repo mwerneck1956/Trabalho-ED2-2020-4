@@ -5,7 +5,8 @@
 #include <vector>
 #include <fstream>
 #include <string>
-
+int numComparacoes = 0;
+int numCopias = 0;
 using namespace std;
 
 Sorting::Sorting()
@@ -102,30 +103,38 @@ void Sorting::shellSort(vector<CovidInfo> &covidInfoList, int n){
          for(k = 0; k< n - i; ++k){
             if(covidInfoList.at(k).state == covidInfoList.at(k + i).state)
             {
+               numComparacoes++;
                if(covidInfoList.at(k).city == covidInfoList.at(k+i).city)
                {
+                   numComparacoes++;
                    if(covidInfoList.at(k).date > covidInfoList.at(k+i).date)
                    {
+                      numComparacoes++;
                       aux = covidInfoList.at(k);
                       covidInfoList.at(k) = covidInfoList.at(k + i);
                       covidInfoList.at(k + i) = aux;
                       chave = 0; 
+                      numCopias++;
                    }
                    
                }
                else if(covidInfoList.at(k).city > covidInfoList.at(k+i).city)
                {
+                      numComparacoes++;
                       aux = covidInfoList.at(k);
                       covidInfoList.at(k) = covidInfoList.at(k + i);
                       covidInfoList.at(k + i) = aux;
-                      chave = 0;      
+                      chave = 0;  
+                      numCopias++;    
                }
             }
             else if(covidInfoList.at(k).state > covidInfoList.at(k+i).state){
+                    numComparacoes++;
                     aux = covidInfoList.at(k);
                     covidInfoList.at(k) = covidInfoList.at(k+i);
                     covidInfoList.at(k+i) = aux;
                     chave = 0;
+                    numCopias++; 
             }
          }
       }while(chave == 0);
