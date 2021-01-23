@@ -31,9 +31,6 @@ void Sorting::merge(vector<CovidInfo> &covidInfoList, int p, int q, int r)
     {
         numComparacoes++;
 
-        if ((covidInfoList.at(i).date.compare(covidInfoList.at(j).date) == 0))
-        {
-
             if ((covidInfoList.at(i).state.compare(covidInfoList.at(j).state) == -1))
             {
                 auxCovidInfoList.push_back(covidInfoList.at(i));
@@ -48,12 +45,28 @@ void Sorting::merge(vector<CovidInfo> &covidInfoList, int p, int q, int r)
                     i++;
                     numCopias++;
                 }
+                else if((covidInfoList.at(i).city.compare(covidInfoList.at(j).city) == 0))
+                {
+                    if((covidInfoList.at(i).date.compare(covidInfoList.at(j).date) == -1))
+                    {
+                        auxCovidInfoList.push_back(covidInfoList.at(i));
+                        i++;
+                        numCopias++;
+                    }
+                    else
+                    {
+                        auxCovidInfoList.push_back(covidInfoList.at(j));
+                        j++;
+                        numCopias++;
+                    }
+                }
                 else
                 {
                     auxCovidInfoList.push_back(covidInfoList.at(j));
                     j++;
                     numCopias++;
                 }
+                
             }
             else
             {
@@ -61,20 +74,6 @@ void Sorting::merge(vector<CovidInfo> &covidInfoList, int p, int q, int r)
                 j++;
                 numCopias++;
             }
-        }
-
-        else if ((covidInfoList.at(i).date.compare(covidInfoList.at(j).date) == -1))
-        {
-            auxCovidInfoList.push_back(covidInfoList.at(i));
-            i++;
-            numCopias++;
-        }
-        else
-        {
-            auxCovidInfoList.push_back(covidInfoList.at(j));
-            j++;
-            numCopias++;
-        }
     }
 
     while (i < q)
