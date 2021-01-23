@@ -23,7 +23,7 @@ int SelecionarSaida()
 
   cout << "----------------------------------------------------" << endl;
 
-   cin >> saidaSelecionada;
+  cin >> saidaSelecionada;
 
   while (saidaSelecionada != 10 && saidaSelecionada != 100)
   {
@@ -33,7 +33,6 @@ int SelecionarSaida()
   }
 
   return saidaSelecionada;
-
 }
 
 int SelecionarAlgoritmo()
@@ -70,7 +69,6 @@ int main(int argc, char **argv)
 
   setlocale(LC_ALL, "");
 
-  //Sorting *Sort = new Sorting();
   FileHandler *FileReader = new FileHandler();
 
   vector<CovidInfo> CovidInfoList = FileReader->csvHandler(argv[1] != NULL ? argv[1] : "brazil_covid19_cities.csv");
@@ -87,7 +85,7 @@ int main(int argc, char **argv)
 
   saidaSelecionada = SelecionarSaida();
 
-      if (algoritmoSelecionado == 1)
+  if (algoritmoSelecionado == 1)
   {
     cout << "Algoritmo MergeSort selecionado" << endl;
 
