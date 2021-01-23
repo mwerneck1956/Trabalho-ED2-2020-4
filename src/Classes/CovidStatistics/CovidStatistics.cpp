@@ -46,22 +46,24 @@ void CovidStatistics::printDates()
 }
 
 void CovidStatistics::dailyCasesTotalizers(){
-    std::ofstream outfile("dailyCases.txt");
-    int index = 0;
+    std::ofstream outfile(" brazil_covid19_cities_processado.csv");
     int lastDayCases = 0 , dailyTotalCases = 0;
+    outfile << "date," << "state," <<  "city," << "dailyCases," << "totalCases" << endl;
     for (int i = 0 ; i < covidInfoList.size() ; i++){
-        string baseDate = covidInfoList.at(i).date;
-        lastDayCases = dailyTotalCases;
+        string baseCity = covidInfoList.at(i).city;
         dailyTotalCases = 0;
-        while(covidInfoList.at(i).date == baseDate && i < covidInfoList.size()){
+        while(covidInfoList.at(i).city == baseCity && i < covidInfoList.size() - 1){
+          lastDayCases = i >= 1 ? covidInfoList.at(i - 1).cases : 0;
           dailyTotalCases += covidInfoList.at(i).cases;
+          outfile << covidInfoList.at(i).date  << ",";
+          outfile << covidInfoList.at(i).city << ",";
+          outfile << covidInfoList.at(i).state << ",";
+          outfile <<  dailyTotalCases - lastDayCases << ",";
+          outfile << dailyTotalCases  <<",";
+          outfile << endl;
           i++;
         }
-        outfile << "---------------------------------------------------------------" << endl;
-        outfile << "Dia " << baseDate << endl;
-        outfile << " Casos Diarios : " <<  dailyTotalCases - lastDayCases << endl;
-        outfile << " Casos Totais : " << dailyTotalCases << endl;
-        outfile << "---------------------------------------------------------------" << endl;
+    
         lastDayCases =0;
     }
   

@@ -134,6 +134,7 @@ void Sorting::imprimirInformacoes(vector<CovidInfo> covidInfoList, int r)
 
     cout << "Tempo total de execução: " << ((tempo_termino - tempo_inicio) / (float)CLOCKS_PER_SEC) << " segundos" << endl;
 
+    
     numComparacoes = 0;
     numCopias = 0;
 
