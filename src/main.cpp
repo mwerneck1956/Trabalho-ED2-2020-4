@@ -75,15 +75,22 @@ int main(int argc, char **argv)
   FileHandler *FileReader = new FileHandler();
 
   vector<CovidInfo> CovidInfoList = FileReader->csvHandler(argv[1] != NULL ? argv[1] : "brazil_covid19_cities.csv");
-  cout << "Acabou o processamento" << endl;
+ 
   CovidStatistics *statistic = new CovidStatistics();
-  statistic->setCovidInfoList(CovidInfoList);
-  //for(int i = 0 ; i < 50 ; i++)
-  //cout << "Cidade : " << CovidInfoList.at(i).city << " Casos : " << CovidInfoList.at(i).cases << endl;
-  statistic->dailyCasesTotalizers();
 
   Sorting *Sort = new Sorting();
 
+  Sort->mergeSort(CovidInfoList,0,CovidInfoList.size() - 1);
+  Sort->imprimirInformacoes(CovidInfoList,100);
+  
+  statistic->setCovidInfoList(CovidInfoList);
+
+
+  statistic->dailyCasesTotalizers();
+  
+
+
+  /*
   algoritmoSelecionado = SelecionarAlgoritmo();
 
   saidaSelecionada = SelecionarSaida();
@@ -116,8 +123,9 @@ int main(int argc, char **argv)
     //Sort->shellSort(CovidInfoList, 0, 12);
     //Sort->imprimirInformacoes(CovidInfoList, 12);
   }
-
-  delete statistic;
+*/
+ // delete statistic;
+  
 
   return 0;
 }
