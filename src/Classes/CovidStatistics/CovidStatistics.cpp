@@ -52,9 +52,9 @@ void CovidStatistics::dailyCasesTotalizers(){
     for (int i = 0 ; i < covidInfoList.size() ; i++){
         string baseCity = covidInfoList.at(i).city;
         dailyTotalCases = 0;
-        while(covidInfoList.at(i).city == baseCity && i < covidInfoList.size() - 1){
+        while(i < covidInfoList.size() && covidInfoList.at(i).city == baseCity){
           lastDayCases = i >= 1 ? covidInfoList.at(i - 1).cases : 0;
-          dailyTotalCases += covidInfoList.at(i).cases;
+          dailyTotalCases = covidInfoList.at(i).cases;
           outfile << covidInfoList.at(i).date  << ",";
           outfile << covidInfoList.at(i).city << ",";
           outfile << covidInfoList.at(i).state << ",";
