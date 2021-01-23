@@ -16,7 +16,7 @@ int main(int argc, char** argv)
 {  
   setlocale(LC_ALL,"");
   
-  //Sorting *Sort = new Sorting();
+  Sorting *Sort = new Sorting();
   FileHandler *FileReader = new FileHandler();
 
 
@@ -26,6 +26,9 @@ int main(int argc, char** argv)
   statistic->setCovidInfoList(CovidInfoList);
   //for(int i = 0 ; i < 50 ; i++)
   //cout << "Cidade : " << CovidInfoList.at(i).city << " Casos : " << CovidInfoList.at(i).cases << endl;
+  Sort->mergeSort(CovidInfoList, 0, 12);
+  Sort->imprimirInformacoes(CovidInfoList, 12);
+
   statistic->dailyCasesTotalizers();
 
   delete statistic;
