@@ -95,14 +95,11 @@ void Sorting::merge(vector<CovidInfo> &covidInfoList, int p, int q, int r)
         covidInfoList.at(i) = auxCovidInfoList.at(i - p);
     }
 
-    tempo_termino = clock();
-
 }
 
 ///Funcao recursiva
 void Sorting::mergeSort(vector<CovidInfo> &covidInfoList, int p, int r)
 {
-    tempo_inicio = clock();
 
     if (p < r - 1)
     {
@@ -113,13 +110,13 @@ void Sorting::mergeSort(vector<CovidInfo> &covidInfoList, int p, int r)
     }
 }
 
-void Sorting::imprimirInformacoes(vector<CovidInfo> covidInfoList, int r)
+void Sorting::imprimirInformacoes(vector<CovidInfo> covidInfoList, int tam, float tempoExecucao)
 {
     int totalCasos = 0;
 
     cout << endl;
 
-    for (int i = 0; i < r; i++)
+    for (int i = 0; i < tam; i++)
     {
         cout << covidInfoList.at(i).date << "," << covidInfoList.at(i).state << "," << covidInfoList.at(i).city << "," << covidInfoList.at(i).code << "," << covidInfoList.at(i).cases << "," << covidInfoList.at(i).deaths << endl;
 
@@ -132,7 +129,7 @@ void Sorting::imprimirInformacoes(vector<CovidInfo> covidInfoList, int r)
 
     cout << "O numero de copias foi: " << numCopias << endl;
 
-    cout << "Tempo total de execução: " << ((tempo_termino - tempo_inicio) / (float)CLOCKS_PER_SEC) << " segundos" << endl;
+    cout << "Tempo total de execução: " << tempoExecucao << " segundos" << endl;
 
     numComparacoes = 0;
     numCopias = 0;

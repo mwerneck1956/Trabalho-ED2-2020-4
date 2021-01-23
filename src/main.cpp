@@ -7,6 +7,7 @@
 #include "./Classes/CovidStatistics/CovidStatistics.h"
 #include "./Classes/Sorting/Sorting.cpp"
 #include <locale>
+#include <ctime>
 
 using namespace std;
 
@@ -63,6 +64,8 @@ int SelecionarAlgoritmo()
 
 int main(int argc, char **argv)
 {
+  float tempoExecucao;
+  clock_t tempo_inicio = 0, tempo_termino;
 
   int algoritmoSelecionado = -1;
   int saidaSelecionada = -1;
@@ -89,8 +92,13 @@ int main(int argc, char **argv)
   {
     cout << "Algoritmo MergeSort selecionado" << endl;
 
+    tempo_inicio = clock();
     Sort->mergeSort(CovidInfoList, 0, 12);
-    Sort->imprimirInformacoes(CovidInfoList, 12);
+    tempo_termino = clock();
+    tempoExecucao = ((tempo_termino - tempo_inicio) / (float)CLOCKS_PER_SEC);
+
+    Sort->imprimirInformacoes(CovidInfoList, 12, tempoExecucao);
+
   }
 
   if (algoritmoSelecionado == 2)
