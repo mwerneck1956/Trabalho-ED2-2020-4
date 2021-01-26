@@ -21,6 +21,7 @@ public:
   int deaths;
   //Função de processamento do csv
   CovidInfo(string date, string state, string city, int code, int cases, int deaths);
+  ~CovidInfo();
   void printInfo();
 };
 

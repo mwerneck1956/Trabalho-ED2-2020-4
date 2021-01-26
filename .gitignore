@@ -1,14 +1,17 @@
 # Prerequisites
 *.d
 
-# Compiled Object files
-*.slo
+# Compiled Objz
 *.lo
 *.o
 *.obj
 
 #Covid csv
 *brazil_covid19_cities.csv
+
+#Txts
+*dailyCases.txt
+
 *main
 
 # Precompiled Headers

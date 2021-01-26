@@ -20,10 +20,11 @@ class CovidStatistics
     //Função de processamento do csv
     CovidStatistics();
     ~CovidStatistics();
+    void setCovidInfoList(vector<CovidInfo> covidList);
     vector<CovidInfo> getCovidInfoList();
     void push(CovidInfo* line);
     void printDates();
-    void setCovidInfoList(vector<CovidInfo> covidList);
+    void dailyCasesTotalizers();
    
 };
 

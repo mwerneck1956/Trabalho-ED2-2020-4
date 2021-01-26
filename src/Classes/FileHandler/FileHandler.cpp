@@ -57,9 +57,11 @@ vector<CovidInfo> FileHandler::csvHandler(string filename)
     CovidFile->printDates();
     
   }
-
   else
   {
     cout << "Nao foi possivel abrir o arquivo" << endl;
+    
   }
+  vector<CovidInfo> teste;
+  return teste;
 }
