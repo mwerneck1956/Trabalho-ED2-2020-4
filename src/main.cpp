@@ -1,5 +1,4 @@
 #include <iostream>
-#include <chrono>
 #include <stdlib.h>
 #include <stdio.h>
 #include "./Classes/CovidInfo/CovidInfo.h"
@@ -99,6 +98,7 @@ int main(int argc, char **argv)
 
     tempo_inicio = clock();
     Sort->mergeSort(CovidInfoList, 0, 12);
+    //Sort->mergeSortCases(CovidInfoList, 0 , 12);
     tempo_termino = clock();
     tempoExecucao = ((tempo_termino - tempo_inicio) / (float)CLOCKS_PER_SEC);
 
