@@ -33,11 +33,10 @@ void Sorting::merge(vector<CovidInfo> &covidInfoList, int p, int q, int r)
         {
             auxCovidInfoList.push_back(covidInfoList.at(i));
             i++;
-            
         }
-        else if((covidInfoList.at(i).state.compare(covidInfoList.at(j).state) == 0))
+        else if ((covidInfoList.at(i).state.compare(covidInfoList.at(j).state) == 0))
         {
-            if((covidInfoList.at(i).city.compare(covidInfoList.at(j).city) == -1))
+            if ((covidInfoList.at(i).city.compare(covidInfoList.at(j).city) == -1))
             {
                 auxCovidInfoList.push_back(covidInfoList.at(i));
                 i++;
@@ -47,7 +46,6 @@ void Sorting::merge(vector<CovidInfo> &covidInfoList, int p, int q, int r)
                 auxCovidInfoList.push_back(covidInfoList.at(j));
                 j++;
             }
-            
         }
         else
         {
@@ -74,13 +72,12 @@ void Sorting::merge(vector<CovidInfo> &covidInfoList, int p, int q, int r)
     {
         covidInfoList.at(i) = auxCovidInfoList.at(i - p);
     }
-
 }
 
 ///Funcao recursiva
 void Sorting::mergeSort(vector<CovidInfo> &covidInfoList, int p, int r)
 {
-    
+
     if (p < r - 1)
     {
         int q = (p + r) / 2;
@@ -88,78 +85,53 @@ void Sorting::mergeSort(vector<CovidInfo> &covidInfoList, int p, int r)
         mergeSort(covidInfoList, q, r); ///chama de q a r
         merge(covidInfoList, p, q, r);
     }
-        
 }
-void Sorting::shellSort(vector<CovidInfo> &covidInfoList, int n){
-   int i = (n - 1)/ 2;
-   int chave, k;
-   CovidInfo aux = covidInfoList.at(i);
 
-   while(i != 0)
-   {
-      do
-      {
-         chave = 1;
-         for(k = 0; k< n - i; ++k){
-            if(covidInfoList.at(k).state == covidInfoList.at(k + i).state)
+void Sorting::shellSortCases(vector<CovidInfo> &covidInfoList, int n)
+{
+    int h = 1;
+    int i, j;
+    while (h < n)
+    {
+        h = h * 3 + 1; //calcula o h inicial
+    }
+
+    while (h > 1)
+    {
+        h /= 3; //atualiza valor de h
+
+        for (i = h; i < n; i++)
+        {
+            CovidInfo aux = covidInfoList.at(i);
+            j = i;
+            // efetua comparações entre elementos com distância h:
+            while (aux.cases < covidInfoList.at(j - h).cases)
             {
-               numComparacoes++;
-               if(covidInfoList.at(k).city == covidInfoList.at(k+i).city)
-               {
-                   numComparacoes++;
-                   if(covidInfoList.at(k).date > covidInfoList.at(k+i).date)
-                   {
-                      numComparacoes++;
-                      aux = covidInfoList.at(k);
-                      covidInfoList.at(k) = covidInfoList.at(k + i);
-                      covidInfoList.at(k + i) = aux;
-                      chave = 0; 
-                      numCopias++;
-                   }
-                   
-               }
-               else if(covidInfoList.at(k).city > covidInfoList.at(k+i).city)
-               {
-                      numComparacoes++;
-                      aux = covidInfoList.at(k);
-                      covidInfoList.at(k) = covidInfoList.at(k + i);
-                      covidInfoList.at(k + i) = aux;
-                      chave = 0;  
-                      numCopias++;    
-               }
+                covidInfoList.at(j) = covidInfoList.at(j-h);
+                j -= h; // atualiza valor de j
+                if(j < h) break;
             }
-            else if(covidInfoList.at(k).state > covidInfoList.at(k+i).state){
-                    numComparacoes++;
-                    aux = covidInfoList.at(k);
-                    covidInfoList.at(k) = covidInfoList.at(k+i);
-                    covidInfoList.at(k+i) = aux;
-                    chave = 0;
-                    numCopias++; 
-            }
-         }
-      }while(chave == 0);
-      i = i / 2;
-   }
+            covidInfoList.at(j) = aux;
+        }
+    }
 }
+
 void Sorting::imprimir(vector<CovidInfo> covidInfoList, int r)
 {
     int totalCasos = 0;
 
     cout << endl;
 
-     for (int i = 0; i < r; i++)
+    for (int i = 0; i < r; i++)
     {
-        cout << covidInfoList.at(i).date << "," << covidInfoList.at(i).state << "," << covidInfoList.at(i).city << "," << 
-        covidInfoList.at(i).code << "," << covidInfoList.at(i).cases << "," << covidInfoList.at(i).deaths << endl;
-        
-        totalCasos += covidInfoList.at(i).cases;
+        cout << covidInfoList.at(i).date << "," << covidInfoList.at(i).state << "," << covidInfoList.at(i).city << "," << covidInfoList.at(i).code << "," << covidInfoList.at(i).cases << "," << covidInfoList.at(i).deaths << endl;
 
+        totalCasos += covidInfoList.at(i).cases;
     }
 
     cout << endl;
 
     cout << " O numero total de casos diarios eh de: " << totalCasos << endl;
-
 }
 
 //Teste feito na main()
