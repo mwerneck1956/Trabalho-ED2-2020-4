@@ -7,6 +7,8 @@
 #include <string>
 #include <ctime>
 
+int numComparacoes = 0;
+int numCopias = 0;
 using namespace std;
 
 int numComparacoes = 0;
@@ -94,7 +96,6 @@ void Sorting::merge(vector<CovidInfo> &covidInfoList, int p, int q, int r)
     {
         covidInfoList.at(i) = auxCovidInfoList.at(i - p);
     }
-
 }
 
 ///Funcao recursiva
@@ -110,13 +111,42 @@ void Sorting::mergeSort(vector<CovidInfo> &covidInfoList, int p, int r)
     }
 }
 
+void Sorting::shellSortCases(vector<CovidInfo> &covidInfoList, int n)
+{
+    int h = 1;
+    int i, j;
+    while (h < n)
+    {
+        h = h * 3 + 1; //calcula o h inicial
+    }
+
+    while (h > 1)
+    {
+        h /= 3; //atualiza valor de h
+
+        for (i = h; i < n; i++)
+        {
+            CovidInfo aux = covidInfoList.at(i);
+            j = i;
+            // efetua comparações entre elementos com distância h:
+            while (aux.cases < covidInfoList.at(j - h).cases)
+            {
+                covidInfoList.at(j) = covidInfoList.at(j-h);
+                j -= h; // atualiza valor de j
+                if(j < h) break;
+            }
+            covidInfoList.at(j) = aux;
+        }
+    }
+}
+
 void Sorting::imprimirInformacoes(vector<CovidInfo> covidInfoList, int tam, float tempoExecucao)
 {
     int totalCasos = 0;
 
     cout << endl;
 
-    for (int i = 0; i < tam; i++)
+    for (int i = 0; i < r; i++)
     {
         cout << covidInfoList.at(i).date << "," << covidInfoList.at(i).state << "," << covidInfoList.at(i).city << "," << covidInfoList.at(i).code << "," << covidInfoList.at(i).cases << "," << covidInfoList.at(i).deaths << endl;
 
@@ -125,15 +155,5 @@ void Sorting::imprimirInformacoes(vector<CovidInfo> covidInfoList, int tam, floa
 
     cout << "O numero total de casos diarios eh: " << totalCasos << endl;
 
-    cout << "O numero de comparacoes foi: " << numComparacoes << endl;
-
-    cout << "O numero de copias foi: " << numCopias << endl;
-
-    cout << "Tempo total de execução: " << tempoExecucao << " segundos" << endl;
-
-    
-    numComparacoes = 0;
-    numCopias = 0;
-
-    cout << endl;
+    cout << " O numero total de casos diarios eh de: " << totalCasos << endl;
 }
