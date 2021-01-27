@@ -11,9 +11,6 @@ int numComparacoes = 0;
 int numCopias = 0;
 using namespace std;
 
-int numComparacoes = 0;
-int numCopias = 0;
-
 clock_t tempo_inicio = 0, tempo_termino;
 
 Sorting::Sorting()
@@ -146,7 +143,7 @@ void Sorting::imprimirInformacoes(vector<CovidInfo> covidInfoList, int tam, floa
 
     cout << endl;
 
-    for (int i = 0; i < r; i++)
+    for (int i = 0; i < tam; i++)
     {
         cout << covidInfoList.at(i).date << "," << covidInfoList.at(i).state << "," << covidInfoList.at(i).city << "," << covidInfoList.at(i).code << "," << covidInfoList.at(i).cases << "," << covidInfoList.at(i).deaths << endl;
 

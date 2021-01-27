@@ -81,7 +81,7 @@ int main(int argc, char **argv)
   Sorting *Sort = new Sorting();
 
   Sort->mergeSort(CovidInfoList,0,CovidInfoList.size() - 1);
-  Sort->imprimirInformacoes(CovidInfoList,100);
+  //Sort->imprimirInformacoes(CovidInfoList,100);
   
   statistic->setCovidInfoList(CovidInfoList);
 
