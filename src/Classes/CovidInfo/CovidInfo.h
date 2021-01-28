@@ -19,8 +19,11 @@ public:
   float code;
   int cases;
   int deaths;
+  int totalCases;
   //Função de processamento do csv
   CovidInfo(string date, string state, string city, int code, int cases, int deaths);
+  CovidInfo(string date, string state, string city, int code, int cases, int totalCases, int deaths);
+
   ~CovidInfo();
   void printInfo();
 };

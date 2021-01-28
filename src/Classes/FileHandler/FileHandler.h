@@ -19,7 +19,7 @@ public:
   vector<CovidInfo> csvHandler(string filename);
   vector<CovidInfo> getNCovidInfos(int n);
   void  printLine(string line);
-  void  printFile(vector<string> file);
+  //void  printFile(vector<string> file);
   
 
   

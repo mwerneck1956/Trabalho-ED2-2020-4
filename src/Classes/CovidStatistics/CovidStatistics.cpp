@@ -45,23 +45,27 @@ void CovidStatistics::printDates()
   }
 }
 
-void CovidStatistics::dailyCasesTotalizers(){
-    std::ofstream outfile("dailyCases.txt");
-    int index = 0;
+void CovidStatistics::dailyCasesTotalizers(vector<CovidInfo> covidInfoList){
+    std::ofstream outfile("brazil_covid19_cities_processado.csv");
     int lastDayCases = 0 , dailyTotalCases = 0;
+    outfile << "date," << "state," <<  "city," << "code," << "dailyCases," << "totalCases," << "deaths," << endl;
     for (int i = 0 ; i < covidInfoList.size() ; i++){
-        string baseDate = covidInfoList.at(i).date;
-        lastDayCases = dailyTotalCases;
+        string baseCity = covidInfoList.at(i).city;
         dailyTotalCases = 0;
-        while(covidInfoList.at(i).date == baseDate && i < covidInfoList.size()){
-          dailyTotalCases += covidInfoList.at(i).cases;
+        while(i < covidInfoList.size() && covidInfoList.at(i).city == baseCity){
+          lastDayCases = i >= 1 ? covidInfoList.at(i - 1).cases : 0;
+          dailyTotalCases = covidInfoList.at(i).cases;
+          outfile << covidInfoList.at(i).date  << ",";
+          outfile << covidInfoList.at(i).state << ",";
+          outfile << covidInfoList.at(i).city << ",";
+          outfile << covidInfoList.at(i).code << ",";
+          outfile <<  dailyTotalCases - lastDayCases << ",";
+          outfile << dailyTotalCases  <<",";
+          outfile << covidInfoList.at(i).deaths << ",";
+          outfile << "\n";
           i++;
         }
-        outfile << "---------------------------------------------------------------" << endl;
-        outfile << "Dia " << baseDate << endl;
-        outfile << " Casos Diarios : " <<  dailyTotalCases - lastDayCases << endl;
-        outfile << " Casos Totais : " << dailyTotalCases << endl;
-        outfile << "---------------------------------------------------------------" << endl;
+    
         lastDayCases =0;
     }
   
