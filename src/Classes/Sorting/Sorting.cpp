@@ -110,7 +110,7 @@ void Sorting::mergeSort(vector<CovidInfo> &covidInfoList, int p, int r)
     }
 }
 
-void Sorting::quickSort(vector<CovidInfo> &covidInfoList, int p, int q, char t)
+void Sorting::quickSort(vector<CovidInfo> &covidInfoList, int p, int q, char t) //t ='c' para ordenar por casos, 's' para State-City-Date
 {
     int r;
 

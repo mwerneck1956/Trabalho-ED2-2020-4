@@ -110,10 +110,9 @@ int main(int argc, char **argv)
     cout << "Algoritmo QuickSort selecionado" << endl;
 
     tempo_inicio = clock();
-    Sort->quickSort(CovidInfoList, 0, 12, 's');
+    Sort->quickSort(CovidInfoList, 0, 12, 'c'); //'c' para ordenar por casos, 's' para State-City-Date
     tempo_termino = clock();
     tempoExecucao = ((tempo_termino - tempo_inicio) / (float)CLOCKS_PER_SEC);
-    cout << "Caboooooou!" << endl;
     Sort->imprimirInformacoes(CovidInfoList, 12, tempoExecucao);
   }
 
