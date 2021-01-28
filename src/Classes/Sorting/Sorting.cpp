@@ -9,6 +9,8 @@
 
 using namespace std;
 
+int numComparacoes = 0;
+
 Sorting::Sorting()
 {
     cout << "Objeto sorting montado" << endl;
@@ -136,7 +138,7 @@ void Sorting::shellSortCases(vector<CovidInfo> &covidInfoList,  int &comparisons
     }
 }
 
-void Sorting::mergeCases(vector<CovidInfo> &covidInfoList, int p, int q, int r, int *comparisons, int *swaps)
+void Sorting::mergeCases(vector<CovidInfo> &covidInfoList, int p, int q, int r, int &comparisons, int &swaps)
 {
 
     vector<CovidInfo> auxCovidInfoList;
@@ -145,19 +147,19 @@ void Sorting::mergeCases(vector<CovidInfo> &covidInfoList, int p, int q, int r, 
 
     while (i < q && j < r)
     {
-        (*comparisons)++;
+        comparisons++;
 
             if (covidInfoList.at(i).cases < covidInfoList.at(j).cases)
             {
                 auxCovidInfoList.push_back(covidInfoList.at(i));
                 i++;
-                (*swaps)++;
+                swaps++;
             }
             else
             {
                 auxCovidInfoList.push_back(covidInfoList.at(j));
                 j++;
-                (*swaps)++;
+                swaps++;
             }
     }
 
@@ -165,14 +167,14 @@ void Sorting::mergeCases(vector<CovidInfo> &covidInfoList, int p, int q, int r, 
     {
         auxCovidInfoList.push_back(covidInfoList.at(i));
         i++;
-        (*swaps)++;
+        swaps++;
     }
 
     while (j < r)
     {
         auxCovidInfoList.push_back((covidInfoList.at(j)));
         j++;
-        (*swaps)++;
+        swaps++;
     }
 
     for (i = p; i < r; i++)
@@ -182,15 +184,14 @@ void Sorting::mergeCases(vector<CovidInfo> &covidInfoList, int p, int q, int r, 
 }
 
 ///Funcao recursiva
-void Sorting::mergeSortCases(vector<CovidInfo> &covidInfoList, int p, int r, int *comparisons, int *swaps)
+void Sorting::mergeSortCases(vector<CovidInfo> &covidInfoList, int p, int r, int &comparisons, int &swaps)
 {
-
     if (p < r - 1)
     {
         int q = (p + r) / 2;
-        mergeSortCases(covidInfoList, p, q, &comparisons, &swaps); ///chama de p a q
-        mergeSortCases(covidInfoList, q, r, &comparisons, &swaps); ///chama de q a r
-        mergeCases(covidInfoList, p, q, r, &comparisons, &swaps);
+        mergeSortCases(covidInfoList, p, q, comparisons, swaps); ///chama de p a q
+        mergeSortCases(covidInfoList, q, r, comparisons, swaps); ///chama de q a r
+        mergeCases(covidInfoList, p, q, r, comparisons, swaps);
     }
 } 
 /*void Sorting::imprimirInformacoes(vector<CovidInfo> covidInfoList, int tam, float tempoExecucao)
