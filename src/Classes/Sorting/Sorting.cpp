@@ -11,8 +11,6 @@ int numComparacoes = 0;
 int numCopias = 0;
 using namespace std;
 
-clock_t tempo_inicio = 0, tempo_termino;
-
 Sorting::Sorting()
 {
     cout << "Objeto sorting montado" << endl;
@@ -20,44 +18,36 @@ Sorting::Sorting()
 
 void Sorting::merge(vector<CovidInfo> &covidInfoList, int p, int q, int r)
 {
-    
+
     vector<CovidInfo> auxCovidInfoList;
     int i = p;
     int j = q;
-    int k = q;
 
     while (i < q && j < r)
     {
         numComparacoes++;
 
-            if ((covidInfoList.at(i).state.compare(covidInfoList.at(j).state) == -1))
+        if ((covidInfoList.at(i).state.compare(covidInfoList.at(j).state) == -1))
+        {
+            auxCovidInfoList.push_back(covidInfoList.at(i));
+            i++;
+            numCopias++;
+        }
+        else if ((covidInfoList.at(i).state.compare(covidInfoList.at(j).state) == 0))
+        {
+            if ((covidInfoList.at(i).city.compare(covidInfoList.at(j).city) == -1))
             {
                 auxCovidInfoList.push_back(covidInfoList.at(i));
                 i++;
                 numCopias++;
             }
-            else if ((covidInfoList.at(i).state.compare(covidInfoList.at(j).state) == 0))
+            else if ((covidInfoList.at(i).city.compare(covidInfoList.at(j).city) == 0))
             {
-                if ((covidInfoList.at(i).city.compare(covidInfoList.at(j).city) == -1))
+                if ((covidInfoList.at(i).date.compare(covidInfoList.at(j).date) == -1))
                 {
                     auxCovidInfoList.push_back(covidInfoList.at(i));
                     i++;
                     numCopias++;
-                }
-                else if((covidInfoList.at(i).city.compare(covidInfoList.at(j).city) == 0))
-                {
-                    if((covidInfoList.at(i).date.compare(covidInfoList.at(j).date) == -1))
-                    {
-                        auxCovidInfoList.push_back(covidInfoList.at(i));
-                        i++;
-                        numCopias++;
-                    }
-                    else
-                    {
-                        auxCovidInfoList.push_back(covidInfoList.at(j));
-                        j++;
-                        numCopias++;
-                    }
                 }
                 else
                 {
@@ -65,7 +55,6 @@ void Sorting::merge(vector<CovidInfo> &covidInfoList, int p, int q, int r)
                     j++;
                     numCopias++;
                 }
-                
             }
             else
             {
@@ -73,6 +62,13 @@ void Sorting::merge(vector<CovidInfo> &covidInfoList, int p, int q, int r)
                 j++;
                 numCopias++;
             }
+        }
+        else
+        {
+            auxCovidInfoList.push_back(covidInfoList.at(j));
+            j++;
+            numCopias++;
+        }
     }
 
     while (i < q)
@@ -137,6 +133,63 @@ void Sorting::shellSortCases(vector<CovidInfo> &covidInfoList, int n)
     }
 }
 
+void Sorting::mergeCases(vector<CovidInfo> &covidInfoList, int p, int q, int r)
+{
+
+    vector<CovidInfo> auxCovidInfoList;
+    int i = p;
+    int j = q;
+
+    while (i < q && j < r)
+    {
+        numComparacoes++;
+
+            if (covidInfoList.at(i).cases < covidInfoList.at(j).cases)
+            {
+                auxCovidInfoList.push_back(covidInfoList.at(i));
+                i++;
+                numCopias++;
+            }
+            else
+            {
+                auxCovidInfoList.push_back(covidInfoList.at(j));
+                j++;
+                numCopias++;
+            }
+    }
+
+    while (i < q)
+    {
+        auxCovidInfoList.push_back(covidInfoList.at(i));
+        i++;
+        numCopias++;
+    }
+
+    while (j < r)
+    {
+        auxCovidInfoList.push_back((covidInfoList.at(j)));
+        j++;
+        numCopias++;
+    }
+
+    for (i = p; i < r; i++)
+    {
+        covidInfoList.at(i) = auxCovidInfoList.at(i - p);
+    }
+}
+
+///Funcao recursiva
+void Sorting::mergeSortCases(vector<CovidInfo> &covidInfoList, int p, int r)
+{
+
+    if (p < r - 1)
+    {
+        int q = (p + r) / 2;
+        mergeSortCases(covidInfoList, p, q); ///chama de p a q
+        mergeSortCases(covidInfoList, q, r); ///chama de q a r
+        mergeCases(covidInfoList, p, q, r);
+    }
+}
 void Sorting::imprimirInformacoes(vector<CovidInfo> covidInfoList, int tam, float tempoExecucao)
 {
     int totalCasos = 0;
@@ -152,5 +205,14 @@ void Sorting::imprimirInformacoes(vector<CovidInfo> covidInfoList, int tam, floa
 
     cout << "O numero total de casos diarios eh: " << totalCasos << endl;
 
-    cout << " O numero total de casos diarios eh de: " << totalCasos << endl;
+    cout << "O numero de comparacoes foi: " << numComparacoes << endl;
+
+    cout << "O numero de copias foi: " << numCopias << endl;
+
+    cout << "Tempo total de execução: " << tempoExecucao << " segundos" << endl;
+
+    numComparacoes = 0;
+    numCopias = 0;
+
+    cout << endl;
 }

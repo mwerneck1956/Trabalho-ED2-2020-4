@@ -1,5 +1,4 @@
 #include <iostream>
-#include <chrono>
 #include <stdlib.h>
 #include <stdio.h>
 #include "./Classes/CovidInfo/CovidInfo.h"

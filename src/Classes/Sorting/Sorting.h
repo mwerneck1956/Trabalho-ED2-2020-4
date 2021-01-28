@@ -20,6 +20,9 @@ class Sorting
         void shellSortStateCityDate(vector<CovidInfo> &convidInfoList, int n);
         void shellSortCases(vector<CovidInfo> &convidInfoList, int n);
         void imprimir(vector<CovidInfo> covidInfoList, int tam);
+        void mergeCases(vector<CovidInfo> &covidInfoList, int p, int q, int r);
+        void mergeSortCases(vector<CovidInfo> &covidInfoList, int p, int r);
+        
 
 };
 
