@@ -248,7 +248,7 @@ void Testing::StatisticalAnalysis(int M)
         saida << "Media de comparacoes dos " << M << " conjuntos: " << comparisonsAvgMerge[j] << endl;
         saida << "Media de trocas dos " << M << " conjuntos: " << swapsAvgMerge[j] << endl;
 
-        cout << "-------------------------------------------------------------------------------" << endl;
+        saida << "-------------------------------------------------------------------------------" << endl;
       }
 
       else
@@ -262,8 +262,6 @@ void Testing::StatisticalAnalysis(int M)
       }
     }
   }
-
-  cout << "-------------------------------------------------------------------------------" << endl;
 
   if (algoritmoSelecionado == 2)
   {
@@ -285,7 +283,7 @@ void Testing::StatisticalAnalysis(int M)
           saida << "Media de comparacoes dos " << M << " conjuntos: " << comparisonsAvgShell[j] << endl;
           saida << "Media de trocas dos " << M << " conjuntos: " << swapsAvgShell[j] << endl;
 
-          cout << "-------------------------------------------------------------------------------" << endl;
+          saida << "-------------------------------------------------------------------------------" << endl;
         }
 
         else
@@ -300,8 +298,6 @@ void Testing::StatisticalAnalysis(int M)
       }
     }
   }
-
-  cout << "-------------------------------------------------------------------------------" << endl;
 
   /*if (algoritmoSelecionado == 3)
   {
