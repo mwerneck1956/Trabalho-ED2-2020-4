@@ -144,9 +144,9 @@ void Testing::statisticalAnalysis(int M)
   int comparisonsQuick[5] = {0, 0, 0, 0, 0};
   int comparisonsShell[5] = {0, 0, 0, 0, 0};
 
-  int swapMerge[5] = {0, 0, 0, 0, 0};
-  int swapQuick[5] = {0, 0, 0, 0, 0};
-  int swapShell[5] = {0, 0, 0, 0, 0};
+  int swapsMerge[5] = {0, 0, 0, 0, 0};
+  int swapsQuick[5] = {0, 0, 0, 0, 0};
+  int swapsShell[5] = {0, 0, 0, 0, 0};
 
   float timeAvgMerge[5] = {0, 0, 0, 0, 0};
   float timeAvgQuick[5] = {0, 0, 0, 0, 0};
@@ -156,16 +156,13 @@ void Testing::statisticalAnalysis(int M)
   int comparisonsAvgQuick[5] = {0, 0, 0, 0, 0};
   int comparisonsAvgShell[5] = {0, 0, 0, 0, 0};
 
-  int swapAvgMerge[5] = {0, 0, 0, 0, 0};
-  int swapAvgQuick[5] = {0, 0, 0, 0, 0};
-  int swapAvgShell[5] = {0, 0, 0, 0, 0};
-
+  int swapsAvgMerge[5] = {0, 0, 0, 0, 0};
+  int swapsAvgQuick[5] = {0, 0, 0, 0, 0};
+  int swapsAvgShell[5] = {0, 0, 0, 0, 0};
   Sorting *Sort = new Sorting();
   FileHandler *File = new FileHandler();
   clock_t timeStart = 0, timeEnd;
-  int *comparisons = 0;
-  int *swaps = 0;
-  cout << "ola";
+
   for (int i = 0; i < 5; i++)
   {
     for (int j = 0; j < M; j++)
@@ -173,52 +170,75 @@ void Testing::statisticalAnalysis(int M)
       vector<CovidInfo> notSorted = File->getNCovidInfos(N[i]);
       vector<CovidInfo> toSort = notSorted;
       
-      timeStart = 0;
-      timeEnd = 0;
       /*
-      timeStart;
-      mergeSort(vetor randomico, size);
-      timeEnd;
-      swapMerge[i] = swapMerge[j] + Pegar numero de swaps;
-      comparisonsMerge[i] = swapMerge[i] + Pegar numero de comparisons;
-      timeMerge[i] = timeMerge[i] + Pegar o time;
-      */
-
       timeStart = clock();
-      //Sort->shellSortCases(toSort, N[i], comparisons, swaps);
+      Sort->mergeSortCases(toSort, N[i]-1, comparisonsMerge[i], swapsMerge[i]);
       timeEnd = clock();
       float time = (timeEnd - timeStart) / (float)CLOCKS_PER_SEC;
-      swapShell[i] = swapShell[i] + 77;
-      comparisonsShell[i] = swapShell[i] + 55;
-      //timeShell[i] = timeShell[i] + time;
+      swapsMerge[i] += swapsMerge[i];
+      comparisonsMerge[i] += comparisonsMerge[i];
+      timeMerge[i] += timeMerge[i];
+      */
+       
+      timeStart = clock();
+      Sort->shellSortCases(toSort, comparisonsShell[i], swapsShell[i]);
+      timeEnd = clock();
+      float time = (timeEnd - timeStart) / (float)CLOCKS_PER_SEC;
+      swapsShell[i] += swapsShell[i] ;
+      comparisonsShell[i] += comparisonsShell[i] ;
+      timeShell[i] += time;
       
       /*
-      timeStart = 0;
-      timeStart;
-      quickSort(vetor randomico, size);
-      timeEnd;
-      swapQuick[i] = swapQuick[i] + Pegar numero de swaps;
-      comparisonsQuick[j] = swapQuick[i] + Pegar numero de comparisons;
-      timeQuick[i] = timeQuick[i] + Pegar o time;*/
+      timeStart = clock();
+      Sort->quickSortCases(toSort, N[i]-1, comparisonsMerge[i], swapsMerge[i]);
+      timeEnd = clock();
+      float time = (timeEnd - timeStart) / (float)CLOCKS_PER_SEC;
+      swapsQuick[i] += swapsQuick[i];
+      comparisonsQuick[j] += comparisonsQuick[i];
+      timeQuick[i] += time;*/
     }
   }
   
   for (int j = 0; j < 5; j++)
   {
-    //timeAvgMerge[j] = timeMerge[j] / 5;
-    //timeAvgQuick[j] = timeQuick[j] / 5;
     timeAvgShell[j] = timeShell[j] / 5;
-
-    //comparisonsAvgMerge[j] = comparisonsMerge[j] / 5;
-    //comparisonsAvgQuick[j] = comparisonsQuick[j] / 5;
     comparisonsAvgShell[j] = comparisonsShell[j] / 5;
+    swapsAvgShell[j] = swapsShell[j] / 5;
 
-    //swapAvgMerge[j] = swapMerge[j] / 5;
-    //swapAvgQuick[j] = swapQuick[j] / 5;
-    swapAvgShell[j] = swapShell[j] / 5;
-
-    cout << timeAvgShell[j] << " " << comparisonsAvgShell[j] << " " << swapAvgShell[j] << endl;
+    cout << "Os resultados do algoritmo Shellsort para um vetor randomico de tamanho " << N[j] << " foram " << endl;
+    cout << "Media de tempo dos " << M << "conjuntos: " <<  timeAvgShell[j] << endl;
+    cout << "Media de comparacoes dos " << M << "conjuntos: " <<  comparisonsAvgShell[j] << endl;
+    cout << "Media de trocas dos " << M << "conjuntos: " <<  swapsAvgShell[j] << endl << endl;
+    
   }
-  
+  cout << "-------------------------------------------------------------------------------" << endl;
+  /*
+  for (int j = 0; j < 5; j++)
+  {
+    timeAvgMerge[j] = timeMerge[j] / 5;
+    comparisonsAvgMerge[j] = comparisonsMerge[j] / 5;
+    swapsAvgMerge[j] = swapsMerge[j] / 5;
+
+    cout << "Os resultados do algoritmo MergeSort para um vetor randomico de tamanho " << N[j] << " foram " << endl;
+    cout << "Media de tempo dos " << M << "conjuntos: " <<  timeAvgMerge[j] << endl;
+    cout << "Media de comparacoes dos " << M << "conjuntos: " <<  comparisonsAvgMerge[j] << endl;
+    cout << "Media de trocas dos " << M << "conjuntos: " <<  swapsAvgMerge[j] << endl << endl;
+    
+  }
+
+  cout << "-------------------------------------------------------------------------------" << endl;
+  for (int j = 0; j < 5; j++)
+  {
+    timeAvgQuick[j] = timeQuick[j] / 5;
+    comparisonsAvgQuick[j] = comparisonsQuick[j] / 5;
+    swapsAvgQuick[j] = swapsQuick[j] / 5;
+
+    cout << "Os resultados do algoritmo QuickSort para um vetor randomico de tamanho " << N[j] << " foram " << endl;
+    cout << "Media de tempo dos " << M << "conjuntos: " <<  timeAvgQuick[j] << endl;
+    cout << "Media de comparacoes dos " << M << "conjuntos: " <<  comparisonsAvgQuick[j] << endl;
+    cout << "Media de trocas dos " << M << "conjuntos: " <<  swapsAvgQuick[j] << endl << endl;
+    
+  } */
+  //cout << "-------------------------------------------------------------------------------" << endl;
   //CriarArquivoSaida(Resultados); 
 }

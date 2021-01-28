@@ -102,12 +102,12 @@ void Sorting::mergeSort(vector<CovidInfo> &covidInfoList, int p, int r)
     }
 }
 
-void Sorting::shellSortCases(vector<CovidInfo> &covidInfoList, int n, int *comparisons, int *swaps)
+void Sorting::shellSortCases(vector<CovidInfo> &covidInfoList,  int &comparisons, int &swaps)
 {
     int h = 1;
     int i, j;
 
-    while (h < n)
+    while (h < covidInfoList.size())
     {
         h = h * 3 + 1; //calcula o h inicial
     }
@@ -116,21 +116,22 @@ void Sorting::shellSortCases(vector<CovidInfo> &covidInfoList, int n, int *compa
     {
         h /= 3; //atualiza valor de h
 
-        for (i = h; i < n; i++)
+        for (i = h; i < covidInfoList.size(); i++)
         {
             CovidInfo aux = covidInfoList.at(i);
             j = i;
+            swaps++;
             // efetua comparações entre elementos com distância h:
             while (aux.cases < covidInfoList.at(j - h).cases)
             {
-                (*comparisons)++;
+                comparisons++;
+                swaps++;
                 covidInfoList.at(j) = covidInfoList.at(j-h);
-                (*swaps)++;
                 j -= h; // atualiza valor de j
                 if(j < h) break;
             }
             covidInfoList.at(j) = aux;
-            //(*swaps)+;
+            swaps++;
         }
     }
 }
