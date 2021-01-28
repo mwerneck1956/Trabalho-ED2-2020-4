@@ -13,7 +13,6 @@ using namespace std;
 
 Sorting::Sorting()
 {
-    cout << "Objeto sorting montado" << endl;
 }
 
 void Sorting::merge(vector<CovidInfo> &covidInfoList, int p, int q, int r)
@@ -122,7 +121,7 @@ void Sorting::shellSortCases(vector<CovidInfo> &covidInfoList, int n)
             CovidInfo aux = covidInfoList.at(i);
             j = i;
             // efetua comparações entre elementos com distância h:
-            while (aux.cases < covidInfoList.at(j - h).cases)
+            while (aux.totalCases < covidInfoList.at(j - h).totalCases)
             {
                 covidInfoList.at(j) = covidInfoList.at(j-h);
                 j -= h; // atualiza valor de j
@@ -144,7 +143,7 @@ void Sorting::mergeCases(vector<CovidInfo> &covidInfoList, int p, int q, int r)
     {
         numComparacoes++;
 
-            if (covidInfoList.at(i).cases < covidInfoList.at(j).cases)
+            if (covidInfoList.at(i).totalCases < covidInfoList.at(j).totalCases)
             {
                 auxCovidInfoList.push_back(covidInfoList.at(i));
                 i++;

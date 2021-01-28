@@ -2,8 +2,8 @@
 
 using namespace std;
 
-Testing::Testing(){
-
+Testing::Testing()
+{
 }
 
 int Testing::SelecionarSaida()
@@ -14,14 +14,14 @@ int Testing::SelecionarSaida()
   cout << "Selecione a saida dos resultados de teste: " << endl;
   cout << "----------------------------------------------------" << endl;
 
-  cout << "Digite 10 para escrever a saida em um arquivo txt;" << endl;
-  cout << "Digite 100 para escrever a saida no console;" << endl;
+  cout << "Digite [1] para escrever a saida em um arquivo txt;" << endl;
+  cout << "Digite [2] para escrever a saida no console;" << endl;
 
   cout << "----------------------------------------------------" << endl;
 
   cin >> saidaSelecionada;
 
-  while (saidaSelecionada != 10 && saidaSelecionada != 100)
+  while (saidaSelecionada != 1 && saidaSelecionada != 2)
   {
 
     cout << "Digite um numero valido!" << endl;
@@ -31,30 +31,25 @@ int Testing::SelecionarSaida()
   return saidaSelecionada;
 }
 
-void Testing::selectRandomCases(){
-    int n;
+vector<CovidInfo> Testing::selectRandomCases()
+{
+  int n;
 
-    //@todo mudar para casos fixos 10.000,50.000,100.000,500.000,1.000.000
-    cout << "-------------------------------------------------------------------------------" << endl;
-    cout << "Selecione o número de instâncias para teste" << endl;
-    cout << "Obs: (deve ser um número entre 1 e 1000000)" << endl;
-    cout << "-------------------------------------------------------------------------------" << endl;
+  //@todo mudar para casos fixos 10.000,50.000,100.000,500.000,1.000.000
+  cout << "-------------------------------------------------------------------------------" << endl;
+  cout << "Selecione o numero de instâncias para teste" << endl;
+  cout << "Obs: (deve ser um numero entre 1 e 1000000)" << endl;
+  cout << "-------------------------------------------------------------------------------" << endl;
+  cin >> n;
+  while (n <= 1 || n >= 1000000)
+  {
+    cout << "Opção invalida" << endl;
     cin >> n;
-    while(n <= 1 || n >= 100000){
-      cout << "Opção invalida" << endl;
-      cin >>n;
-    } 
-    FileHandler fileHandler;
-    vector<CovidInfo> covidArray =  fileHandler.getNCovidInfos(n);
+  }
+  FileHandler fileHandler;
+  vector<CovidInfo> covidArray = fileHandler.getNCovidInfos(n);
 
-    int i =0;
-    for(CovidInfo a : covidArray){
-      i++;
-      if(i >20)
-      break;
-      cout << a.city << endl;
-      cout << a.cases << endl;
-    }
+  return covidArray;
 }
 
 int Testing::SelecionarAlgoritmo()
@@ -66,14 +61,14 @@ int Testing::SelecionarAlgoritmo()
   cout << "-------------------------------------------------------------------------------" << endl;
 
   cout << "Digite [1] para MergeSort;" << endl;
-  cout << "Digite [2] para QuickSort;" << endl;
-  cout << "Digite [3] para ShellSort;" << endl;
+  cout << "Digite [2] para ShellSort;" << endl;
+  // cout << "Digite [3] para ShellSort;" << endl;
 
   cout << "-------------------------------------------------------------------------------" << endl;
 
   cin >> algoritmoSelecionado;
 
-  while (algoritmoSelecionado != 1 && algoritmoSelecionado != 2 && algoritmoSelecionado != 3)
+  while (algoritmoSelecionado != 1 && algoritmoSelecionado != 2)
   {
     cout << "Digite um numero valido!" << endl;
     cin >> algoritmoSelecionado;
@@ -82,7 +77,7 @@ int Testing::SelecionarAlgoritmo()
   return algoritmoSelecionado;
 }
 
-vector<CovidInfo> Testing::preProcessing(string filename, clock_t &processingTime)
+void Testing::preProcessing(string filename, clock_t &processingTime)
 {
   Sorting sorting;
   FileHandler *FileReader = new FileHandler();
@@ -113,15 +108,58 @@ vector<CovidInfo> Testing::preProcessing(string filename, clock_t &processingTim
   cout << "Arquivo pre-processado com sucesso!" << endl;
   clock_t tempo_termino = clock();
   processingTime = (tempo_termino - tempo_inicio) / ((float)CLOCKS_PER_SEC);
+  //Para desalocar o vector da memória
+  processedFile = vector<CovidInfo>();  
+
 }
 
-void Testing::execute(string filename){
-    clock_t tempo_processamento = clock();
-    
-    vector<CovidInfo>  processedCsv = preProcessing(filename , tempo_processamento);    
-    cout << "Tempo total de execução do processamento: " << tempo_processamento << " segundos" << endl;
-    this->selectRandomCases();
-    int outType = this->SelecionarSaida();
-    int selectedOrdering = this->SelecionarAlgoritmo();
+void Testing::executeSorting(int choice, vector<CovidInfo> *covidInfoSet)
+{
+  Sorting sorting;
+  switch (choice)
+  {
+  case 1:
+    sorting.mergeSortCases(*covidInfoSet, 0, covidInfoSet->size());
+    break;
+  case 2:
+    sorting.shellSortCases(*covidInfoSet, covidInfoSet->size());
+  default:
+    break;
+  }
+}
 
+void Testing::execute(string filename)
+{
+  clock_t tempo_processamento = clock();
+  preProcessing(filename , tempo_processamento);
+  vector<CovidInfo> processedCovidInfo = this->selectRandomCases();
+  this->executeSorting(this->SelecionarAlgoritmo(), &processedCovidInfo);
+  int saida = this->SelecionarSaida();
+  system("CLS");
+  if (saida == 1)
+  {
+    ofstream arq("saidaTestes.txt");
+    for (int i = 0; i < 100; i++)
+    {
+      arq << processedCovidInfo.at(i).date << endl;
+      arq << processedCovidInfo.at(i).state << "-" << processedCovidInfo.at(i).city << endl;
+      arq << "Novos Casos : " << processedCovidInfo.at(i).cases << endl;
+      arq << "Casos Totais : " << processedCovidInfo.at(i).totalCases << endl;
+      arq << "Mortes : " << processedCovidInfo.at(i).totalCases << endl;
+    }
+    cout << "Arquivo saidaTestes.txt Gerado Com Sucesso!!" << endl;
+  }
+  else if (saida == 2)
+  {
+    cout << "Dados Apos a Ordenação" << endl;
+    cout << "--------------------------------------------" << endl;
+    for (int i = 0; i < 10; i++)
+    {
+      cout << processedCovidInfo.at(i).date << endl;
+      cout << processedCovidInfo.at(i).state << "-" << processedCovidInfo.at(i).city << endl;
+      cout << "Novos Casos : " << processedCovidInfo.at(i).cases << endl;
+      cout << "Casos Totais : " << processedCovidInfo.at(i).totalCases << endl;
+      cout << "Mortes : " << processedCovidInfo.at(i).totalCases << endl;
+    }
+  }
 }

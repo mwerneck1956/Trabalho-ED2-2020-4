@@ -1,0 +1,600 @@
+
+2020-04-05
+AC-Capixaba
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-22
+AC-Sena Madureira
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-19
+AL-Barra de Santo Antônio
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-08
+AC-Santa Rosa do Purus
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-27
+AC-Jordão
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-24
+AL-Branquinha
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-21
+AL-Belém
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-06
+AC-Tarauacá
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-23
+AL-Belém
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-04
+AL-Campo Alegre
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-30
+AC-Assis Brasil
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-26
+AC-Jordão
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-28
+AC-Feijó
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-06
+AL-Boca da Mata
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-28
+AL-Campestre
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-09
+AL-Cacimbinhas
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-12
+AL-Branquinha
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-02
+AC-Sena Madureira
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-02
+AL-Branquinha
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-06
+AC-Santa Rosa do Purus
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-30
+AC-Mâncio Lima
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-30
+AL-Belo Monte
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-07
+AC-Cruzeiro do Sul
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-13
+AC-Manoel Urbano
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-22
+AC-Capixaba
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-02
+AL-Arapiraca
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-07
+AL-Cajueiro
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-18
+AC-Assis Brasil
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-26
+AC-Capixaba
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-30
+AC-Jordão
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-28
+AC-Porto Acre
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-13
+AL-Campo Grande
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-17
+AL-Campo Grande
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-10
+AL-Cajueiro
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-04
+AC-Marechal Thaumaturgo
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-26
+AL-Cajueiro
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-29
+AC-Sena Madureira
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-30
+AC-Manoel Urbano
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-29
+AL-Belém
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-07
+AC-Capixaba
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-04
+AL-Campo Grande
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-15
+AC-Capixaba
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-29
+AL-Cajueiro
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-16
+AC-Feijó
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-25
+AL-Campo Grande
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-17
+AL-Belém
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-01
+AC-Capixaba
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-06
+AC-Capixaba
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-06
+AL-Belém
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-19
+AL-Campo Grande
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-23
+AL-Branquinha
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-06
+AL-Capela
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-20
+AL-Belo Monte
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-17
+AL-Belém
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-03
+AC-Epitaciolândia
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-15
+AL-Arapiraca
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-30
+AL-Atalaia
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-25
+AC-Jordão
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-25
+AC-Porto Walter
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-29
+AL-Belo Monte
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-23
+AC-Mâncio Lima
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-14
+AC-Senador Guiomard
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-27
+AL-Campestre
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-02
+AL-Belo Monte
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-07
+AC-Jordão
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-11
+AC-Porto Walter
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-21
+AC-Jordão
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-23
+AC-Capixaba
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-31
+AL-Carneiros
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-13
+AC-Senador Guiomard
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-04
+AL-Cajueiro
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-21
+AL-Campestre
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-20
+AC-Feijó
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-08
+AL-Barra de Santo Antônio
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-23
+AL-Campo Grande
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-09
+AC-Senador Guiomard
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-05
+AC-Mâncio Lima
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-01
+AL-Canapi
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-05
+AL-Arapiraca
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-05
+AC-Plácido de Castro
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-05
+AC-Capixaba
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-30
+AL-Capela
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-29
+AC-Sena Madureira
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-04
+AL-Batalha
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-05
+AL-Belo Monte
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-11
+AC-Rodrigues Alves
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-24
+AL-Belém
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-26
+AC-Porto Walter
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-26
+AC-Rodrigues Alves
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-14
+AL-Canapi
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-28
+AC-Feijó
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-18
+AL-Barra de São Miguel
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-31
+AC-Senador Guiomard
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-11
+AC-Marechal Thaumaturgo
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-09
+AL-Atalaia
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-19
+AL-Cacimbinhas
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-07
+AL-Barra de Santo Antônio
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-02
+AL-Belo Monte
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-01
+AC-Santa Rosa do Purus
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-28
+AC-Brasiléia
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0

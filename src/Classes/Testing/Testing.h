@@ -22,9 +22,10 @@ public:
   Testing();
   int SelecionarSaida();
   int SelecionarAlgoritmo();
-  vector<CovidInfo> preProcessing(string filename , clock_t &processingTime);
-  void selectRandomCases();
+  void preProcessing(string filename , clock_t &processingTime);
+  vector<CovidInfo> selectRandomCases();
   void execute(string filename);
+  void executeSorting(int choice , vector<CovidInfo> *covidInfoSet);
 
   
 };

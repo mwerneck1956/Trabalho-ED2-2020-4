@@ -58,6 +58,11 @@ vector<CovidInfo> FileHandler::getNCovidInfos(int n){
       usedIndexs[drawn] = true;
 
   } 
+
+  //Código para desalocar memória do vector https://www.techiedelight.com/delete-vector-free-memory-cpp/
+  file.clear();
+  file.shrink_to_fit();
+
   return sortedInfos;
 
 }
