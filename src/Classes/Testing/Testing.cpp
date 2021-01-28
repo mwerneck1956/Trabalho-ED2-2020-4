@@ -208,6 +208,7 @@ void Testing::StatisticalAnalysis(int M)
       comparisonsQuick[j] += comparisonsQuick[i];
       quickTime[i] += time;*/
     }
+
   }
   
   for (int j = 0; j < 5; j++)
@@ -217,9 +218,9 @@ void Testing::StatisticalAnalysis(int M)
     swapsAvgShell[j] = swapsShell[j] / 5;
 
     cout << "Os resultados do algoritmo Shellsort para um vetor randomico de tamanho " << N[j] << " foram " << endl;
-    cout << "Media de tempo dos " << M << "conjuntos: " <<  timeAvgShell[j] << endl;
-    cout << "Media de comparacoes dos " << M << "conjuntos: " <<  comparisonsAvgShell[j] << endl;
-    cout << "Media de trocas dos " << M << "conjuntos: " <<  swapsAvgShell[j] << endl << endl;
+    cout << "Media de tempo dos " << M << " conjuntos: " <<  timeAvgShell[j] << endl;
+    cout << "Media de comparacoes dos " << M << " conjuntos: " <<  comparisonsAvgShell[j] << endl;
+    cout << "Media de trocas dos " << M << " conjuntos: " <<  swapsAvgShell[j] << endl << endl;
     
   }
   cout << "-------------------------------------------------------------------------------" << endl;

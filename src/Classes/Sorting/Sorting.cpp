@@ -9,6 +9,8 @@
 
 using namespace std;
 
+int numComparacoes = 0;
+
 Sorting::Sorting()
 {
     cout << "Objeto sorting montado" << endl;
@@ -184,7 +186,6 @@ void Sorting::mergeCases(vector<CovidInfo> &covidInfoList, int p, int q, int r, 
 ///Funcao recursiva
 void Sorting::mergeSortCases(vector<CovidInfo> &covidInfoList, int p, int r, int &comparisons, int &swaps)
 {
-
     if (p < r - 1)
     {
         int q = (p + r) / 2;
