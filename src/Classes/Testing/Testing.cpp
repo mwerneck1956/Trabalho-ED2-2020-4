@@ -270,36 +270,40 @@ void Testing::StatisticalAnalysis(int M)
 
     for (int j = 0; j < 5; j++)
     {
-      timeAvgShell[j] = shellTime[j] / 5;
-      comparisonsAvgShell[j] = comparisonsShell[j] / 5;
-      swapsAvgShell[j] = swapsShell[j] / 5;
 
-      if (saidaSelecionada == 10)
+      for (int j = 0; j < 5; j++)
       {
+        timeAvgShell[j] = shellTime[j] / 5;
+        comparisonsAvgShell[j] = comparisonsShell[j] / 5;
+        swapsAvgShell[j] = swapsShell[j] / 5;
 
-        saida << "Os resultados do algoritmo Shellsort para um vetor randomico de tamanho " << N[j] << " foram: " << endl;
-        saida << "Media de tempo dos " << M << " conjuntos: " << timeAvgShell[j] << endl;
-        saida << "Media de comparacoes dos " << M << " conjuntos: " << comparisonsAvgShell[j] << endl;
-        saida << "Media de trocas dos " << M << " conjuntos: " << swapsAvgShell[j] << endl;
+        if (saidaSelecionada == 10)
+        {
 
-        cout << "-------------------------------------------------------------------------------" << endl;
-      }
+          saida << "Os resultados do algoritmo Shellsort para um vetor randomico de tamanho " << N[j] << " foram: " << endl;
+          saida << "Media de tempo dos " << M << " conjuntos: " << timeAvgShell[j] << endl;
+          saida << "Media de comparacoes dos " << M << " conjuntos: " << comparisonsAvgShell[j] << endl;
+          saida << "Media de trocas dos " << M << " conjuntos: " << swapsAvgShell[j] << endl;
 
-      else
-      {
-        cout << "Os resultados do algoritmo Shellsort para um vetor randomico de tamanho " << N[j] << " foram: " << endl;
-        cout << "Media de tempo dos " << M << " conjuntos: " << timeAvgShell[j] << endl;
-        cout << "Media de comparacoes dos " << M << " conjuntos: " << comparisonsAvgShell[j] << endl;
-        cout << "Media de trocas dos " << M << " conjuntos: " << swapsAvgShell[j] << endl;
+          cout << "-------------------------------------------------------------------------------" << endl;
+        }
 
-        cout << "-------------------------------------------------------------------------------" << endl;
+        else
+        {
+          cout << "Os resultados do algoritmo Shellsort para um vetor randomico de tamanho " << N[j] << " foram: " << endl;
+          cout << "Media de tempo dos " << M << " conjuntos: " << timeAvgShell[j] << endl;
+          cout << "Media de comparacoes dos " << M << " conjuntos: " << comparisonsAvgShell[j] << endl;
+          cout << "Media de trocas dos " << M << " conjuntos: " << swapsAvgShell[j] << endl;
+
+          cout << "-------------------------------------------------------------------------------" << endl;
+        }
       }
     }
   }
 
   cout << "-------------------------------------------------------------------------------" << endl;
 
-  if (algoritmoSelecionado == 3)
+  /*if (algoritmoSelecionado == 3)
   {
 
     for (int j = 0; j < 5; j++)
@@ -328,20 +332,8 @@ void Testing::StatisticalAnalysis(int M)
         cout << "-------------------------------------------------------------------------------" << endl;
       }
     }
-  }
+  }*/
   cout << "-------------------------------------------------------------------------------" << endl;
-
-  //CriarArquivoSaida(Resultados);
 
   saida.close();
 }
-
-/*void Testing::arquivoSaida()
-{
-  ofstream saida;
-
-  saida.open("saida.txt");
-
-
-
-}*/
