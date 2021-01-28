@@ -25,7 +25,6 @@ class CovidStatistics
     void push(CovidInfo* line);
     void printDates();
     void dailyCasesTotalizers(vector<CovidInfo> covidInfoList);
-   
 };
 
 #endif
