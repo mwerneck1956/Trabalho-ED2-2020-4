@@ -39,8 +39,8 @@ public:
   }
 
     friend bool operator<=(const CovidInfo& c1, const CovidInfo& c2)
-  {
-    if(c1.state == c2.state and c1.city == c2.city)
+    {
+      if(c1.state == c2.state and c1.city == c2.city)
     {
       return c1.date <= c2.date;
     }

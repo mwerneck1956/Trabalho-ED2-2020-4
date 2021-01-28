@@ -114,6 +114,10 @@ void Sorting::quickSort(vector<CovidInfo> &covidInfoList, int p, int q, char t)
 {
     int r;
 
+    int cIt = 1;
+    int dIt = 1;
+    int b = 0;
+
     if(p < q)
     {
         if (t == 'c')
@@ -124,9 +128,57 @@ void Sorting::quickSort(vector<CovidInfo> &covidInfoList, int p, int q, char t)
         }
         else if(t == 's')
         {
-            r = particaoSCD(covidInfoList, p, q);
+            r = particaoStates(covidInfoList, p, q);
             quickSort(covidInfoList, p, r);  
             quickSort(covidInfoList, r+1, q);
+
+            quickSortCities(covidInfoList, p, q);
+
+            quickSortDates(covidInfoList, p, q);
+        }
+    }
+}
+
+void Sorting::quickSortCities(vector<CovidInfo> &covidInfoList, int p, int q)
+{
+    int r;
+    int cIt = 1;
+    int b = 0;
+
+    if(p < q)
+    {
+        while(cIt <= q)
+        {
+            if(covidInfoList.at(cIt-1).state.compare(covidInfoList.at(cIt).state) != 0)
+            {
+                r = particaoCities(covidInfoList, b, cIt-1);
+                quickSortCities(covidInfoList, b, r);  
+                quickSortCities(covidInfoList, r+1, cIt-1);
+                b = cIt;
+            }
+            cIt++;
+        }
+    }
+}
+
+void Sorting::quickSortDates(vector<CovidInfo> &covidInfoList, int p, int q)
+{
+    int r;
+    int dIt = 1;
+    int b = 0;
+
+    if(p < q)
+    {
+        while(dIt <= q)
+        {
+            if(covidInfoList.at(dIt-1).city.compare(covidInfoList.at(dIt).city) != 0)
+            {
+                r = particaoDates(covidInfoList, b, dIt-1);
+                quickSortDates(covidInfoList, b, r);  
+                quickSortDates(covidInfoList, r+1, dIt-1);
+                b = dIt;
+            }
+            dIt++;
         }
     }
 }
@@ -150,15 +202,35 @@ int Sorting::particaoCases(vector<CovidInfo> &covidInfoList, int p, int q)
     return i;
 }
 
-int Sorting::particaoSCD(vector<CovidInfo> &covidInfoList, int p, int q)
+int Sorting::particaoStates(vector<CovidInfo> &covidInfoList, int p, int q)
 {
-    CovidInfo x = covidInfoList[p];
+    string x = covidInfoList[p].state;
     int i = p;
     int j;
 
     for(j = p+1; j < q; j++)
     {
-        if(covidInfoList[j].state <= x.state)
+        if(covidInfoList.at(j).state.compare(x) == -1 or covidInfoList.at(j).state.compare(x) == 0)
+        {
+            i++;
+            swap(covidInfoList[i], covidInfoList[j]);
+        }
+         
+    }
+
+    swap(covidInfoList[i], covidInfoList[p]);
+    return i;
+}
+
+int Sorting::particaoCities(vector<CovidInfo> &covidInfoList, int p, int q)
+{
+    string x = covidInfoList[p].city;
+    int i = p;
+    int j;
+
+    for(j = p+1; j < q; j++)
+    {
+        if(covidInfoList.at(j).city.compare(x) == -1 or covidInfoList.at(j).city.compare(x) == 0)
         {
             i++;
             swap(covidInfoList[i], covidInfoList[j]);
@@ -169,35 +241,18 @@ int Sorting::particaoSCD(vector<CovidInfo> &covidInfoList, int p, int q)
     return i;
 }
 
-int Sorting::particaoSCD2(vector<CovidInfo> &covidInfoList, int p, int q)
+int Sorting::particaoDates(vector<CovidInfo> &covidInfoList, int p, int q)
 {
-    CovidInfo x = covidInfoList[p];
+    string x = covidInfoList[p].date;
     int i = p;
     int j;
 
     for(j = p+1; j < q; j++)
     {
-        if(covidInfoList[j].state < x.state)
+        if(covidInfoList.at(j).date.compare(x) == -1 or covidInfoList.at(j).date.compare(x) == 0)
         {
             i++;
             swap(covidInfoList[i], covidInfoList[j]);
-        }
-        else if(covidInfoList[j].state == x.state)
-        {
-            if(covidInfoList[j].city < x.city)
-            {
-                i++;
-                swap(covidInfoList[i], covidInfoList[j]);
-            }
-            else if (covidInfoList[j].city == x.city)
-            {
-                if(covidInfoList[j].date < x.date)
-                {
-                    i++;
-                    swap(covidInfoList[i], covidInfoList[j]);
-                }
-            }
-            
         }
     }
 

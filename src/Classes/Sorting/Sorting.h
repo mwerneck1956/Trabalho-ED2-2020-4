@@ -18,9 +18,12 @@ class Sorting
         void mergeSort(vector<CovidInfo> &covidInfoList, int p, int r);
         void imprimirInformacoes(vector<CovidInfo> covidInfoList, int tam, float tempoExecucao);
         void quickSort(vector<CovidInfo> &covidInfoList, int p, int q, char t = 'c');
+        void quickSortCities(vector<CovidInfo> &covidInfoList, int p, int q);
+        void quickSortDates(vector<CovidInfo> &covidInfoList, int p, int q);
         int particaoCases(vector<CovidInfo> &covidInfoList, int p, int q);
-        int particaoSCD(vector<CovidInfo> &covidInfoList, int p, int q);
-        int particaoSCD2(vector<CovidInfo> &covidInfoList, int p, int q);
+        int particaoStates(vector<CovidInfo> &covidInfoList, int p, int q);
+        int particaoCities(vector<CovidInfo> &covidInfoList, int p, int q);
+        int particaoDates(vector<CovidInfo> &covidInfoList, int p, int q);
 };
 
 #endif
