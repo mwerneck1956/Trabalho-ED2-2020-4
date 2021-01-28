@@ -183,7 +183,7 @@ void Testing::StatisticalAnalysis(int M)
       
       
       startTime = clock();
-      Sort->mergeSortCases(toSort, N[i]-1, 10, &mergeComparisons[i], &mergeSwaps[i]);
+      Sort->mergeSortCases(toSort, N[i]-1, 10, mergeComparisons[i], mergeSwaps[i]);
       finalTime = clock();
       float totalTime = (finalTime - startTime) / (float)CLOCKS_PER_SEC;
       mergeSwaps[i] += mergeSwaps[i];
@@ -209,7 +209,7 @@ void Testing::StatisticalAnalysis(int M)
       quickTime[i] += time;*/
     }
   }
-  
+  /*
   for (int j = 0; j < 5; j++)
   {
     timeAvgShell[j] = shellTime[j] / 5;
@@ -223,21 +223,22 @@ void Testing::StatisticalAnalysis(int M)
     
   }
   cout << "-------------------------------------------------------------------------------" << endl;
-  /*
+  */
   for (int j = 0; j < 5; j++)
   {
     timeAvgMerge[j] = mergeTime[j] / 5;
-    comparisonsAvgMerge[j] = comparisonsMerge[j] / 5;
-    swapsAvgMerge[j] = swapsMerge[j] / 5;
+    comparisonsAvgMerge[j] = mergeComparisons[j] / 5;
+    swapsAvgMerge[j] = mergeSwaps[j] / 5;
 
     cout << "Os resultados do algoritmo MergeSort para um vetor randomico de tamanho " << N[j] << " foram " << endl;
-    cout << "Media de tempo dos " << M << "conjuntos: " <<  timeAvgMerge[j] << endl;
-    cout << "Media de comparacoes dos " << M << "conjuntos: " <<  comparisonsAvgMerge[j] << endl;
-    cout << "Media de trocas dos " << M << "conjuntos: " <<  swapsAvgMerge[j] << endl << endl;
+    cout << "Media de tempo dos " << M << " conjuntos: " <<  timeAvgMerge[j] << endl;
+    cout << "Media de comparacoes dos " << M << " conjuntos: " <<  comparisonsAvgMerge[j] << endl;
+    cout << "Media de trocas dos " << M << " conjuntos: " <<  swapsAvgMerge[j] << endl << endl;
     
   }
 
   cout << "-------------------------------------------------------------------------------" << endl;
+  /*
   for (int j = 0; j < 5; j++)
   {
     timeAvgQuick[j] = quickTime[j] / 5;
