@@ -148,28 +148,28 @@ void Testing::StatisticalAnalysis(int M)
   int N[5] = {10000, 50000, 100000, 500000, 1000000};
 
   float mergeTime[5] = {0, 0, 0, 0, 0};
-  float quickTime[5] = {0, 0, 0, 0, 0};
-  float shellTime[5] = {0, 0, 0, 0, 0};
+ // float quickTime[5] = {0, 0, 0, 0, 0};
+  //float shellTime[5] = {0, 0, 0, 0, 0};
 
   int mergeComparisons[5] = {0, 0, 0, 0, 0};
-  int comparisonsQuick[5] = {0, 0, 0, 0, 0};
-  int comparisonsShell[5] = {0, 0, 0, 0, 0};
+  //int comparisonsQuick[5] = {0, 0, 0, 0, 0};
+  //int comparisonsShell[5] = {0, 0, 0, 0, 0};
 
   int mergeSwaps[5] = {0, 0, 0, 0, 0};
-  int swapsQuick[5] = {0, 0, 0, 0, 0};
-  int swapsShell[5] = {0, 0, 0, 0, 0};
+  //int swapsQuick[5] = {0, 0, 0, 0, 0};
+  //int swapsShell[5] = {0, 0, 0, 0, 0};
 
   float timeAvgMerge[5] = {0, 0, 0, 0, 0};
-  float timeAvgQuick[5] = {0, 0, 0, 0, 0};
-  float timeAvgShell[5] = {0, 0, 0, 0, 0};
+  //float timeAvgQuick[5] = {0, 0, 0, 0, 0};
+  //float timeAvgShell[5] = {0, 0, 0, 0, 0};
 
   int comparisonsAvgMerge[5] = {0, 0, 0, 0, 0};
-  int comparisonsAvgQuick[5] = {0, 0, 0, 0, 0};
-  int comparisonsAvgShell[5] = {0, 0, 0, 0, 0};
+  //int comparisonsAvgQuick[5] = {0, 0, 0, 0, 0};
+  //int comparisonsAvgShell[5] = {0, 0, 0, 0, 0};
 
   int swapsAvgMerge[5] = {0, 0, 0, 0, 0};
-  int swapsAvgQuick[5] = {0, 0, 0, 0, 0};
-  int swapsAvgShell[5] = {0, 0, 0, 0, 0};
+  //int swapsAvgQuick[5] = {0, 0, 0, 0, 0};
+  //int swapsAvgShell[5] = {0, 0, 0, 0, 0};
 
   Sorting *Sort = new Sorting();
   FileHandler *File = new FileHandler();
@@ -195,7 +195,7 @@ void Testing::StatisticalAnalysis(int M)
         mergeTime[i] += totalTime;
       }
 
-      if (algoritmoSelecionado == 2)
+      /*if (algoritmoSelecionado == 2)
       {
 
         startTime = clock();
@@ -205,7 +205,7 @@ void Testing::StatisticalAnalysis(int M)
         swapsShell[i] += swapsShell[i];
         comparisonsShell[i] += comparisonsShell[i];
         shellTime[i] += totalTime;
-      }
+      }*/
 
       //Tem q arrumar a chamada do QuickSort
 
@@ -220,6 +220,13 @@ void Testing::StatisticalAnalysis(int M)
         comparisonsQuick[j] += comparisonsQuick[i];
         quickTime[i] += totalTime;
       }*/
+
+      vector<CovidInfo>().swap(notSorted);
+      vector<CovidInfo>().swap(toSort);
+      /*notSorted.clear();
+      notSorted.shrink_to_fit();
+      toSort.clear();
+      toSort.shrink_to_fit();*/
     }
   }
 
@@ -263,7 +270,7 @@ void Testing::StatisticalAnalysis(int M)
     }
   }
 
-  if (algoritmoSelecionado == 2)
+  /*if (algoritmoSelecionado == 2)
   {
 
     for (int j = 0; j < 5; j++)
@@ -297,7 +304,7 @@ void Testing::StatisticalAnalysis(int M)
         }
       }
     }
-  }
+  }*/
 
   /*if (algoritmoSelecionado == 3)
   {
