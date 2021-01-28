@@ -4,22 +4,62 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include <random>
+#include <functional>
 
 using namespace std;
 
-void FileHandler::printFile(vector<string> file)
-{
-  int j = 0;
-  for (int i = 0; i < file.size(); i++)
+
+vector<CovidInfo> FileHandler::getNCovidInfos(int n){
+  string date, state, city,code, dailyCases,totalCases , deaths,line;
+  ifstream arq("brazil_covid19_cities_processado.csv");
+  int linesProcessed = 0;
+  //CovidInfo* = new CovidInfo[n];
+  vector<CovidInfo> file;
+  if (arq.is_open())
   {
-    cout << file.at(i) << ",";
-    j++;
-    if (j == 6)
+    //Vai ate o final do arquivo separando cada elemento do csv por , 
+    while (!arq.eof() && linesProcessed < n)
     {
-      cout << endl;
-      j = 0;
-    }
+      getline(arq, date, ',');
+      getline(arq, state, ',');
+      getline(arq, city, ',');
+      getline(arq, code, ',');
+      getline(arq, dailyCases, ',');
+      getline(arq, totalCases, ',');
+      getline(arq, deaths, ',');
+      if (linesProcessed >= 1)
+      {
+        //Criado objeto covid info e feito as transformações para int necessarias
+        CovidInfo *line = new CovidInfo(date, state, city, stoi(code), stoi(dailyCases),stoi(totalCases), stoi(deaths));
+        file.push_back(*line);
+      }
+      linesProcessed ++;
+    }    
   }
+  std::random_device device;
+  std::mt19937 generator(device());
+  std::uniform_int_distribution<int> distribution(0,file.size()-1);
+  vector<CovidInfo> sortedInfos;
+  int drawn = 0;
+
+  //Vetor auxiliar para eu controlar quais indices ja foram gerados
+  vector<bool> usedIndexs;
+  for(int i = 0 ; i < file.size() ; i++)
+  usedIndexs.push_back(false);
+
+  for(int i = 0 ; i < n - 1 ; i++){
+      //Garanto que o indice que gerei ainda não foi utilizado , para não ocorrerem duplicatas.
+      while(usedIndexs[drawn])
+         drawn = distribution(generator);
+      
+      sortedInfos.push_back(file.at(drawn));
+      //Adiciono o número sorteado no meu vetor de indices já sorteados
+      usedIndexs[drawn] = true;
+
+  } 
+  return sortedInfos;
+
 }
 
 vector<CovidInfo> FileHandler::csvHandler(string filename)
@@ -55,7 +95,6 @@ vector<CovidInfo> FileHandler::csvHandler(string filename)
     }
     return CovidFile->getCovidInfoList();
     cout << "Arquivo processado com sucesso" << endl;
-    CovidFile->printDates();
     
   }
   else
