@@ -13,7 +13,7 @@ using namespace std;
 class FileHandler
 {
 private:
-
+  vector<CovidInfo> processedCovidCsv;
 public:
   //Função de processamento do csv
   vector<CovidInfo> csvHandler(string filename);

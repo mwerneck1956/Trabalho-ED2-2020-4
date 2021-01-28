@@ -1,6 +1,8 @@
 #include "./FileHandler.h"
 #include "../CovidStatistics/CovidStatistics.cpp"
 #include "../CovidInfo/CovidInfo.h"
+#include "../Util/Util.h"
+#include "../Util/Util.cpp"
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -98,6 +100,7 @@ vector<CovidInfo> FileHandler::csvHandler(string filename)
       }
       line ++;
     }
+    this->processedCovidCsv = CovidFile->getCovidInfoList();
     return CovidFile->getCovidInfoList();
     cout << "Arquivo processado com sucesso" << endl;
     
@@ -110,4 +113,32 @@ vector<CovidInfo> FileHandler::csvHandler(string filename)
   }
   vector<CovidInfo> teste;
   return teste;
+}
+
+vector<CovidInfo> FileHandler::getNCovidInfos(int n){
+  std::random_device device;
+  std::mt19937 generator(device());
+  std::uniform_int_distribution<int> distribution(0,this->processedCovidCsv.size()-1);
+  vector<CovidInfo> sortedInfos;
+  int drawn = 0;
+
+  //Vetor auxiliar para eu controlar quais indices ja foram gerados
+  vector<bool> usedIndexs;
+  for(int i = 0 ; i < this->processedCovidCsv.size() ; i++)
+  usedIndexs.push_back(false);
+
+  for(int i = 0 ; i < n ; i++){
+
+      //Garanto que o indice que gerei ainda não foi utilizado , para não ocorrerem duplicatas.
+      while(usedIndexs[drawn])
+         drawn = distribution(generator);
+      
+      sortedInfos.push_back(this->processedCovidCsv.at(drawn));
+      //Adiciono o número sorteado no meu vetor de indices já sorteados
+      usedIndexs[drawn] = true;
+
+  } 
+
+  return sortedInfos;
+
 }
