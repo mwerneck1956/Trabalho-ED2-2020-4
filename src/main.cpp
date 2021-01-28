@@ -1,5 +1,5 @@
 #include <iostream>
-#include <chrono>
+//#include <chrono>
 #include <stdlib.h>
 #include <stdio.h>
 #include "./Classes/CovidInfo/CovidInfo.h"
@@ -87,7 +87,6 @@ int main(int argc, char **argv)
 
 
   statistic->dailyCasesTotalizers();*/
-  
 
   algoritmoSelecionado = SelecionarAlgoritmo();
 
@@ -110,8 +109,12 @@ int main(int argc, char **argv)
   {
     cout << "Algoritmo QuickSort selecionado" << endl;
 
-    //Sort->quickSort(CovidInfoList, 0, 12);
-    //Sort->imprimirInformacoes(CovidInfoList, 12);
+    tempo_inicio = clock();
+    Sort->quickSort(CovidInfoList, 0, 12, 's');
+    tempo_termino = clock();
+    tempoExecucao = ((tempo_termino - tempo_inicio) / (float)CLOCKS_PER_SEC);
+    cout << "Caboooooou!" << endl;
+    Sort->imprimirInformacoes(CovidInfoList, 12, tempoExecucao);
   }
 
   if (algoritmoSelecionado == 3)
@@ -123,7 +126,6 @@ int main(int argc, char **argv)
   }
 
  // delete statistic;
-  
 
   return 0;
 }

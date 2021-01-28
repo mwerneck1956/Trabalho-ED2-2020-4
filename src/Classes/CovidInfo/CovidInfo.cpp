@@ -29,3 +29,4 @@ void CovidInfo::printInfo()
   cout << "Code" << code << endl;
 }
 
+

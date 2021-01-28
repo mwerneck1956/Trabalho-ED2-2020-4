@@ -110,6 +110,101 @@ void Sorting::mergeSort(vector<CovidInfo> &covidInfoList, int p, int r)
     }
 }
 
+void Sorting::quickSort(vector<CovidInfo> &covidInfoList, int p, int q, char t)
+{
+    int r;
+
+    if(p < q)
+    {
+        if (t == 'c')
+        {
+            r = particaoCases(covidInfoList, p, q);
+            quickSort(covidInfoList, p, r);  
+            quickSort(covidInfoList, r+1, q);
+        }
+        else if(t == 's')
+        {
+            r = particaoSCD(covidInfoList, p, q);
+            quickSort(covidInfoList, p, r);  
+            quickSort(covidInfoList, r+1, q);
+        }
+    }
+}
+
+int Sorting::particaoCases(vector<CovidInfo> &covidInfoList, int p, int q)
+{
+    int x = covidInfoList[p].cases;
+    int i = p;
+    int j;
+
+    for(j = p+1; j < q; j++)
+    {
+        if(covidInfoList[j].cases <= x)
+        {
+            i++;
+            swap(covidInfoList[i], covidInfoList[j]);
+        }
+    }
+
+    swap(covidInfoList[i], covidInfoList[p]);
+    return i;
+}
+
+int Sorting::particaoSCD(vector<CovidInfo> &covidInfoList, int p, int q)
+{
+    CovidInfo x = covidInfoList[p];
+    int i = p;
+    int j;
+
+    for(j = p+1; j < q; j++)
+    {
+        if(covidInfoList[j].state <= x.state)
+        {
+            i++;
+            swap(covidInfoList[i], covidInfoList[j]);
+        }
+    }
+
+    swap(covidInfoList[i], covidInfoList[p]);
+    return i;
+}
+
+int Sorting::particaoSCD2(vector<CovidInfo> &covidInfoList, int p, int q)
+{
+    CovidInfo x = covidInfoList[p];
+    int i = p;
+    int j;
+
+    for(j = p+1; j < q; j++)
+    {
+        if(covidInfoList[j].state < x.state)
+        {
+            i++;
+            swap(covidInfoList[i], covidInfoList[j]);
+        }
+        else if(covidInfoList[j].state == x.state)
+        {
+            if(covidInfoList[j].city < x.city)
+            {
+                i++;
+                swap(covidInfoList[i], covidInfoList[j]);
+            }
+            else if (covidInfoList[j].city == x.city)
+            {
+                if(covidInfoList[j].date < x.date)
+                {
+                    i++;
+                    swap(covidInfoList[i], covidInfoList[j]);
+                }
+            }
+            
+        }
+    }
+
+    swap(covidInfoList[i], covidInfoList[p]);
+    return i;
+}
+
 void Sorting::imprimirInformacoes(vector<CovidInfo> covidInfoList, int tam, float tempoExecucao)
 {
     int totalCasos = 0;
