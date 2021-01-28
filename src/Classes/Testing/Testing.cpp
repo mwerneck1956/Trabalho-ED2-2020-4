@@ -181,20 +181,20 @@ void Testing::StatisticalAnalysis(int M)
       vector<CovidInfo> notSorted = File->getNCovidInfos(N[i]);
       vector<CovidInfo> toSort = notSorted;
       
-      /*
+      
       startTime = clock();
-      Sort->mergeSortCases(toSort, N[i]-1, 10, mergeComparisons[i], mergeSwaps[i]);
+      Sort->mergeSortCases(toSort, 0, N[i]-1, mergeComparisons[i], mergeSwaps[i]);
       finalTime = clock();
       float totalTime = (finalTime - startTime) / (float)CLOCKS_PER_SEC;
       mergeSwaps[i] += mergeSwaps[i];
       mergeComparisons[i] += mergeComparisons[i];
       mergeTime[i] += totalTime;
-      */
-       
+      
+      toSort = notSorted;
       startTime = clock();
       Sort->shellSortCases(toSort, N[i]-1, comparisonsShell[i], swapsShell[i]);
       finalTime = clock();
-      float totalTime = (finalTime - startTime) / (float)CLOCKS_PER_SEC;
+      totalTime = (finalTime - startTime) / (float)CLOCKS_PER_SEC;
       swapsShell[i] += swapsShell[i] ;
       comparisonsShell[i] += comparisonsShell[i] ;
       shellTime[i] += totalTime;
@@ -209,7 +209,7 @@ void Testing::StatisticalAnalysis(int M)
       quickTime[i] += time;*/
     }
   }
- 
+  
   for (int j = 0; j < 5; j++)
   {
     timeAvgShell[j] = shellTime[j] / 5;
@@ -224,7 +224,7 @@ void Testing::StatisticalAnalysis(int M)
   }
   cout << "-------------------------------------------------------------------------------" << endl;
   
-  /*
+  
   for (int j = 0; j < 5; j++)
   {
     timeAvgMerge[j] = mergeTime[j] / 5;
@@ -239,7 +239,7 @@ void Testing::StatisticalAnalysis(int M)
   }
 
   cout << "-------------------------------------------------------------------------------" << endl;
-  
+  /*
   for (int j = 0; j < 5; j++)
   {
     timeAvgQuick[j] = quickTime[j] / 5;
