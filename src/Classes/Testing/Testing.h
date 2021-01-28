@@ -7,12 +7,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <ctime>
-#include "../../Classes/FileHandler/FileHandler.h"
+/*#include "../../Classes/FileHandler/FileHandler.h"
 #include "../../Classes/CovidInfo/Covidinfo.h"
 #include "../../Classes/Sorting/Sorting.h"
-#include "../../Classes/CovidStatistics/CovidStatistics.h"
-
-using namespace std;
+#include "../../Classes/CovidStatistics/CovidStatistics.h"*/
 
 class Testing
 {
@@ -22,10 +20,10 @@ public:
   Testing();
   int SelecionarSaida();
   int SelecionarAlgoritmo();
-  void preProcessing(string filename , clock_t &processingTime);
-  void selectRandomCases();
-  void execute(string filename);
-  void statisticalAnalysis(int M);
+  void PreProcessing(string filename , clock_t &processingTime);
+  void SelectRandomCases();
+  void Execute(string filename);
+  void StatisticalAnalysis(int M);
   
   
 };

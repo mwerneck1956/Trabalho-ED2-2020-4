@@ -136,7 +136,7 @@ void Sorting::shellSortCases(vector<CovidInfo> &covidInfoList,  int &comparisons
     }
 }
 
-/*void Sorting::mergeCases(vector<CovidInfo> &covidInfoList, int p, int q, int r, int *comparisons, int *swaps)
+void Sorting::mergeCases(vector<CovidInfo> &covidInfoList, int p, int q, int r, int *comparisons, int *swaps)
 {
 
     vector<CovidInfo> auxCovidInfoList;
@@ -179,10 +179,10 @@ void Sorting::shellSortCases(vector<CovidInfo> &covidInfoList,  int &comparisons
     {
         covidInfoList.at(i) = auxCovidInfoList.at(i - p);
     }
-}*/
+}
 
 ///Funcao recursiva
-/*void Sorting::mergeSortCases(vector<CovidInfo> &covidInfoList, int p, int r, int *comparisons, int *swaps)
+void Sorting::mergeSortCases(vector<CovidInfo> &covidInfoList, int p, int r, int *comparisons, int *swaps)
 {
 
     if (p < r - 1)

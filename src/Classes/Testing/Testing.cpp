@@ -1,9 +1,17 @@
 #include "./Testing.h"
 #include "../FileHandler/FileHandler.h"
+#include "../CovidInfo/CovidInfo.h"
+#include "../CovidStatistics/CovidStatistics.h"
 #include "../Sorting/Sorting.h"
+#include <iostream>
+#include <fstream>
+#include <stdlib.h>
+#include <stdio.h>
 #include <ctime>
 #include <vector>
+
 using namespace std;
+
 Testing::Testing()
 {
 }
@@ -33,7 +41,7 @@ int Testing::SelecionarSaida()
   return saidaSelecionada;
 }
 
-void Testing::selectRandomCases()
+void Testing::SelectRandomCases()
 {
   int n;
 
@@ -87,7 +95,7 @@ int Testing::SelecionarAlgoritmo()
   return algoritmoSelecionado;
 }
 
-void Testing::preProcessing(string filename, clock_t &processingTime)
+void Testing::PreProcessing(string filename, clock_t &processingTime)
 {
   Sorting sorting;
   FileHandler *FileReader = new FileHandler();
@@ -107,7 +115,7 @@ void Testing::preProcessing(string filename, clock_t &processingTime)
     cout << "Digite uma opcao valida!" << endl;
     cin >> option;
   }
-  clock_t tempo_inicio = clock();
+  clock_t startTime = clock();
   //Abre o arquivo de texto , desmembra o mesmo , e salva em um vector de CovidInfo
   vector<CovidInfo> processedFile = FileReader->csvHandler(filename != "" ? filename : "brazil_covid19_cities.csv");
   cout << "Arquivo Desmenbrado com Sucesso" << endl;
@@ -116,35 +124,37 @@ void Testing::preProcessing(string filename, clock_t &processingTime)
   //Geração do novo arquivo csv com os dados processados
   statistics.dailyCasesTotalizers(processedFile);
   cout << "Arquivo pre-processado com sucesso!" << endl;
-  clock_t tempo_termino = clock();
-  processingTime = (tempo_termino - tempo_inicio) / ((float)CLOCKS_PER_SEC);
+  clock_t finalTime = clock();
+  processingTime = (finalTime - startTime) / ((float)CLOCKS_PER_SEC);
   
 }
 
-void Testing::execute(string filename)
+void Testing::Execute(string filename)
 {
-  clock_t tempo_processamento = clock();
+  clock_t processingTime = clock();
 
-  preProcessing(filename , tempo_processamento);
-  cout << "Tempo total de execução do processamento: " << tempo_processamento << " segundos" << endl;
+  PreProcessing(filename , processingTime);
+  cout << "Tempo total de execução do processamento: " << processingTime << " segundos" << endl;
   /*this->selectRandomCases();
   int outType = this->SelecionarSaida();
   int selectedOrdering = this->SelecionarAlgoritmo();*/
 }
 
-void Testing::statisticalAnalysis(int M)
+void Testing::StatisticalAnalysis(int M)
 {
+  clock_t startTime = 0, finalTime;
+  
   int N[5] = {10000, 50000, 100000, 500000, 1000000};
 
-  float timeMerge[5] = {0, 0, 0, 0, 0};
-  float timeQuick[5] = {0, 0, 0, 0, 0};
-  float timeShell[5] = {0, 0, 0, 0, 0};
+  float mergeTime[5] = {0, 0, 0, 0, 0};
+  float quickTime[5] = {0, 0, 0, 0, 0};
+  float shellTime[5] = {0, 0, 0, 0, 0};
 
-  int comparisonsMerge[5] = {0, 0, 0, 0, 0};
+  int mergeComparisons[5] = {0, 0, 0, 0, 0};
   int comparisonsQuick[5] = {0, 0, 0, 0, 0};
   int comparisonsShell[5] = {0, 0, 0, 0, 0};
 
-  int swapsMerge[5] = {0, 0, 0, 0, 0};
+  int mergeSwaps[5] = {0, 0, 0, 0, 0};
   int swapsQuick[5] = {0, 0, 0, 0, 0};
   int swapsShell[5] = {0, 0, 0, 0, 0};
 
@@ -159,9 +169,10 @@ void Testing::statisticalAnalysis(int M)
   int swapsAvgMerge[5] = {0, 0, 0, 0, 0};
   int swapsAvgQuick[5] = {0, 0, 0, 0, 0};
   int swapsAvgShell[5] = {0, 0, 0, 0, 0};
+  
   Sorting *Sort = new Sorting();
   FileHandler *File = new FileHandler();
-  clock_t timeStart = 0, timeEnd;
+  
 
   for (int i = 0; i < 5; i++)
   {
@@ -170,38 +181,38 @@ void Testing::statisticalAnalysis(int M)
       vector<CovidInfo> notSorted = File->getNCovidInfos(N[i]);
       vector<CovidInfo> toSort = notSorted;
       
-      /*
-      timeStart = clock();
-      Sort->mergeSortCases(toSort, N[i]-1, comparisonsMerge[i], swapsMerge[i]);
-      timeEnd = clock();
-      float time = (timeEnd - timeStart) / (float)CLOCKS_PER_SEC;
-      swapsMerge[i] += swapsMerge[i];
-      comparisonsMerge[i] += comparisonsMerge[i];
-      timeMerge[i] += timeMerge[i];
-      */
+      
+      startTime = clock();
+      Sort->mergeSortCases(toSort, N[i]-1, 10, &mergeComparisons[i], &mergeSwaps[i]);
+      finalTime = clock();
+      float totalTime = (finalTime - startTime) / (float)CLOCKS_PER_SEC;
+      mergeSwaps[i] += mergeSwaps[i];
+      mergeComparisons[i] += mergeComparisons[i];
+      mergeTime[i] += mergeTime[i];
+      
        
-      timeStart = clock();
+      /*startTime = clock();
       Sort->shellSortCases(toSort, comparisonsShell[i], swapsShell[i]);
-      timeEnd = clock();
-      float time = (timeEnd - timeStart) / (float)CLOCKS_PER_SEC;
+      finalTime = clock();
+      float totalTime = (finalTime - startTime) / (float)CLOCKS_PER_SEC;
       swapsShell[i] += swapsShell[i] ;
       comparisonsShell[i] += comparisonsShell[i] ;
-      timeShell[i] += time;
+      shellTime[i] += time;
       
-      /*
-      timeStart = clock();
+      
+      startTime = clock();
       Sort->quickSortCases(toSort, N[i]-1, comparisonsMerge[i], swapsMerge[i]);
-      timeEnd = clock();
-      float time = (timeEnd - timeStart) / (float)CLOCKS_PER_SEC;
+      finalTime = clock();
+      float totalTime = (finalTime - startTime) / (float)CLOCKS_PER_SEC;
       swapsQuick[i] += swapsQuick[i];
       comparisonsQuick[j] += comparisonsQuick[i];
-      timeQuick[i] += time;*/
+      quickTime[i] += time;*/
     }
   }
   
   for (int j = 0; j < 5; j++)
   {
-    timeAvgShell[j] = timeShell[j] / 5;
+    timeAvgShell[j] = shellTime[j] / 5;
     comparisonsAvgShell[j] = comparisonsShell[j] / 5;
     swapsAvgShell[j] = swapsShell[j] / 5;
 
@@ -215,7 +226,7 @@ void Testing::statisticalAnalysis(int M)
   /*
   for (int j = 0; j < 5; j++)
   {
-    timeAvgMerge[j] = timeMerge[j] / 5;
+    timeAvgMerge[j] = mergeTime[j] / 5;
     comparisonsAvgMerge[j] = comparisonsMerge[j] / 5;
     swapsAvgMerge[j] = swapsMerge[j] / 5;
 
@@ -229,7 +240,7 @@ void Testing::statisticalAnalysis(int M)
   cout << "-------------------------------------------------------------------------------" << endl;
   for (int j = 0; j < 5; j++)
   {
-    timeAvgQuick[j] = timeQuick[j] / 5;
+    timeAvgQuick[j] = quickTime[j] / 5;
     comparisonsAvgQuick[j] = comparisonsQuick[j] / 5;
     swapsAvgQuick[j] = swapsQuick[j] / 5;
 
