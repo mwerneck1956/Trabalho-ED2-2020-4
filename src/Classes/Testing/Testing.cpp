@@ -182,22 +182,23 @@ void Testing::StatisticalAnalysis(int M)
       vector<CovidInfo> toSort = notSorted;
       
       startTime = clock();
-      Sort->mergeSortCases(toSort, N[i]-1, 500, mergeComparisons[i], mergeSwaps[i]);
+      Sort->mergeSortCases(toSort, 0, N[i]-1, mergeComparisons[i], mergeSwaps[i]);
       finalTime = clock();
       float totalTime = (finalTime - startTime) / (float)CLOCKS_PER_SEC;
       mergeSwaps[i] += mergeSwaps[i];
       mergeComparisons[i] += mergeComparisons[i];
       mergeTime[i] += mergeTime[i];
+
        
       /*startTime = clock();
-      Sort->shellSortCases(toSort, comparisonsShell[i], swapsShell[i]);
+      Sort->shellSortCases(toSort, N[i]-1, comparisonsShell[i], swapsShell[i]);
       finalTime = clock();
       float totalTime = (finalTime - startTime) / (float)CLOCKS_PER_SEC;
       swapsShell[i] += swapsShell[i] ;
       comparisonsShell[i] += comparisonsShell[i] ;
-      shellTime[i] += time;
+      shellTime[i] += totalTime;*/
       
-      
+      /*
       startTime = clock();
       Sort->quickSortCases(toSort, N[i]-1, comparisonsMerge[i], swapsMerge[i]);
       finalTime = clock();
@@ -208,7 +209,7 @@ void Testing::StatisticalAnalysis(int M)
     }
 
   }
-  
+ 
   /*for (int j = 0; j < 5; j++)
   {
     timeAvgShell[j] = shellTime[j] / 5;
@@ -228,7 +229,7 @@ void Testing::StatisticalAnalysis(int M)
     timeAvgMerge[j] = mergeTime[j] / 5;
     comparisonsAvgMerge[j] = mergeComparisons[j] / 5;
     swapsAvgMerge[j] = mergeSwaps[j] / 5;
-    
+
     cout << "Os resultados do algoritmo MergeSort para um vetor randomico de tamanho " << N[j] << " foram " << endl;
     cout << "Media de tempo dos " << M << " conjuntos: " <<  timeAvgMerge[j] << endl;
     cout << "Media de comparacoes dos " << M << " conjuntos: " <<  comparisonsAvgMerge[j] << endl;
@@ -237,6 +238,7 @@ void Testing::StatisticalAnalysis(int M)
   }
 
   cout << "-------------------------------------------------------------------------------" << endl;
+  
   /*for (int j = 0; j < 5; j++)
   {
     timeAvgQuick[j] = quickTime[j] / 5;
