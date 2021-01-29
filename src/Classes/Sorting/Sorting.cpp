@@ -168,7 +168,7 @@ void Sorting::shellSortCases(vector<CovidInfo> &covidInfoList, int n, int &compa
             j = i;  
             // efetua comparações entre elementos com distância h:
             comparisons++;
-            while (j >= h && aux.cases < covidInfoList.at(j - h).totalCases)
+            while (j >= h && aux.totalCases < covidInfoList.at(j - h).totalCases)
             {
                 covidInfoList.at(j) = covidInfoList.at(j-h);
                 j -= h; // atualiza valor de j
