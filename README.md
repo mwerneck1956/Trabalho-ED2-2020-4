@@ -22,8 +22,8 @@
 
 👤 **Bryan Barbosa**
 
-* Github: []()
-* LinkedIn: []()
+* Github: [@BryanCMBarbosa](https://github.com/BryanCMBarbosa)
+* LinkedIn: [Bryan Barbosa](www.linkedin.com/in/bryancmbarbosa)
 
 
 👤 **Pedro Henrique**

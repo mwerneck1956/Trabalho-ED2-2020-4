@@ -24,6 +24,13 @@ class Sorting
         void mergeSortCases(vector<CovidInfo> &covidInfoList, int p, int r);
         
 
+        void quickSort(vector<CovidInfo> &covidInfoList, int p, int q, char t = 'c'); //'c' para ordenar por casos, 's' para State-City-Date
+        void quickSortCities(vector<CovidInfo> &covidInfoList, int p, int q);
+        void quickSortDates(vector<CovidInfo> &covidInfoList, int p, int q);
+        int particaoCases(vector<CovidInfo> &covidInfoList, int p, int q);
+        int particaoStates(vector<CovidInfo> &covidInfoList, int p, int q);
+        int particaoCities(vector<CovidInfo> &covidInfoList, int p, int q);
+        int particaoDates(vector<CovidInfo> &covidInfoList, int p, int q);
 };
 
 #endif
