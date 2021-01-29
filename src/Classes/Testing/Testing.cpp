@@ -211,6 +211,8 @@ void Testing::StatisticalAnalysis(int M)
 
   }
   
+  cout << "-------------------------------------------------------------------------------" << endl;
+
   for (int j = 0; j < 5; j++)
   {
     timeAvgShell[j] = shellTime[j] / 5;
