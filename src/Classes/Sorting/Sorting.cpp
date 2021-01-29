@@ -128,7 +128,9 @@ void Sorting::shellSortCases(vector<CovidInfo> &covidInfoList, int n)
                 if(j < h) break;
             }
             covidInfoList.at(j) = aux;
-            
+        }
+    }
+}   
 void Sorting::quickSort(vector<CovidInfo> &covidInfoList, int p, int q, char t) //t ='c' para ordenar por casos, 's' para State-City-Date
 {
     int r;
@@ -261,13 +263,13 @@ void Sorting::quickSortDates(vector<CovidInfo> &covidInfoList, int p, int q)
 
 int Sorting::particaoCases(vector<CovidInfo> &covidInfoList, int p, int q)
 {
-    int x = covidInfoList[p].cases;
+    int x = covidInfoList[p].totalCases;
     int i = p;
     int j;
 
     for(j = p+1; j < q; j++)
     {
-        if(covidInfoList[j].cases <= x)
+        if(covidInfoList[j].totalCases <= x)
         {
             i++;
             swap(covidInfoList[i], covidInfoList[j]);
