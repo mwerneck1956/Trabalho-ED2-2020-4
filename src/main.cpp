@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 {
   setlocale(LC_CTYPE, "");
   Testing test;
-  //test.execute(argv[1] != NULL ? argv[1] : "brazil_covid19_cities.csv");
-  test.StatisticalAnalysis(5);
+  test.execute(argv[1] != NULL ? argv[1] : "brazil_covid19_cities.csv");
+  //test.StatisticalAnalysis(5);
   return 0;
 }

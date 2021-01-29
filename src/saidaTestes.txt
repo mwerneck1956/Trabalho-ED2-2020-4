@@ -1,600 +1,600 @@
 
-2020-12-08
-AM-Manaus
-Novos Casos : 506
-Casos Totais : 73454
-Mortes : 73454
-
-2020-12-07
-AM-Manaus
-Novos Casos : 72
-Casos Totais : 72948
-Mortes : 72948
-
-2020-12-06
-AM-Manaus
-Novos Casos : 189
-Casos Totais : 72876
-Mortes : 72876
-
-2020-12-05
-AM-Manaus
-Novos Casos : 375
-Casos Totais : 72687
-Mortes : 72687
-
-2020-12-04
-AM-Manaus
-Novos Casos : 429
-Casos Totais : 72312
-Mortes : 72312
-
-2020-12-03
-AM-Manaus
-Novos Casos : 310
-Casos Totais : 71883
-Mortes : 71883
-
-2020-12-02
-AM-Manaus
-Novos Casos : 248
-Casos Totais : 71573
-Mortes : 71573
-
-2020-12-01
-AM-Manaus
-Novos Casos : 526
-Casos Totais : 71325
-Mortes : 71325
-
-2020-11-30
-AM-Manaus
-Novos Casos : 48
-Casos Totais : 70799
-Mortes : 70799
-
-2020-11-29
-AM-Manaus
-Novos Casos : 90
-Casos Totais : 70751
-Mortes : 70751
-
-2020-11-28
-AM-Manaus
-Novos Casos : 333
-Casos Totais : 70661
-Mortes : 70661
-
-2020-11-27
-AM-Manaus
-Novos Casos : 504
-Casos Totais : 70328
-Mortes : 70328
-
-2020-11-26
-AM-Manaus
-Novos Casos : 371
-Casos Totais : 69824
-Mortes : 69824
-
-2020-11-25
-AM-Manaus
-Novos Casos : 234
-Casos Totais : 69453
-Mortes : 69453
-
-2020-11-24
-AM-Manaus
-Novos Casos : 330
-Casos Totais : 69219
-Mortes : 69219
-
-2020-11-23
-AM-Manaus
-Novos Casos : 47
-Casos Totais : 68889
-Mortes : 68889
-
-2020-11-22
-AM-Manaus
-Novos Casos : 89
-Casos Totais : 68842
-Mortes : 68842
-
-2020-11-21
-AM-Manaus
-Novos Casos : 268
-Casos Totais : 68753
-Mortes : 68753
-
-2020-11-20
-AM-Manaus
-Novos Casos : 352
-Casos Totais : 68485
-Mortes : 68485
-
-2020-11-19
-AM-Manaus
-Novos Casos : 533
-Casos Totais : 68133
-Mortes : 68133
-
-2020-11-18
-AM-Manaus
-Novos Casos : 341
-Casos Totais : 67600
-Mortes : 67600
-
-2020-11-17
-AM-Manaus
-Novos Casos : 492
-Casos Totais : 67259
-Mortes : 67259
-
-2020-11-16
-AM-Manaus
-Novos Casos : 43
-Casos Totais : 66767
-Mortes : 66767
-
-2020-11-15
-AM-Manaus
-Novos Casos : 110
-Casos Totais : 66724
-Mortes : 66724
-
-2020-11-14
-AM-Manaus
-Novos Casos : 322
-Casos Totais : 66614
-Mortes : 66614
-
-2020-11-13
-AM-Manaus
-Novos Casos : 406
-Casos Totais : 66292
-Mortes : 66292
-
-2020-11-12
-AM-Manaus
+2020-04-12
+AM-Tapauá
 Novos Casos : 0
-Casos Totais : 65886
-Mortes : 65886
+Casos Totais : 0
+Mortes : 0
 
-2020-11-11
-AM-Manaus
-Novos Casos : 316
-Casos Totais : 65886
-Mortes : 65886
-
-2020-11-10
-AM-Manaus
-Novos Casos : 357
-Casos Totais : 65570
-Mortes : 65570
-
-2020-11-09
-AM-Manaus
-Novos Casos : 62
-Casos Totais : 65213
-Mortes : 65213
-
-2020-11-08
-AM-Manaus
-Novos Casos : 136
-Casos Totais : 65151
-Mortes : 65151
-
-2020-11-07
-AM-Manaus
-Novos Casos : 674
-Casos Totais : 65015
-Mortes : 65015
-
-2020-11-06
-AM-Manaus
+2020-03-29
+AM-Guajará
 Novos Casos : 0
-Casos Totais : 64341
-Mortes : 64341
-
-2020-11-05
-AM-Manaus
-Novos Casos : 249
-Casos Totais : 64341
-Mortes : 64341
-
-2020-11-04
-AM-Manaus
-Novos Casos : 387
-Casos Totais : 64092
-Mortes : 64092
-
-2020-11-03
-AM-Manaus
-Novos Casos : 148
-Casos Totais : 63705
-Mortes : 63705
-
-2020-11-02
-AM-Manaus
-Novos Casos : 53
-Casos Totais : 63557
-Mortes : 63557
-
-2020-11-01
-AM-Manaus
-Novos Casos : 122
-Casos Totais : 63504
-Mortes : 63504
-
-2020-10-31
-AM-Manaus
-Novos Casos : 120
-Casos Totais : 63382
-Mortes : 63382
-
-2020-10-30
-AM-Manaus
-Novos Casos : 433
-Casos Totais : 63262
-Mortes : 63262
-
-2020-10-29
-AM-Manaus
-Novos Casos : 499
-Casos Totais : 62829
-Mortes : 62829
-
-2020-10-28
-AM-Manaus
-Novos Casos : 418
-Casos Totais : 62330
-Mortes : 62330
-
-2020-10-27
-AM-Manaus
-Novos Casos : 490
-Casos Totais : 61912
-Mortes : 61912
-
-2020-10-26
-AM-Manaus
-Novos Casos : 42
-Casos Totais : 61422
-Mortes : 61422
-
-2020-10-25
-AM-Manaus
-Novos Casos : 214
-Casos Totais : 61380
-Mortes : 61380
-
-2020-10-24
-AM-Manaus
-Novos Casos : 481
-Casos Totais : 61166
-Mortes : 61166
-
-2020-10-23
-AM-Manaus
-Novos Casos : 480
-Casos Totais : 60685
-Mortes : 60685
-
-2020-10-22
-AM-Manaus
-Novos Casos : 353
-Casos Totais : 60205
-Mortes : 60205
-
-2020-10-21
-AM-Manaus
-Novos Casos : 1233
-Casos Totais : 59852
-Mortes : 59852
-
-2020-10-20
-AM-Manaus
-Novos Casos : 475
-Casos Totais : 58619
-Mortes : 58619
-
-2020-10-19
-AM-Manaus
-Novos Casos : 57
-Casos Totais : 58144
-Mortes : 58144
-
-2020-10-18
-AM-Manaus
-Novos Casos : 300
-Casos Totais : 58087
-Mortes : 58087
-
-2020-10-17
-AM-Manaus
-Novos Casos : 1068
-Casos Totais : 57787
-Mortes : 57787
-
-2020-10-16
-AM-Manaus
-Novos Casos : 51
-Casos Totais : 56719
-Mortes : 56719
-
-2020-10-15
-AM-Manaus
-Novos Casos : 446
-Casos Totais : 56668
-Mortes : 56668
-
-2020-10-14
-AM-Manaus
-Novos Casos : 330
-Casos Totais : 56222
-Mortes : 56222
-
-2020-10-13
-AM-Manaus
-Novos Casos : 135
-Casos Totais : 55892
-Mortes : 55892
-
-2020-10-11
-AM-Manaus
-Novos Casos : 254
-Casos Totais : 55863
-Mortes : 55863
-
-2020-10-12
-AM-Manaus
-Novos Casos : -106
-Casos Totais : 55757
-Mortes : 55757
-
-2020-10-10
-AM-Manaus
-Novos Casos : 426
-Casos Totais : 55609
-Mortes : 55609
-
-2020-10-09
-AM-Manaus
-Novos Casos : 523
-Casos Totais : 55183
-Mortes : 55183
-
-2020-10-08
-AM-Manaus
-Novos Casos : 368
-Casos Totais : 54660
-Mortes : 54660
-
-2020-10-07
-AM-Manaus
-Novos Casos : 398
-Casos Totais : 54292
-Mortes : 54292
-
-2020-10-06
-AM-Manaus
-Novos Casos : 523
-Casos Totais : 53894
-Mortes : 53894
-
-2020-10-05
-AM-Manaus
-Novos Casos : 64
-Casos Totais : 53371
-Mortes : 53371
-
-2020-10-04
-AM-Manaus
-Novos Casos : 97
-Casos Totais : 53307
-Mortes : 53307
-
-2020-10-03
-AM-Manaus
-Novos Casos : 579
-Casos Totais : 53210
-Mortes : 53210
-
-2020-10-02
-AM-Manaus
-Novos Casos : 592
-Casos Totais : 52631
-Mortes : 52631
-
-2020-10-01
-AM-Manaus
-Novos Casos : 414
-Casos Totais : 52039
-Mortes : 52039
-
-2020-09-30
-AM-Manaus
-Novos Casos : 763
-Casos Totais : 51625
-Mortes : 51625
-
-2020-09-29
-AM-Manaus
-Novos Casos : 846
-Casos Totais : 50862
-Mortes : 50862
-
-2020-09-28
-AM-Manaus
-Novos Casos : 57
-Casos Totais : 50016
-Mortes : 50016
-
-2020-09-27
-AM-Manaus
-Novos Casos : 62
-Casos Totais : 49959
-Mortes : 49959
-
-2020-09-26
-AM-Manaus
-Novos Casos : 660
-Casos Totais : 49897
-Mortes : 49897
-
-2020-09-25
-AM-Manaus
-Novos Casos : 484
-Casos Totais : 49237
-Mortes : 49237
-
-2020-09-24
-AM-Manaus
-Novos Casos : 364
-Casos Totais : 48753
-Mortes : 48753
-
-2020-09-23
-AM-Manaus
-Novos Casos : 412
-Casos Totais : 48389
-Mortes : 48389
-
-2020-09-22
-AM-Manaus
-Novos Casos : 378
-Casos Totais : 47977
-Mortes : 47977
-
-2020-09-21
-AM-Manaus
-Novos Casos : 40
-Casos Totais : 47599
-Mortes : 47599
-
-2020-09-20
-AM-Manaus
-Novos Casos : 75
-Casos Totais : 47559
-Mortes : 47559
-
-2020-09-19
-AM-Manaus
-Novos Casos : 373
-Casos Totais : 47484
-Mortes : 47484
-
-2020-09-18
-AM-Manaus
-Novos Casos : 507
-Casos Totais : 47111
-Mortes : 47111
-
-2020-09-17
-AM-Manaus
-Novos Casos : 368
-Casos Totais : 46604
-Mortes : 46604
-
-2020-09-16
-AM-Manaus
-Novos Casos : 327
-Casos Totais : 46236
-Mortes : 46236
-
-2020-09-15
-AM-Manaus
-Novos Casos : 448
-Casos Totais : 45909
-Mortes : 45909
-
-2020-09-14
-AM-Manaus
-Novos Casos : 65
-Casos Totais : 45461
-Mortes : 45461
-
-2020-09-13
-AM-Manaus
-Novos Casos : 69
-Casos Totais : 45396
-Mortes : 45396
-
-2020-09-12
-AM-Manaus
-Novos Casos : 306
-Casos Totais : 45327
-Mortes : 45327
-
-2020-09-11
-AM-Manaus
-Novos Casos : 312
-Casos Totais : 45021
-Mortes : 45021
-
-2020-09-10
-AM-Manaus
-Novos Casos : 311
-Casos Totais : 44709
-Mortes : 44709
-
-2020-09-09
-AM-Manaus
-Novos Casos : 330
-Casos Totais : 44398
-Mortes : 44398
-
-2020-09-08
-AM-Manaus
-Novos Casos : 65
-Casos Totais : 44068
-Mortes : 44068
-
-2020-09-07
-AM-Manaus
-Novos Casos : 22
-Casos Totais : 44003
-Mortes : 44003
-
-2020-09-06
-AM-Manaus
-Novos Casos : 38
-Casos Totais : 43981
-Mortes : 43981
-
-2020-09-05
-AM-Manaus
-Novos Casos : 271
-Casos Totais : 43943
-Mortes : 43943
-
-2020-09-04
-AM-Manaus
-Novos Casos : 265
-Casos Totais : 43672
-Mortes : 43672
-
-2020-09-03
-AM-Manaus
-Novos Casos : 274
-Casos Totais : 43407
-Mortes : 43407
-
-2020-09-02
-AM-Manaus
-Novos Casos : 443
-Casos Totais : 43133
-Mortes : 43133
-
-2020-09-01
-AM-Manaus
-Novos Casos : 244
-Casos Totais : 42690
-Mortes : 42690
-
-2020-08-31
-AM-Manaus
-Novos Casos : 48
-Casos Totais : 42446
-Mortes : 42446
+Casos Totais : 0
+Mortes : 0
+
+2020-08-16
+BA-Ipupiara
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-27
+BA-Arataca
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-05
+BA-Anguera
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-06-09
+BA-Contendas do Sincorá
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-24
+BA-Central
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-19
+AM-Japurá
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-14
+BA-Ibicuí
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-17
+BA-Barra do Mendes
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-06-21
+BA-Canápolis
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-08-09
+BA-Ipupiara
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-03
+AL-Olho d'Água do Casado
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-08
+BA-Caturama
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-16
+AL-Major Isidoro
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-15
+BA-Bom Jesus da Serra
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-01
+BA-Abaíra
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-05
+AC-Sena Madureira
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-27
+AC-Mâncio Lima
+Novos Casos : -689
+Casos Totais : 0
+Mortes : 0
+
+2020-05-13
+BA-Casa Nova
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-06
+BA-Caetité
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-18
+AL-São José da Tapera
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-07
+AL-Maribondo
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-31
+BA-Guajeru
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-20
+BA-Cotegipe
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-11
+BA-Iraquara
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-22
+BA-Candeal
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-08
+BA-Barrocas
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-05
+BA-Caetité
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-01
+AM-Boa Vista do Ramos
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-01
+AL-Barra de Santo Antônio
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-30
+BA-Antas
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-06
+AL-Joaquim Gomes
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-06
+BA-Baianópolis
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-05
+AC-Capixaba
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-12
+BA-Andaraí
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-27
+AL-Mar Vermelho
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-20
+BA-Ibitiara
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-10
+BA-Dom Macedo Costa
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-05
+BA-Catolândia
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-08
+BA-Barra do Mendes
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-18
+AL-Quebrangulo
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-28
+BA-Cairu
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-10
+BA-Coribe
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-29
+AL-Piranhas
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-27
+AM-Careiro
+Novos Casos : -3650
+Casos Totais : 0
+Mortes : 0
+
+2020-06-13
+BA-Ichu
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-07-15
+BA-Ibiquera
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-12
+AP-Tartarugalzinho
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-22
+BA-Barro Alto
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-07
+BA-Cordeiros
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-19
+AL-Igaci
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-25
+BA-Anagé
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-06-08
+BA-Ichu
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-14
+BA-Ibitiara
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-20
+BA-Central
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-07-08
+BA-Contendas do Sincorá
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-15
+AL-Passo de Camaragibe
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-05
+AL-Dois Riachos
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-29
+AL-Belém
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-25
+AC-Manoel Urbano
+Novos Casos : -1
+Casos Totais : 0
+Mortes : 0
+
+2020-05-18
+BA-Caravelas
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-12
+AL-São José da Tapera
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-20
+BA-Gavião
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-11
+BA-Banzaê
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-13
+AL-Ouro Branco
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-24
+AL-Penedo
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-12
+BA-Aramari
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-19
+BA-Carinhanha
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-05
+BA-Brejolândia
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-17
+AL-Anadia
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-05
+AL-Viçosa
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-10
+BA-Andaraí
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-17
+BA-Formosa do Rio Preto
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-15
+BA-Boa Vista do Tupim
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-05
+BA-Anguera
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-04
+BA-Brejolândia
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-29
+BA-Elísio Medrado
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-11
+AL-Pariconha
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-23
+BA-Dom Basílio
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-14
+BA-Iramaia
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-07-02
+BA-Ibititá
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-07-11
+BA-Contendas do Sincorá
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-16
+AC-Xapuri
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-14
+BA-Caetité
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-31
+AL-Dois Riachos
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-27
+AL-Porto de Pedras
+Novos Casos : -433
+Casos Totais : 0
+Mortes : 0
+
+2020-04-18
+BA-Central
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-21
+BA-Antônio Cardoso
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-30
+BA-Anagé
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-09
+BA-Heliópolis
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-14
+BA-Caetanos
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-02
+BA-Chorrochó
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-14
+BA-Itaju do Colônia
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-08
+AL-Matriz de Camaragibe
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-08
+BA-Anagé
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-02
+BA-Iaçu
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-18
+BA-Iramaia
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-18
+BA-Buritirama
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-19
+BA-Dário Meira
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
