@@ -139,7 +139,7 @@ void Testing::Execute(string filename)
   int selectedOrdering = this->SelecionarAlgoritmo();*/
 }
 
-void Testing::Exit(int M, int N, int algoritmoSelecionado, int saidaSelecionada, float sortTime, int sortComparisons, int sortSwaps)
+void Testing::Exit(int M, int N, int algoritmoSelecionado, int saidaSelecionada, float &sortTime, int &sortComparisons, int &sortSwaps)
 {
 
   float timeAvgSort[5] = {0.0, 0.0, 0.0, 0.0, 0.0};
@@ -183,6 +183,7 @@ void Testing::Exit(int M, int N, int algoritmoSelecionado, int saidaSelecionada,
       }
     }
 
+  exit.close();
 
 }
 
@@ -233,7 +234,7 @@ void Testing::StatisticalAnalysis(int M)
 
   int saidaSelecionada = SelecionarSaida();
 
-  Exit(M, N, algoritmoSelecionado, saidaSelecionada, sortTime, sortComparisons, sortSwaps);
+  Exit(M, *N, algoritmoSelecionado, saidaSelecionada, *sortTime, *sortComparisons, *sortSwaps);
 
   /*if (algoritmoSelecionado == 1)
   {
@@ -333,6 +334,4 @@ void Testing::StatisticalAnalysis(int M)
     }
   }*/
   cout << "-------------------------------------------------------------------------------" << endl;
-
-  saida.close();
 }
