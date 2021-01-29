@@ -1,4 +1,5 @@
 #include "./Testing.h"
+
 #include "../FileHandler/FileHandler.h"
 #include "../CovidInfo/CovidInfo.h"
 #include "../CovidStatistics/CovidStatistics.h"
@@ -339,4 +340,52 @@ void Testing::StatisticalAnalysis(int M)
   cout << "-------------------------------------------------------------------------------" << endl;
 
   saida.close();
+}
+
+
+void Testing::statisticAnalysis(int M , int sortType){
+    int trocas = 0,comparacoes = 0, mediaTempo = 0;
+    int totalTrocas,totalComp,totalTempo;
+    clock_t startTime = clock() , finalTime;
+    int sizes[5] = {10000,50000,100000,500000,1000000};
+    for(int i = 0 ; i < M ; i++){
+        startTime = clock();
+        for(int j = 0 ; j < 5 ; j++){
+          this->orderNInstances(1,sizes[j],trocas,comparacoes);
+          totalTrocas+=trocas;
+          totalComp+=comparacoes;
+        }
+        finalTime = clock(); 
+        cout << "Iteração " << i << endl;
+        cout << "Tempo total" << (finalTime - startTime) / ((float)CLOCKS_PER_SEC);
+    }
+}
+
+
+//Retorna o tempo de processamento
+int Testing::orderNInstances(int sortType , int size, int &swaps , int &comparisions){
+    FileHandler fileHandler;
+    Sorting sort;
+    vector<CovidInfo> covidSet;
+
+    //Pre alocação de tamanho para melhor desempenho do vector
+    covidSet.reserve(size);
+    //Pego os registros aleatório e associo ao meu vetor
+    covidSet = fileHandler.getNCovidInfos(size);
+    switch (sortType)
+    {
+    case 1:
+      sort.mergeSortCases(covidSet,0,size-1,comparisions,swaps);
+      break;
+    case 2 :
+      sort.shellSortCases(covidSet,size-1,comparisions,swaps);
+      break;
+    default:
+      break;
+    }
+
+    covidSet.clear();
+    covidSet.shrink_to_fit();
+    delete &sort;
+    delete &fileHandler;
 }

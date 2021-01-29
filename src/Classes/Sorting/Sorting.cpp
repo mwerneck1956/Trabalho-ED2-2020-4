@@ -13,7 +13,6 @@ int numComparacoes = 0;
 
 Sorting::Sorting()
 {
-    cout << "Objeto sorting montado" << endl;
 }
 
 void Sorting::merge(vector<CovidInfo> &covidInfoList, int p, int q, int r)
@@ -183,7 +182,7 @@ void Sorting::mergeCases(vector<CovidInfo> &covidInfoList, int p, int q, int r, 
     }
 }
 
-///Funcao recursiva
+/* p = inicioVetor r=FinalVetor */
 void Sorting::mergeSortCases(vector<CovidInfo> &covidInfoList, int p, int r, int &comparisons, int &swaps)
 {
     if (p < r - 1)

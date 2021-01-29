@@ -12,6 +12,7 @@
 #include "../../Classes/Sorting/Sorting.h"
 #include "../../Classes/CovidStatistics/CovidStatistics.h"*/
 
+
 class Testing
 {
 private:
@@ -25,7 +26,8 @@ public:
   void Execute(string filename);
   void StatisticalAnalysis(int M);
   void arquivoSaida();
-  
+  int orderNInstances(int sortType , int size, int &numTrocas , int &numComparacoes);
+  void statisticAnalysis(int M , int sortType);
   
 };
 
