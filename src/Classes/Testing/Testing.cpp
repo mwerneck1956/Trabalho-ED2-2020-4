@@ -87,7 +87,7 @@ void Testing::preProcessing(string filename, clock_t &processingTime)
   vector<CovidInfo> processedFile = FileReader->csvHandler(filename != "" ? filename : "brazil_covid19_cities.csv");
   cout << "Arquivo Desmembrado com Sucesso" << endl;
   //Ordenação do vetor por (Estado,Cidade) e data.
-  sorting.mergeSort(processedFile, 0, processedFile.size());
+  sorting.shellSortStateCityDate(processedFile, processedFile.size());
   //Geração do novo arquivo csv com os dados processados
   statistics.dailyCasesTotalizers(processedFile);
   cout << "Arquivo pre-processado com sucesso!" << endl;

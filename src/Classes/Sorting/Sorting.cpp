@@ -90,6 +90,50 @@ void Sorting::merge(vector<CovidInfo> &covidInfoList, int p, int q, int r)
     }
 }
 
+void Sorting::shellSortStateCityDate(vector<CovidInfo> &covidInfoList, int n){
+   int i = (n - 1)/ 2;
+   int chave, k;
+   CovidInfo aux = covidInfoList.at(i);
+
+   while(i != 0)
+   {
+      do
+      {
+         chave = 1;
+         for(k = 0; k< n - i; ++k){
+            if(covidInfoList.at(k).state == covidInfoList.at(k + i).state)
+            {
+               if(covidInfoList.at(k).city == covidInfoList.at(k+i).city)
+               {
+                   if(covidInfoList.at(k).date > covidInfoList.at(k+i).date)
+                   {
+                      aux = covidInfoList.at(k);
+                      covidInfoList.at(k) = covidInfoList.at(k + i);
+                      covidInfoList.at(k + i) = aux;
+                      chave = 0; 
+                   }
+                   
+               }
+               else if(covidInfoList.at(k).city > covidInfoList.at(k+i).city)
+               {
+                      aux = covidInfoList.at(k);
+                      covidInfoList.at(k) = covidInfoList.at(k + i);
+                      covidInfoList.at(k + i) = aux;
+                      chave = 0;      
+               }
+            }
+            else if(covidInfoList.at(k).state > covidInfoList.at(k+i).state){
+                    aux = covidInfoList.at(k);
+                    covidInfoList.at(k) = covidInfoList.at(k+i);
+                    covidInfoList.at(k+i) = aux;
+                    chave = 0;
+            }
+         }
+      }while(chave == 0);
+      i = i / 2;
+   }
+}
+
 ///Funcao recursiva
 void Sorting::mergeSort(vector<CovidInfo> &covidInfoList, int p, int r)
 {
