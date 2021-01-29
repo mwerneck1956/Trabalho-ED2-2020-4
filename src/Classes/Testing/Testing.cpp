@@ -133,6 +133,8 @@ int Testing::selectFirstPhase(){
     cout << "Digite uma opcao valida!" << endl;
     cin >> option;
   }
+
+  return option;
 }
 
 void Testing::writeOutFile(vector<CovidInfo> &data, int out)
@@ -174,7 +176,6 @@ void Testing::execute(string filename)
   vector<CovidInfo> processedCovidInfo = this->selectRandomCases();
   this->executeSorting(this->SelecionarAlgoritmo(), &processedCovidInfo);
   int saida = this->SelecionarSaida();
-  system("CLS");
   writeOutFile(processedCovidInfo,saida);
 
  

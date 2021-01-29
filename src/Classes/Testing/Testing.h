@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <ctime>
 #include "../../Classes/FileHandler/FileHandler.h"
-#include "../../Classes/CovidInfo/Covidinfo.h"
+#include "../../Classes/CovidInfo/CovidInfo.h"
 #include "../../Classes/Sorting/Sorting.h"
 #include "../../Classes/CovidStatistics/CovidStatistics.h"
 
