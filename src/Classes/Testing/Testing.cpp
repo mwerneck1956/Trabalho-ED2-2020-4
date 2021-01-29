@@ -85,7 +85,7 @@ void Testing::preProcessing(string filename, clock_t &processingTime)
   clock_t tempo_inicio = clock();
   //Abre o arquivo de texto , desmembra o mesmo , e salva em um vector de CovidInfo
   vector<CovidInfo> processedFile = FileReader->csvHandler(filename != "" ? filename : "brazil_covid19_cities.csv");
-  cout << "Arquivo Desmenbrado com Sucesso" << endl;
+  cout << "Arquivo Desmembrado com Sucesso" << endl;
   //Ordenação do vetor por (Estado,Cidade) e data.
   sorting.mergeSort(processedFile, 0, processedFile.size());
   //Geração do novo arquivo csv com os dados processados
