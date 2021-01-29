@@ -26,7 +26,8 @@ public:
   vector<CovidInfo> selectRandomCases();
   void execute(string filename);
   void executeSorting(int choice , vector<CovidInfo> *covidInfoSet);
-
+  int selectFirstPhase();
+  void writeOutFile(vector<CovidInfo> &data , int out);
   
 };
 

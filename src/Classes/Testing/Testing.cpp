@@ -62,13 +62,13 @@ int Testing::SelecionarAlgoritmo()
 
   cout << "Digite [1] para MergeSort;" << endl;
   cout << "Digite [2] para ShellSort;" << endl;
-  // cout << "Digite [3] para ShellSort;" << endl;
+  cout << "Digite [3] para QuickSort;" << endl;
 
   cout << "-------------------------------------------------------------------------------" << endl;
 
   cin >> algoritmoSelecionado;
 
-  while (algoritmoSelecionado != 1 && algoritmoSelecionado != 2)
+  while (algoritmoSelecionado != 1 && algoritmoSelecionado != 2  && algoritmoSelecionado != 3)
   {
     cout << "Digite um numero valido!" << endl;
     cin >> algoritmoSelecionado;
@@ -82,21 +82,6 @@ void Testing::preProcessing(string filename, clock_t &processingTime)
   Sorting sorting;
   FileHandler *FileReader = new FileHandler();
   CovidStatistics statistics;
-  int option;
-
-  cout << "-------------------------------------------------------------------------------------" << endl;
-  cout << "Processamento dos Dados: " << endl;
-  cout << "O Arquivo processado sera salvo no arquivo :  brazil_covid19_cities_processado.csv" << endl;
-  cout << "------------------------------------------------------------------------------------" << endl;
-
-  cout << "Digite [1] para comecar o processamento do arquivo csv" << endl;
-
-  cin >> option;
-  while (option != 1)
-  {
-    cout << "Digite uma opcao valida!" << endl;
-    cin >> option;
-  }
   clock_t tempo_inicio = clock();
   //Abre o arquivo de texto , desmembra o mesmo , e salva em um vector de CovidInfo
   vector<CovidInfo> processedFile = FileReader->csvHandler(filename != "" ? filename : "brazil_covid19_cities.csv");
@@ -123,43 +108,74 @@ void Testing::executeSorting(int choice, vector<CovidInfo> *covidInfoSet)
     break;
   case 2:
     sorting.shellSortCases(*covidInfoSet, covidInfoSet->size());
+    break;
+  case 3:
+    sorting.quickSort(*covidInfoSet,0,covidInfoSet->size() , 'c');
+    break;
   default:
     break;
+  }
+}
+
+int Testing::selectFirstPhase(){
+  int option;
+
+  cout << "-------------------------------------------------------------------------------------" << endl;
+  cout << "Processamento dos Dados: " << endl;
+  cout << "O Arquivo processado sera salvo no arquivo :  brazil_covid19_cities_processado.csv" << endl;
+  cout << "------------------------------------------------------------------------------------" << endl;
+
+  cout << "Digite [1] para comecar o processamento do arquivo csv" << endl;
+  cout << "Digite [2] para pular o pre-processamento(Somente se ja tiver o arquivo pre-processado salvo)" << endl;
+  cin >> option;
+  while (option != 1 && option != 2)
+  {
+    cout << "Digite uma opcao valida!" << endl;
+    cin >> option;
+  }
+}
+
+void Testing::writeOutFile(vector<CovidInfo> &data, int out)
+{
+  if (out == 1)
+  {
+    ofstream arq("saidaTestes.txt");
+    for (int i = 0; i < 100; i++)
+    {
+      arq << data.at(i).date << endl;
+      arq << data.at(i).state << "-" << data.at(i).city << endl;
+      arq << "Novos Casos : " << data.at(i).cases << endl;
+      arq << "Casos Totais : " << data.at(i).totalCases << endl;
+      arq << "Mortes : " << data.at(i).totalCases << endl;
+    }
+    cout << "Arquivo saidaTestes.txt Gerado Com Sucesso!!" << endl;
+  }
+  else if (out == 2)
+  {
+    cout << "Dados Apos a Ordenação" << endl;
+    cout << "--------------------------------------------" << endl;
+    for (int i = 0; i < 10; i++)
+    {
+      cout << data.at(i).date << endl;
+      cout << data.at(i).state << "-" << data.at(i).city << endl;
+      cout << "Novos Casos : " << data.at(i).cases << endl;
+      cout << "Casos Totais : " << data.at(i).totalCases << endl;
+      cout << "Mortes : " << data.at(i).totalCases << endl;
+    }
   }
 }
 
 void Testing::execute(string filename)
 {
   clock_t tempo_processamento = clock();
+  int firstPhase = selectFirstPhase();
+  if(firstPhase == 1)
   preProcessing(filename , tempo_processamento);
   vector<CovidInfo> processedCovidInfo = this->selectRandomCases();
   this->executeSorting(this->SelecionarAlgoritmo(), &processedCovidInfo);
   int saida = this->SelecionarSaida();
   system("CLS");
-  if (saida == 1)
-  {
-    ofstream arq("saidaTestes.txt");
-    for (int i = 0; i < 100; i++)
-    {
-      arq << processedCovidInfo.at(i).date << endl;
-      arq << processedCovidInfo.at(i).state << "-" << processedCovidInfo.at(i).city << endl;
-      arq << "Novos Casos : " << processedCovidInfo.at(i).cases << endl;
-      arq << "Casos Totais : " << processedCovidInfo.at(i).totalCases << endl;
-      arq << "Mortes : " << processedCovidInfo.at(i).totalCases << endl;
-    }
-    cout << "Arquivo saidaTestes.txt Gerado Com Sucesso!!" << endl;
-  }
-  else if (saida == 2)
-  {
-    cout << "Dados Apos a Ordenação" << endl;
-    cout << "--------------------------------------------" << endl;
-    for (int i = 0; i < 10; i++)
-    {
-      cout << processedCovidInfo.at(i).date << endl;
-      cout << processedCovidInfo.at(i).state << "-" << processedCovidInfo.at(i).city << endl;
-      cout << "Novos Casos : " << processedCovidInfo.at(i).cases << endl;
-      cout << "Casos Totais : " << processedCovidInfo.at(i).totalCases << endl;
-      cout << "Mortes : " << processedCovidInfo.at(i).totalCases << endl;
-    }
-  }
+  writeOutFile(processedCovidInfo,saida);
+
+ 
 }
