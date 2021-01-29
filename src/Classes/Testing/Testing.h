@@ -7,10 +7,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <ctime>
-/*#include "../../Classes/FileHandler/FileHandler.h"
-#include "../../Classes/CovidInfo/Covidinfo.h"
-#include "../../Classes/Sorting/Sorting.h"
-#include "../../Classes/CovidStatistics/CovidStatistics.h"*/
 
 class Testing
 {
@@ -24,6 +20,7 @@ public:
   void SelectRandomCases();
   void Execute(string filename);
   void StatisticalAnalysis(int M);
+  void algumNomeBom(int algoritmoSelecionado);
   void arquivoSaida();
   
   

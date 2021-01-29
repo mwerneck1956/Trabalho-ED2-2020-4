@@ -139,6 +139,21 @@ void Testing::Execute(string filename)
   int selectedOrdering = this->SelecionarAlgoritmo();*/
 }
 
+void Testing::algumNomeBom(int algoritmoSelecionado)
+{
+  Sorting *sort = new Sorting();
+  clock_t startTime = 0, finalTime;
+
+  startTime = clock();
+  algoritmoSelecionado == 1 ? sort->mergeSortCases(toSort, 0, N[i] - 1, sortComparisons[i], sortSwaps[i]) : algoritmoSelecionado == 2 ? sort->shellSortCases(toSort, N[i] - 1, sortComparisons[i], sortSwaps[i])
+                                                                                                                                      : sort->quickSortCases(toSort, N[i] - 1, sortComparisons[i], sortSwaps[i]);
+  finalTime = clock();
+  float totalTime = (finalTime - startTime) / (float)CLOCKS_PER_SEC;
+  sortSwaps[i] += mergeSwaps[i];
+  sortComparisons[i] += mergeComparisons[i];
+  sortTime[i] += totalTime;
+}
+
 void Testing::StatisticalAnalysis(int M)
 {
   ofstream saida;
@@ -147,29 +162,17 @@ void Testing::StatisticalAnalysis(int M)
 
   int N[5] = {10000, 50000, 100000, 500000, 1000000};
 
-  float mergeTime[5] = {0, 0, 0, 0, 0};
- // float quickTime[5] = {0, 0, 0, 0, 0};
-  //float shellTime[5] = {0, 0, 0, 0, 0};
+  float sortTime[5] = {0, 0, 0, 0, 0};
 
-  int mergeComparisons[5] = {0, 0, 0, 0, 0};
-  //int comparisonsQuick[5] = {0, 0, 0, 0, 0};
-  //int comparisonsShell[5] = {0, 0, 0, 0, 0};
+  int sortComparisons[5] = {0, 0, 0, 0, 0};
 
-  int mergeSwaps[5] = {0, 0, 0, 0, 0};
-  //int swapsQuick[5] = {0, 0, 0, 0, 0};
-  //int swapsShell[5] = {0, 0, 0, 0, 0};
+  int sortSwaps[5] = {0, 0, 0, 0, 0};
 
-  float timeAvgMerge[5] = {0, 0, 0, 0, 0};
-  //float timeAvgQuick[5] = {0, 0, 0, 0, 0};
-  //float timeAvgShell[5] = {0, 0, 0, 0, 0};
+  float timeAvgSort[5] = {0, 0, 0, 0, 0};
 
-  int comparisonsAvgMerge[5] = {0, 0, 0, 0, 0};
-  //int comparisonsAvgQuick[5] = {0, 0, 0, 0, 0};
-  //int comparisonsAvgShell[5] = {0, 0, 0, 0, 0};
+  int comparisonsAvgSort[5] = {0, 0, 0, 0, 0};
 
-  int swapsAvgMerge[5] = {0, 0, 0, 0, 0};
-  //int swapsAvgQuick[5] = {0, 0, 0, 0, 0};
-  //int swapsAvgShell[5] = {0, 0, 0, 0, 0};
+  int swapsAvgSort[5] = {0, 0, 0, 0, 0};
 
   Sorting *Sort = new Sorting();
   FileHandler *File = new FileHandler();
@@ -180,48 +183,19 @@ void Testing::StatisticalAnalysis(int M)
   {
     for (int j = 0; j < M; j++)
     {
-      vector<CovidInfo> notSorted = File->getNCovidInfos(N[i]);
-      vector<CovidInfo> toSort = notSorted;
+      vector<CovidInfo> toSort = File->getNCovidInfos(N[i]);
 
-      if (algoritmoSelecionado == 1)
-      {
+      startTime = clock();
+      algoritmoSelecionado == 1 ? Sort->mergeSortCases(toSort, 0, N[i] - 1, sortComparisons[i], sortSwaps[i]) : 
+      algoritmoSelecionado == 2 ? Sort->shellSortCases(toSort, N[i] - 1, sortComparisons[i], sortSwaps[i]) :
+      Sort->quickSortCases(toSort, N[i] - 1, sortComparisons[i], sortSwaps[i]);
+      finalTime = clock();
+      float totalTime = (finalTime - startTime) / (float)CLOCKS_PER_SEC;
+      
+      sortSwaps[i] += sortSwaps[i];
+      sortComparisons[i] += sortComparisons[i];
+      sortTime[i] += totalTime;
 
-        startTime = clock();
-        Sort->mergeSortCases(toSort, 0, N[i] - 1, mergeComparisons[i], mergeSwaps[i]);
-        finalTime = clock();
-        float totalTime = (finalTime - startTime) / (float)CLOCKS_PER_SEC;
-        mergeSwaps[i] += mergeSwaps[i];
-        mergeComparisons[i] += mergeComparisons[i];
-        mergeTime[i] += totalTime;
-      }
-
-      /*if (algoritmoSelecionado == 2)
-      {
-
-        startTime = clock();
-        Sort->shellSortCases(toSort, N[i] - 1, comparisonsShell[i], swapsShell[i]);
-        finalTime = clock();
-        float totalTime = (finalTime - startTime) / (float)CLOCKS_PER_SEC;
-        swapsShell[i] += swapsShell[i];
-        comparisonsShell[i] += comparisonsShell[i];
-        shellTime[i] += totalTime;
-      }*/
-
-      //Tem q arrumar a chamada do QuickSort
-
-      /*if (algoritmoSelecionado == 3) 
-      {
-
-        startTime = clock();
-        Sort->quickSortCases(toSort, N[i] - 1, comparisonsQuick[i], swapsQuick[i]);
-        finalTime = clock();
-        float totalTime = (finalTime - startTime) / (float)CLOCKS_PER_SEC;
-        swapsQuick[i] += swapsQuick[i];
-        comparisonsQuick[j] += comparisonsQuick[i];
-        quickTime[i] += totalTime;
-      }*/
-
-      vector<CovidInfo>().swap(notSorted);
       vector<CovidInfo>().swap(toSort);
       /*notSorted.clear();
       notSorted.shrink_to_fit();
