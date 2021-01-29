@@ -142,14 +142,14 @@ void Testing::Execute(string filename)
 void Testing::StatisticalAnalysis(int M)
 {
   ofstream exit;
-  float timeAvgSort[5] = {0.0, 0.0, 0.0, 0.0, 0.0};
-  float comparisonsAvgSort[5] = {0.0, 0.0, 0.0, 0.0, 0.0};
-  float swapsAvgSort[5] = {0.0, 0.0, 0.0, 0.0, 0.0};
+  float timeAvgSort[5] = {0, 0, 0, 0, 0};
+  int comparisonsAvgSort[5] = {0, 0, 0, 0, 0};
+  int swapsAvgSort[5] = {0, 0, 0, 0, 0};
   clock_t startTime = 0, finalTime;
 
   int N[5] = {10000, 50000, 100000, 500000, 1000000};
 
-  float sortTime[5] = {0.0, 0.0, 0.0, 0.0, 0.0};
+  float sortTime[5] = {0, 0, 0, 0, 0};
   int sortComparisons[5] = {0, 0, 0, 0, 0};
   int sortSwaps[5] = {0, 0, 0, 0, 0};
 

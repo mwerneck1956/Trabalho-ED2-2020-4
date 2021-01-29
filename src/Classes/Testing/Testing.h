@@ -20,9 +20,6 @@ public:
   void SelectRandomCases();
   void Execute(string filename);
   void StatisticalAnalysis(int M);
-  void Exit(int M, int N, int algoritmoSelecionado, int saidaSelecionada, float &sortTime, int &sortComparisons, int &sortSwaps);
-  void arquivoSaida();
-  
   
 };
 
