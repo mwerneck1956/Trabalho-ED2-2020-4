@@ -139,19 +139,51 @@ void Testing::Execute(string filename)
   int selectedOrdering = this->SelecionarAlgoritmo();*/
 }
 
-void Testing::algumNomeBom(int algoritmoSelecionado)
+void Testing::Exit(int M, int N, int algoritmoSelecionado, int saidaSelecionada, float sortTime, int sortComparisons, int sortSwaps)
 {
-  Sorting *sort = new Sorting();
-  clock_t startTime = 0, finalTime;
 
-  startTime = clock();
-  algoritmoSelecionado == 1 ? sort->mergeSortCases(toSort, 0, N[i] - 1, sortComparisons[i], sortSwaps[i]) : algoritmoSelecionado == 2 ? sort->shellSortCases(toSort, N[i] - 1, sortComparisons[i], sortSwaps[i])
-                                                                                                                                      : sort->quickSortCases(toSort, N[i] - 1, sortComparisons[i], sortSwaps[i]);
-  finalTime = clock();
-  float totalTime = (finalTime - startTime) / (float)CLOCKS_PER_SEC;
-  sortSwaps[i] += mergeSwaps[i];
-  sortComparisons[i] += mergeComparisons[i];
-  sortTime[i] += totalTime;
+  float timeAvgSort[5] = {0.0, 0.0, 0.0, 0.0, 0.0};
+  float comparisonsAvgSort[5] = {0.0, 0.0, 0.0, 0.0, 0.0};
+  float swapsAvgSort[5] = {0.0, 0.0, 0.0, 0.0, 0.0};
+  
+  string nomeAlgoritmo;
+  ofstream exit;
+
+  if (saidaSelecionada == 10)
+    exit.open("saida.txt", ios::app);
+
+  algoritmoSelecionado == 1 ? nomeAlgoritmo = "MergeSort" : algoritmoSelecionado == 2 ? nomeAlgoritmo = "ShellSort"
+                                                                                      : nomeAlgoritmo = "QuickSort";
+
+  for (int i = 0; i < 5; i++)
+    {
+      timeAvgSort[i] = sortTime / 5;
+      comparisonsAvgSort[i] = sortComparisons / 5;
+      swapsAvgSort[i] = sortSwaps / 5;
+
+      if (saidaSelecionada == 10)
+      {
+
+        exit << "Os resultados do algoritmo " << nomeAlgoritmo << " para um vetor randomico de tamanho " << N << " foram: " << endl;
+        exit << "Media de tempo dos " << M << " conjuntos: " << timeAvgSort[i] << endl;
+        exit << "Media de comparacoes dos " << M << " conjuntos: " << comparisonsAvgSort[i] << endl;
+        exit << "Media de trocas dos " << M << " conjuntos: " << swapsAvgSort[i] << endl;
+
+        exit << "-------------------------------------------------------------------------------" << endl;
+      }
+
+      else
+      {
+        cout << "Os resultados do algoritmo " << nomeAlgoritmo << " para um vetor randomico de tamanho " << N << " foram: " << endl;
+        cout << "Media de tempo dos " << M << " conjuntos: " << timeAvgSort[i] << endl;
+        cout << "Media de comparacoes dos " << M << " conjuntos: " << comparisonsAvgSort[i] << endl;
+        cout << "Media de trocas dos " << M << " conjuntos: " << swapsAvgSort[i] << endl;
+
+        cout << "-------------------------------------------------------------------------------" << endl;
+      }
+    }
+
+
 }
 
 void Testing::StatisticalAnalysis(int M)
@@ -162,17 +194,9 @@ void Testing::StatisticalAnalysis(int M)
 
   int N[5] = {10000, 50000, 100000, 500000, 1000000};
 
-  float sortTime[5] = {0, 0, 0, 0, 0};
-
-  int sortComparisons[5] = {0, 0, 0, 0, 0};
-
-  int sortSwaps[5] = {0, 0, 0, 0, 0};
-
-  float timeAvgSort[5] = {0, 0, 0, 0, 0};
-
-  int comparisonsAvgSort[5] = {0, 0, 0, 0, 0};
-
-  int swapsAvgSort[5] = {0, 0, 0, 0, 0};
+  float sortTime[] = {0.0, 0.0, 0.0, 0.0, 0.0};
+  int sortComparisons[] = {0, 0, 0, 0, 0};
+  int sortSwaps[] = {0, 0, 0, 0, 0};
 
   Sorting *Sort = new Sorting();
   FileHandler *File = new FileHandler();
@@ -186,12 +210,13 @@ void Testing::StatisticalAnalysis(int M)
       vector<CovidInfo> toSort = File->getNCovidInfos(N[i]);
 
       startTime = clock();
-      algoritmoSelecionado == 1 ? Sort->mergeSortCases(toSort, 0, N[i] - 1, sortComparisons[i], sortSwaps[i]) : 
-      algoritmoSelecionado == 2 ? Sort->shellSortCases(toSort, N[i] - 1, sortComparisons[i], sortSwaps[i]) :
-      Sort->quickSortCases(toSort, N[i] - 1, sortComparisons[i], sortSwaps[i]);
+      //algoritmoSelecionado == 1 ? Sort->mergeSortCases(toSort, 0, N[i] - 1, sortComparisons[i], sortSwaps[i]) : algoritmoSelecionado == 2 ? Sort->shellSortCases(toSort, N[i] - 1, sortComparisons[i], sortSwaps[i]);
+                                                                                                                                          /*: Sort->quickSort(toSort, N[i] - 1, sortComparisons[i], sortSwaps[i]);*/
+      algoritmoSelecionado == 1 ? Sort->mergeSortCases(toSort, 0, N[i] - 1, sortComparisons[i], sortSwaps[i]) : Sort->shellSortCases(toSort, N[i] - 1, sortComparisons[i], sortSwaps[i]);
+      
       finalTime = clock();
       float totalTime = (finalTime - startTime) / (float)CLOCKS_PER_SEC;
-      
+
       sortSwaps[i] += sortSwaps[i];
       sortComparisons[i] += sortComparisons[i];
       sortTime[i] += totalTime;
@@ -208,26 +233,23 @@ void Testing::StatisticalAnalysis(int M)
 
   int saidaSelecionada = SelecionarSaida();
 
-  if (saidaSelecionada == 10)
-  {
-    saida.open("saida.txt", ios::app);
-  }
+  Exit(M, N, algoritmoSelecionado, saidaSelecionada, sortTime, sortComparisons, sortSwaps);
 
-  if (algoritmoSelecionado == 1)
+  /*if (algoritmoSelecionado == 1)
   {
     for (int j = 0; j < 5; j++)
     {
-      timeAvgMerge[j] = mergeTime[j] / 5;
-      comparisonsAvgMerge[j] = mergeComparisons[j] / 5;
-      swapsAvgMerge[j] = mergeSwaps[j] / 5;
+      timeAvgSort[j] = sortTime[j] / 5;
+      comparisonsAvgSort[j] = sortComparisons[j] / 5;
+      swapsAvgSort[j] = sortSwaps[j] / 5;
 
       if (saidaSelecionada == 10)
       {
 
         saida << "Os resultados do algoritmo MergeSort para um vetor randomico de tamanho " << N[j] << " foram: " << endl;
-        saida << "Media de tempo dos " << M << " conjuntos: " << timeAvgMerge[j] << endl;
-        saida << "Media de comparacoes dos " << M << " conjuntos: " << comparisonsAvgMerge[j] << endl;
-        saida << "Media de trocas dos " << M << " conjuntos: " << swapsAvgMerge[j] << endl;
+        saida << "Media de tempo dos " << M << " conjuntos: " << timeAvgSort[j] << endl;
+        saida << "Media de comparacoes dos " << M << " conjuntos: " << comparisonsAvgSort[j] << endl;
+        saida << "Media de trocas dos " << M << " conjuntos: " << swapsAvgSort[j] << endl;
 
         saida << "-------------------------------------------------------------------------------" << endl;
       }
@@ -235,14 +257,14 @@ void Testing::StatisticalAnalysis(int M)
       else
       {
         cout << "Os resultados do algoritmo MergeSort para um vetor randomico de tamanho " << N[j] << " foram: " << endl;
-        cout << "Media de tempo dos " << M << " conjuntos: " << timeAvgMerge[j] << endl;
-        cout << "Media de comparacoes dos " << M << " conjuntos: " << comparisonsAvgMerge[j] << endl;
-        cout << "Media de trocas dos " << M << " conjuntos: " << swapsAvgMerge[j] << endl;
+        cout << "Media de tempo dos " << M << " conjuntos: " << timeAvgSort[j] << endl;
+        cout << "Media de comparacoes dos " << M << " conjuntos: " << comparisonsAvgSort[j] << endl;
+        cout << "Media de trocas dos " << M << " conjuntos: " << swapsAvgSort[j] << endl;
 
         cout << "-------------------------------------------------------------------------------" << endl;
       }
     }
-  }
+  }*/
 
   /*if (algoritmoSelecionado == 2)
   {

@@ -98,6 +98,7 @@ void Sorting::mergeSort(vector<CovidInfo> &covidInfoList, int p, int r)
     if (p < r - 1)
     {
         int q = (p + r) / 2;
+        
         mergeSort(covidInfoList, p, q); ///chama de p a q
         mergeSort(covidInfoList, q, r); ///chama de q a r
         merge(covidInfoList, p, q, r);
@@ -124,12 +125,12 @@ void Sorting::shellSortCases(vector<CovidInfo> &covidInfoList, int n, int &compa
             j = i;  
             // efetua comparações entre elementos com distância h:
             comparisons++;
-            while (j>=h && aux.cases < covidInfoList.at(j - h).cases)
+            while (j >= h && aux.cases < covidInfoList.at(j - h).cases)
             {
                 covidInfoList.at(j) = covidInfoList.at(j-h);
                 j -= h; // atualiza valor de j
                 swaps++;
-                if(j!=0)
+                if( j != 0)
                 {
                     comparisons++;
                 }
