@@ -77,7 +77,7 @@ int Testing::SelecionarAlgoritmo()
 
   cin >> algoritmoSelecionado;
 
-  while (algoritmoSelecionado != 1 && algoritmoSelecionado != 2  && algoritmoSelecionado != 3)
+  while (algoritmoSelecionado != 1 && algoritmoSelecionado != 2 && algoritmoSelecionado != 3)
   {
     cout << "Digite um numero valido!" << endl;
     cin >> algoritmoSelecionado;
@@ -103,32 +103,31 @@ void Testing::PreProcessing(string filename, clock_t &processingTime)
   clock_t tempo_termino = clock();
   processingTime = (tempo_termino - tempo_inicio) / ((float)CLOCKS_PER_SEC);
   //Para desalocar o vector da memória
-  processedFile = vector<CovidInfo>();  
-
+  processedFile = vector<CovidInfo>();
 }
 
 void Testing::executeSorting(int choice, vector<CovidInfo> *covidInfoSet)
 {
   Sorting sorting;
-  int comparacoes,trocas;
+  int comparacoes = 0, trocas = 0;
   switch (choice)
   {
   case 1:
-    sorting.mergeSortCases(*covidInfoSet, 0, covidInfoSet->size() , comparacoes,trocas );
+    sorting.mergeSortCases(*covidInfoSet, 0, covidInfoSet->size(), comparacoes, trocas);
     break;
   case 2:
-    sorting.shellSortCases(*covidInfoSet, covidInfoSet->size() , comparacoes,trocas);
+    sorting.shellSortCases(*covidInfoSet, covidInfoSet->size(), comparacoes, trocas);
     break;
   case 3:
-    sorting.quickSort(*covidInfoSet,0,covidInfoSet->size() , 'c');
+    sorting.quicksortXD(*covidInfoSet, 0, covidInfoSet->size(), comparacoes, trocas);
     break;
   default:
     break;
   }
 }
 
-
-int Testing::selectFirstPhase(){
+int Testing::selectFirstPhase()
+{
   int option;
 
   cout << "-------------------------------------------------------------------------------------" << endl;
@@ -185,13 +184,12 @@ void Testing::execute(string filename)
   CovidStatistics statistics;
   clock_t tempo_processamento = clock();
   int firstPhase = selectFirstPhase();
-  if(firstPhase == 1)
-  this->PreProcessing(filename , tempo_processamento);
+  if (firstPhase == 1)
+    this->PreProcessing(filename, tempo_processamento);
   vector<CovidInfo> processedCovidInfo = this->selectRandomCases();
-  this->executeSorting(SelecionarAlgoritmo(),&processedCovidInfo);
+  this->executeSorting(SelecionarAlgoritmo(), &processedCovidInfo);
   int saida = this->SelecionarSaida();
-  writeOutFile(processedCovidInfo,saida);
-  
+  writeOutFile(processedCovidInfo, saida);
 }
 void Testing::StatisticalAnalysis(int M)
 {
@@ -220,9 +218,9 @@ void Testing::StatisticalAnalysis(int M)
 
       startTime = clock();
       //algoritmoSelecionado == 1 ? Sort->mergeSortCases(toSort, 0, N[i] - 1, sortComparisons[i], sortSwaps[i]) : algoritmoSelecionado == 2 ? Sort->shellSortCases(toSort, N[i] - 1, sortComparisons[i], sortSwaps[i]);
-                                                                                                                                          /*: Sort->quickSort(toSort, N[i] - 1, sortComparisons[i], sortSwaps[i]);*/
+      /*: Sort->quickSort(toSort, N[i] - 1, sortComparisons[i], sortSwaps[i]);*/
       algoritmoSelecionado == 1 ? Sort->mergeSortCases(toSort, 0, N[i] - 1, sortComparisons[i], sortSwaps[i]) : Sort->shellSortCases(toSort, N[i] - 1, sortComparisons[i], sortSwaps[i]);
-      
+
       finalTime = clock();
       float totalTime = (finalTime - startTime) / (float)CLOCKS_PER_SEC;
 
@@ -250,39 +248,37 @@ void Testing::StatisticalAnalysis(int M)
   if (saidaSelecionada == 10)
     exit.open("saida.txt", ios::app);
 
-  algoritmoSelecionado == 1 ? nomeAlgoritmo = "MergeSort" : algoritmoSelecionado == 2 ? nomeAlgoritmo = "ShellSort"
-                                                                                      : nomeAlgoritmo = "QuickSort";
+  algoritmoSelecionado == 1 ? nomeAlgoritmo = "MergeSort" : algoritmoSelecionado == 2 ? nomeAlgoritmo = "ShellSort" : nomeAlgoritmo = "QuickSort";
 
   for (int i = 0; i < 5; i++)
+  {
+    timeAvgSort[i] = sortTime[i] / 5;
+    comparisonsAvgSort[i] = sortComparisons[i] / 5;
+    swapsAvgSort[i] = sortSwaps[i] / 5;
+
+    if (saidaSelecionada == 10)
     {
-      timeAvgSort[i] = sortTime[i] / 5;
-      comparisonsAvgSort[i] = sortComparisons[i] / 5;
-      swapsAvgSort[i] = sortSwaps[i] / 5;
 
-      if (saidaSelecionada == 10)
-      {
+      exit << "Os resultados do algoritmo " << nomeAlgoritmo << " para um vetor randomico de tamanho " << N[i] << " foram: " << endl;
+      exit << "Media de tempo dos " << M << " conjuntos: " << timeAvgSort[i] << endl;
+      exit << "Media de comparacoes dos " << M << " conjuntos: " << comparisonsAvgSort[i] << endl;
+      exit << "Media de trocas dos " << M << " conjuntos: " << swapsAvgSort[i] << endl;
 
-        exit << "Os resultados do algoritmo " << nomeAlgoritmo << " para um vetor randomico de tamanho " << N[i] << " foram: " << endl;
-        exit << "Media de tempo dos " << M << " conjuntos: " << timeAvgSort[i] << endl;
-        exit << "Media de comparacoes dos " << M << " conjuntos: " << comparisonsAvgSort[i] << endl;
-        exit << "Media de trocas dos " << M << " conjuntos: " << swapsAvgSort[i] << endl;
-
-        exit << "-------------------------------------------------------------------------------" << endl;
-
-      }
-
-      else
-      {
-        cout << "Os resultados do algoritmo " << nomeAlgoritmo << " para um vetor randomico de tamanho " << N[i] << " foram: " << endl;
-        cout << "Media de tempo dos " << M << " conjuntos: " << timeAvgSort[i] << endl;
-        cout << "Media de comparacoes dos " << M << " conjuntos: " << comparisonsAvgSort[i] << endl;
-        cout << "Media de trocas dos " << M << " conjuntos: " << swapsAvgSort[i] << endl;
-
-        cout << "-------------------------------------------------------------------------------" << endl;
-      }
+      exit << "-------------------------------------------------------------------------------" << endl;
     }
 
-    exit.close();
+    else
+    {
+      cout << "Os resultados do algoritmo " << nomeAlgoritmo << " para um vetor randomico de tamanho " << N[i] << " foram: " << endl;
+      cout << "Media de tempo dos " << M << " conjuntos: " << timeAvgSort[i] << endl;
+      cout << "Media de comparacoes dos " << M << " conjuntos: " << comparisonsAvgSort[i] << endl;
+      cout << "Media de trocas dos " << M << " conjuntos: " << swapsAvgSort[i] << endl;
+
+      cout << "-------------------------------------------------------------------------------" << endl;
+    }
+  }
+
+  exit.close();
 
   cout << "-------------------------------------------------------------------------------" << endl;
 }

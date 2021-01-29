@@ -6,7 +6,11 @@
 using namespace std;
 
 //Para Armazenamento a ser processado
-CovidInfo::CovidInfo(string date,string state,string city , int code , int cases , int deaths)
+CovidInfo::CovidInfo()
+{
+}
+
+CovidInfo::CovidInfo(string date, string state, string city, int code, int cases, int deaths)
 {
 
   this->date = date;
@@ -18,7 +22,7 @@ CovidInfo::CovidInfo(string date,string state,string city , int code , int cases
 }
 
 //Para Armazenamento do arquivo processado
-CovidInfo::CovidInfo(string date,string state,string city , int code , int cases , int totalCases, int deaths)
+CovidInfo::CovidInfo(string date, string state, string city, int code, int cases, int totalCases, int deaths)
 {
 
   this->date = date;
@@ -30,9 +34,8 @@ CovidInfo::CovidInfo(string date,string state,string city , int code , int cases
   this->deaths = deaths;
 }
 
-
-CovidInfo::~CovidInfo(){
- 
+CovidInfo::~CovidInfo()
+{
 }
 
 void CovidInfo::printInfo()
@@ -42,5 +45,3 @@ void CovidInfo::printInfo()
   cout << "Cidade" << city << endl;
   cout << "Code" << code << endl;
 }
-
-
