@@ -143,7 +143,7 @@ void Sorting::quickSort(vector<CovidInfo> &covidInfoList, int p, int q, char t) 
     {
         if (t == 'c')
         {
-            r = particaoCases(covidInfoList, p, q);
+            r = particaoCases_r(covidInfoList, p, q);
             quickSort(covidInfoList, p, r);  
             quickSort(covidInfoList, r+1, q);
         }
@@ -259,6 +259,16 @@ void Sorting::quickSortDates(vector<CovidInfo> &covidInfoList, int p, int q)
             dIt++;
         }
     }
+}
+
+int Sorting::particaoCases_r(vector<CovidInfo> &covidInfoList, int p, int q)
+{
+    srand (time(NULL));
+    int r = rand()%((q - p) + 1) + p;
+    
+    swap(covidInfoList[r], covidInfoList[q]);
+
+    return particaoCases(covidInfoList, p, q);
 }
 
 int Sorting::particaoCases(vector<CovidInfo> &covidInfoList, int p, int q)

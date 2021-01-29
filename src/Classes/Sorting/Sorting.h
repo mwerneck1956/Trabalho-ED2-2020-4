@@ -5,6 +5,7 @@
 #include <fstream>
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 
 using namespace std;
 
@@ -28,6 +29,7 @@ class Sorting
         void quickSortCities(vector<CovidInfo> &covidInfoList, int p, int q);
         void quickSortDates(vector<CovidInfo> &covidInfoList, int p, int q);
         int particaoCases(vector<CovidInfo> &covidInfoList, int p, int q);
+        int particaoCases_r(vector<CovidInfo> &covidInfoList, int p, int q);
         int particaoStates(vector<CovidInfo> &covidInfoList, int p, int q);
         int particaoCities(vector<CovidInfo> &covidInfoList, int p, int q);
         int particaoDates(vector<CovidInfo> &covidInfoList, int p, int q);
