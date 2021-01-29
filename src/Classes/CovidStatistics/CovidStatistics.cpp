@@ -66,7 +66,7 @@ void CovidStatistics::dailyCasesTotalizers(vector<CovidInfo> covidInfoList){
           i++;
         }
     
-        lastDayCases =0;
+        lastDayCases = 0;
     }
     covidInfoList.clear();
     covidInfoList.shrink_to_fit();

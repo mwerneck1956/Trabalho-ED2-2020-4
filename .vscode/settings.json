@@ -8,6 +8,9 @@
         "string": "cpp",
         "locale": "cpp",
         "iosfwd": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "vector": "cpp",
+        "random": "cpp",
+        "xstring": "cpp"
     }
 }

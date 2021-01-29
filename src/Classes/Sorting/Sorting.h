@@ -19,10 +19,10 @@ class Sorting
         void mergeSort(vector<CovidInfo> &covidInfoList, int p, int r);
         void imprimirInformacoes(vector<CovidInfo> covidInfoList, int tam, float tempoExecucao);
         void shellSortStateCityDate(vector<CovidInfo> &convidInfoList, int n);
-        void shellSortCases(vector<CovidInfo> &convidInfoList, int n);
+        void shellSortCases(vector<CovidInfo> &convidInfoList, int n, int &comparisons, int &swaps);
         void imprimir(vector<CovidInfo> covidInfoList, int tam);
-        void mergeCases(vector<CovidInfo> &covidInfoList, int p, int q, int r);
-        void mergeSortCases(vector<CovidInfo> &covidInfoList, int p, int r);
+        void mergeCases(vector<CovidInfo> &covidInfoList, int p, int q, int r, int &comparisons, int &swaps);
+        void mergeSortCases(vector<CovidInfo> &covidInfoList, int p, int r, int &comparisons, int &swaps);
         
 
         void quickSort(vector<CovidInfo> &covidInfoList, int p, int q, char t = 'c'); //'c' para ordenar por casos, 's' para State-City-Date
