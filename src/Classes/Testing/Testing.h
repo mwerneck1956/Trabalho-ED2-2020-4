@@ -24,6 +24,7 @@ public:
   void SelectRandomCases();
   void Execute(string filename);
   void StatisticalAnalysis(int M);
+  void arquivoSaida();
   
   
 };

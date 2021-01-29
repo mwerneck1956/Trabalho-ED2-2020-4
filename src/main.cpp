@@ -17,6 +17,6 @@ int main(int argc, char **argv)
   setlocale(LC_CTYPE, "");
   Testing test;
   test.Execute(argv[1] != NULL ? argv[1] : "brazil_covid19_cities.csv");
-  test.StatisticalAnalysis(6);
+  test.StatisticalAnalysis(10);
   return 0;
 }
