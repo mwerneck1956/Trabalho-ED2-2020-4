@@ -17,21 +17,20 @@ using namespace std;
 class Testing
 {
 private:
-
-public: 
+public:
   Testing();
   int SelecionarSaida();
   int SelecionarAlgoritmo();
   vector<CovidInfo> selectRandomCases();
   void execute(string filename);
-  void executeSorting(int choice , vector<CovidInfo> *covidInfoSet);
+  void executeSorting(int choice, vector<CovidInfo> *covidInfoSet);
   int selectFirstPhase();
-  void writeOutFile(vector<CovidInfo> &data , int out);
-  void PreProcessing(string filename , clock_t &processingTime);
+  void writeOutFile(vector<CovidInfo> &data, int out);
+  void PreProcessing(string filename, clock_t &processingTime);
   void SelectRandomCases();
   void Execute(string filename);
   void StatisticalAnalysis(int M);
-  
+  void estatisticaDePobre(int M);
 };
 
 #endif
