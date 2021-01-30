@@ -47,10 +47,10 @@ vector<CovidInfo> Testing::selectRandomCases()
   //@todo mudar para casos fixos 10.000,50.000,100.000,500.000,1.000.000
   cout << "-------------------------------------------------------------------------------" << endl;
   cout << "Selecione o numero de instâncias para teste" << endl;
-  cout << "Obs: (deve ser um numero entre 1 e 1000000)" << endl;
+  cout << "Obs: (deve ser um numero entre 1 e 1400000)" << endl;
   cout << "-------------------------------------------------------------------------------" << endl;
   cin >> n;
-  while (n <= 1 || n >= 1000000)
+  while (n <= 1 || n > 1400000)
   {
     cout << "Opção invalida" << endl;
     cin >> n;
@@ -86,22 +86,30 @@ int Testing::SelecionarAlgoritmo()
   return algoritmoSelecionado;
 }
 
+//Faz o pre processamento do csv base , e retorna o tamanho do vetor processado gerado
 void Testing::PreProcessing(string filename, clock_t &processingTime)
 {
   Sorting sorting;
   FileHandler *FileReader = new FileHandler();
   CovidStatistics statistics;
   clock_t tempo_inicio = clock();
+
   //Abre o arquivo de texto , desmembra o mesmo , e salva em um vector de CovidInfo
   vector<CovidInfo> processedFile = FileReader->csvHandler(filename != "" ? filename : "brazil_covid19_cities.csv");
+
   cout << "Arquivo Desmembrado com Sucesso" << endl;
+
   //Ordenação do vetor por (Estado,Cidade) e data.
   sorting.shellSortStateCityDate(processedFile, processedFile.size());
+
   //Geração do novo arquivo csv com os dados processados
   statistics.dailyCasesTotalizers(processedFile);
+
   cout << "Arquivo pre-processado com sucesso!" << endl;
+
   clock_t tempo_termino = clock();
   processingTime = (tempo_termino - tempo_inicio) / ((float)CLOCKS_PER_SEC);
+
   //Para desalocar o vector da memória
   processedFile = vector<CovidInfo>();
 }
@@ -109,34 +117,47 @@ void Testing::PreProcessing(string filename, clock_t &processingTime)
 void Testing::executeSorting(int choice, vector<CovidInfo> *covidInfoSet)
 {
   Sorting sorting;
-  int comparacoes = 0, trocas = 0;
+  int comparisons = 0, swaps = 0;
+  clock_t startTime, finalTime;
+  startTime = clock();
   switch (choice)
   {
   case 1:
-    sorting.mergeSortCases(*covidInfoSet, 0, covidInfoSet->size(), comparacoes, trocas);
+    sorting.mergeSortCases(*covidInfoSet, 0, covidInfoSet->size(), comparisons, swaps);
     break;
   case 2:
-    sorting.shellSortCases(*covidInfoSet, covidInfoSet->size(), comparacoes, trocas);
+    sorting.shellSortCases(*covidInfoSet, covidInfoSet->size(), comparisons, swaps);
     break;
   case 3:
-    sorting.quicksortXD(*covidInfoSet, 0, covidInfoSet->size(), comparacoes, trocas);
+    sorting.quicksortXD(*covidInfoSet, 0, covidInfoSet->size(), comparisons, swaps);
     break;
   default:
     break;
   }
+  finalTime = clock();
+  cout << "----------------------------------------------------" << endl;
+  cout << "Ordenação Finalizada" << endl;
+  cout << "----------------------------------------------------" << endl;
+  cout << "Tempo de Processamento : " << (finalTime - startTime) / ((float)CLOCKS_PER_SEC) << " segundos" << endl;
+  cout << "Número de Comparações : " << comparisons << endl;
+  cout << "Número de Trocas : " << swaps << endl;
+  cout << "----------------------------------------------------" << endl;
 }
 
 int Testing::selectFirstPhase()
 {
   int option;
 
-  cout << "-------------------------------------------------------------------------------------" << endl;
-  cout << "Processamento dos Dados: " << endl;
+  cout << "-------------------------------------------------------------------------------------------" << endl;
+  cout << "Processamento dos Dados" << endl
+       << endl;
   cout << "O Arquivo processado sera salvo no arquivo :  brazil_covid19_cities_processado.csv" << endl;
-  cout << "------------------------------------------------------------------------------------" << endl;
+  cout << "--------------------------------------------------------------------------------------------" << endl;
 
   cout << "Digite [1] para comecar o processamento do arquivo csv" << endl;
   cout << "Digite [2] para pular o pre-processamento(Somente se ja tiver o arquivo pre-processado salvo)" << endl;
+  cout << "---------------------------------------------------------------------------------------------" << endl;
+
   cin >> option;
   while (option != 1 && option != 2)
   {

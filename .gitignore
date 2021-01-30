@@ -6,12 +6,13 @@
 *.o
 *.obj
 
+
 #Covid csv
 *brazil_covid19_cities.csv
 *.csv
 
 #Txts
-*dailyCases.txt
+.txt
 
 *main
 
