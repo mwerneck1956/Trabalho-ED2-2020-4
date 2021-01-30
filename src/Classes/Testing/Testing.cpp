@@ -361,6 +361,8 @@ void Testing::estatisticaDePobre(int M)
       vector<CovidInfo>().swap(toSort);
 
       toSort = notSorted;
+      comparisonsQuick[i]=0;
+      swapsQuick[i]=0;
       startTime = clock();
       Sort->quicksortXD(toSort, 0, N[i] - 1, comparisonsQuick[i], swapsQuick[i]);
       finalTime = clock();
