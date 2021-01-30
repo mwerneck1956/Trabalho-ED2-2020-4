@@ -403,6 +403,11 @@ void Testing::estatisticaDePobre(int M)
       contadorSwapsQuick[i] += swapsQuick[i];
       contadorComparacoesQuick[j] += comparisonsQuick[i];
       quickTime[i] += totalTime;
+
+      notSorted.clear();
+      notSorted.shrink_to_fit();
+      toSort.clear();
+      toSort.shrink_to_fit();
     }
   }
 
