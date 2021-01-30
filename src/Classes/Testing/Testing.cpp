@@ -152,12 +152,12 @@ int Testing::selectFirstPhase()
   cout << "Processamento dos Dados" << endl
        << endl;
   cout << "O Arquivo processado sera salvo no arquivo :  brazil_covid19_cities_processado.csv" << endl;
-  cout << "--------------------------------------------------------------------------------------------" << endl;
+  cout << "---------------------------------------------------------------------------------------------------------------------------------" << endl;
 
   cout << "Digite [1] para comecar o processamento do arquivo csv" << endl;
-  cout << "Digite [2] para pular o pre-processamento(Somente se ja tiver o arquivo pre-processado salvo)" << endl;
+  cout << "Digite [2] para pular o pre-processamento(Somente se ja tiver o arquivo pre-processado salvo) e ir direto para o modulo de testes" << endl;
   cout << "Digite [3] para ir para o modulo de estatisticas(Somente se ja tiver o arquivo pre-processado salvo)" << endl;
-  cout << "---------------------------------------------------------------------------------------------" << endl;
+  cout << "---------------------------------------------------------------------------------------------------------------------------------" << endl;
 
   cin >> option;
   while (option < 1 && option > 3)
