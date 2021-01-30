@@ -166,10 +166,7 @@ void Sorting::shellSortCases(vector<CovidInfo> &covidInfoList, int n, int &compa
                 covidInfoList.at(j) = covidInfoList.at(j - h);
                 j -= h; // atualiza valor de j
                 swaps++;
-                if (j != 0)
-                {
-                    comparisons++;
-                }
+                comparisons++;              
             }
             covidInfoList.at(j) = aux;
         }
