@@ -29,11 +29,7 @@
 👤 **Pedro Henrique**
 
 * Github: [@PHenriqueCEC](https://github.com/PHenriqueCEC)
-* LinkedIn: [https://www.linkedin.com/in/pedro-henrique-77baa01a9/](https://www.linkedin.com/in/pedro-henrique-77baa01a9/)
-
-
-
-
+* LinkedIn: [Pedro Henrique](https://www.linkedin.com/in/pedro-henrique-77baa01a9/)
 
 # Como rodar o projeto em ambiente linux
 

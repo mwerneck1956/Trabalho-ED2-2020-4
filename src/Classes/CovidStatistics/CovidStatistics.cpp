@@ -39,10 +39,12 @@ void CovidStatistics::push(CovidInfo* line){
 void CovidStatistics::dailyCasesTotalizers(vector<CovidInfo> covidInfoList){
     std::ofstream outfile("brazil_covid19_cities_processado.csv");
     int lastDayCases = 0 , dailyTotalCases = 0;
+    //Montando header do csv gerado
     outfile << "date," << "state," <<  "city," << "code," << "dailyCases," << "totalCases," << "deaths," << endl;
     for (int i = 0 ; i < covidInfoList.size() ; i++){
         string baseCity = covidInfoList.at(i).city;
         dailyTotalCases = 0;
+        //Escrevendo cada dado em uma linha do csv gerado
         while(i < covidInfoList.size()){
           lastDayCases = i >= 1 ? covidInfoList.at(i - 1).cases : 0;
           dailyTotalCases = covidInfoList.at(i).cases;
@@ -59,6 +61,8 @@ void CovidStatistics::dailyCasesTotalizers(vector<CovidInfo> covidInfoList){
     
         lastDayCases = 0;
     }
+
+    //Desalocação da memória do vector usado
     covidInfoList.clear();
     covidInfoList.shrink_to_fit();
   
