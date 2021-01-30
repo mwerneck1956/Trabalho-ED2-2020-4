@@ -36,15 +36,6 @@ void CovidStatistics::push(CovidInfo* line){
   this->covidInfoList.push_back(*line);
 }
 
-void CovidStatistics::printDates()
-{
-  cout << "Cidades com mais de 100k casos " << endl;
-  for (int i = 0; i < 8 ; i++)
-  { 
-      cout << "Cidade : " << covidInfoList.at(i).city << " Estado : " << covidInfoList.at(i).state << endl;
-  }
-}
-
 void CovidStatistics::dailyCasesTotalizers(vector<CovidInfo> covidInfoList){
     std::ofstream outfile("brazil_covid19_cities_processado.csv");
     int lastDayCases = 0 , dailyTotalCases = 0;

@@ -23,7 +23,6 @@ class CovidStatistics
     void setCovidInfoList(vector<CovidInfo> covidList);
     vector<CovidInfo> getCovidInfoList();
     void push(CovidInfo* line);
-    void printDates();
     void dailyCasesTotalizers(vector<CovidInfo> covidInfoList);
 };
 

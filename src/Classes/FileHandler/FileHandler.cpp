@@ -14,7 +14,6 @@ vector<CovidInfo> FileHandler::getNCovidInfos(int n){
   string date, state, city,code, dailyCases,totalCases , deaths,line;
   ifstream arq("brazil_covid19_cities_processado.csv");
   int linesProcessed = 0;
-  //CovidInfo* = new CovidInfo[n];
   vector<CovidInfo> file;
   if (arq.is_open())
   {
