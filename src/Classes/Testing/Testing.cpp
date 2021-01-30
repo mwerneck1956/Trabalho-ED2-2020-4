@@ -156,10 +156,11 @@ int Testing::selectFirstPhase()
 
   cout << "Digite [1] para comecar o processamento do arquivo csv" << endl;
   cout << "Digite [2] para pular o pre-processamento(Somente se ja tiver o arquivo pre-processado salvo)" << endl;
+  cout << "Digite [3] para ir para o modulo de estatisticas(Somente se ja tiver o arquivo pre-processado salvo)" << endl;
   cout << "---------------------------------------------------------------------------------------------" << endl;
 
   cin >> option;
-  while (option != 1 && option != 2)
+  while (option < 1 && option > 3)
   {
     cout << "Digite uma opcao valida!" << endl;
     cin >> option;
@@ -204,13 +205,24 @@ void Testing::execute(string filename)
   Sorting sorting;
   CovidStatistics statistics;
   clock_t tempo_processamento = clock();
+
   int firstPhase = selectFirstPhase();
+
   if (firstPhase == 1)
     this->PreProcessing(filename, tempo_processamento);
-  vector<CovidInfo> processedCovidInfo = this->selectRandomCases();
-  this->executeSorting(SelecionarAlgoritmo(), &processedCovidInfo);
-  int saida = this->SelecionarSaida();
-  writeOutFile(processedCovidInfo, saida);
+  else if (firstPhase == 2)
+  {
+    vector<CovidInfo> processedCovidInfo = this->selectRandomCases();
+    this->executeSorting(SelecionarAlgoritmo(), &processedCovidInfo);
+    int saida = this->SelecionarSaida();
+    writeOutFile(processedCovidInfo, saida);
+  }
+  else{
+    int m = 5;
+    cout  << "Digite o valor de M para o calculo das estatisticas" << endl;
+    cin >> m;
+    this->estatisticaDePobre(m); 
+  }
 }
 void Testing::StatisticalAnalysis(int M)
 {
@@ -382,8 +394,8 @@ void Testing::estatisticaDePobre(int M)
       vector<CovidInfo>().swap(toSort);
 
       toSort = notSorted;
-      comparisonsQuick[i]=0;
-      swapsQuick[i]=0;
+      comparisonsQuick[i] = 0;
+      swapsQuick[i] = 0;
       startTime = clock();
       Sort->quicksortXD(toSort, 0, N[i] - 1, comparisonsQuick[i], swapsQuick[i]);
       finalTime = clock();

@@ -1,600 +1,600 @@
 
-2020-04-12
-AM-Tapauá
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-03-29
-AM-Guajará
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-08-16
-BA-Ipupiara
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-27
-BA-Arataca
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-05
-BA-Anguera
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-06-09
-BA-Contendas do Sincorá
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-05-24
-BA-Central
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-19
-AM-Japurá
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-14
-BA-Ibicuí
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-17
-BA-Barra do Mendes
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-06-21
-BA-Canápolis
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-08-09
-BA-Ipupiara
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-03
-AL-Olho d'Água do Casado
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-08
-BA-Caturama
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-16
-AL-Major Isidoro
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-15
-BA-Bom Jesus da Serra
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-01
-BA-Abaíra
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-05
-AC-Sena Madureira
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-03-27
-AC-Mâncio Lima
-Novos Casos : -689
-Casos Totais : 0
-Mortes : 0
-
-2020-05-13
-BA-Casa Nova
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-05-06
-BA-Caetité
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-18
-AL-São José da Tapera
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-07
-AL-Maribondo
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-05-31
-BA-Guajeru
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-20
-BA-Cotegipe
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-11
-BA-Iraquara
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-05-22
-BA-Candeal
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-08
-BA-Barrocas
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-05-05
-BA-Caetité
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-05-01
-AM-Boa Vista do Ramos
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-01
-AL-Barra de Santo Antônio
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-05-30
-BA-Antas
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
 2020-04-06
-AL-Joaquim Gomes
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-06
-BA-Baianópolis
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-05
-AC-Capixaba
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-05-12
-BA-Andaraí
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-27
-AL-Mar Vermelho
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-20
-BA-Ibitiara
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-05-10
-BA-Dom Macedo Costa
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-05
-BA-Catolândia
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-08
-BA-Barra do Mendes
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-18
-AL-Quebrangulo
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-28
-BA-Cairu
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-10
-BA-Coribe
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-03-29
-AL-Piranhas
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-03-27
-AM-Careiro
-Novos Casos : -3650
-Casos Totais : 0
-Mortes : 0
-
-2020-06-13
-BA-Ichu
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-07-15
-BA-Ibiquera
+PR-Cerro Azul
 Novos Casos : 0
 Casos Totais : 0
 Mortes : 0
 
 2020-04-12
-AP-Tartarugalzinho
+RN-Pedra Grande
 Novos Casos : 0
 Casos Totais : 0
 Mortes : 0
 
-2020-05-22
-BA-Barro Alto
+2020-03-30
+MG-Ubaporanga
 Novos Casos : 0
 Casos Totais : 0
 Mortes : 0
 
-2020-04-07
-BA-Cordeiros
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-19
-AL-Igaci
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-25
-BA-Anagé
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-06-08
-BA-Ichu
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-14
-BA-Ibitiara
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-20
-BA-Central
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-07-08
-BA-Contendas do Sincorá
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-05-15
-AL-Passo de Camaragibe
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-05
-AL-Dois Riachos
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-03-29
-AL-Belém
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-05-25
-AC-Manoel Urbano
-Novos Casos : -1
-Casos Totais : 0
-Mortes : 0
-
-2020-05-18
-BA-Caravelas
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-12
-AL-São José da Tapera
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-05-20
-BA-Gavião
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-11
-BA-Banzaê
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-05-13
-AL-Ouro Branco
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-24
-AL-Penedo
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-05-12
-BA-Aramari
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-05-19
-BA-Carinhanha
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-05
-BA-Brejolândia
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-17
-AL-Anadia
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-05
-AL-Viçosa
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-10
-BA-Andaraí
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-05-17
-BA-Formosa do Rio Preto
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-15
-BA-Boa Vista do Tupim
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-05-05
-BA-Anguera
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-04
-BA-Brejolândia
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-05-29
-BA-Elísio Medrado
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-11
-AL-Pariconha
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-23
-BA-Dom Basílio
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-14
-BA-Iramaia
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-07-02
-BA-Ibititá
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-07-11
-BA-Contendas do Sincorá
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-16
-AC-Xapuri
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-05-14
-BA-Caetité
+2020-06-11
+PI-Massapê do Piauí
 Novos Casos : 0
 Casos Totais : 0
 Mortes : 0
 
 2020-03-31
-AL-Dois Riachos
+BA-Santo Estêvão
 Novos Casos : 0
 Casos Totais : 0
 Mortes : 0
 
-2020-03-27
-AL-Porto de Pedras
-Novos Casos : -433
-Casos Totais : 0
-Mortes : 0
-
-2020-04-18
-BA-Central
+2020-04-07
+MT-Cláudia
 Novos Casos : 0
 Casos Totais : 0
 Mortes : 0
 
-2020-04-21
-BA-Antônio Cardoso
+2020-04-15
+MG-Acaiaca
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-12
+PR-Honório Serpa
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-30
+BA-Itarantim
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-09
+GO-Portelândia
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-22
+RS-Vale Real
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-12
+SP-Cerqueira César
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-10
+PE-Bodocó
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-29
+MG-Perdizes
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-18
+MS-Taquarussu
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-07-22
+BA-Novo Horizonte
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-09
+PR-Salto do Lontra
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-06-17
+MT-Itaúba
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-10
+PI-Ribeiro Gonçalves
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-05
+RN-Lagoa Nova
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-11
+MG-Coroaci
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-06-13
+PR-Bela Vista da Caroba
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-29
+RS-Engenho Velho
 Novos Casos : 0
 Casos Totais : 0
 Mortes : 0
 
 2020-04-30
-BA-Anagé
+PR-Iporã
 Novos Casos : 0
 Casos Totais : 0
 Mortes : 0
 
-2020-04-09
-BA-Heliópolis
+2020-05-19
+PR-Diamante do Sul
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-06-07
+PR-São Jorge do Ivaí
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-06
+MG-Acaiaca
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-06-14
+RS-Boqueirão do Leão
 Novos Casos : 0
 Casos Totais : 0
 Mortes : 0
 
 2020-04-14
-BA-Caetanos
+AL-Major Isidoro
 Novos Casos : 0
 Casos Totais : 0
 Mortes : 0
 
-2020-05-02
-BA-Chorrochó
+2020-03-31
+BA-Guajeru
 Novos Casos : 0
 Casos Totais : 0
 Mortes : 0
 
-2020-04-14
-BA-Itaju do Colônia
+2020-04-22
+PB-Vieirópolis
 Novos Casos : 0
 Casos Totais : 0
 Mortes : 0
 
-2020-04-08
-AL-Matriz de Camaragibe
+2020-05-11
+RS-Vespasiano Corrêa
 Novos Casos : 0
 Casos Totais : 0
 Mortes : 0
 
-2020-05-08
-BA-Anagé
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-02
-BA-Iaçu
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-18
-BA-Iramaia
-Novos Casos : 0
-Casos Totais : 0
-Mortes : 0
-
-2020-04-18
-BA-Buritirama
+2020-04-22
+MA-São João dos Patos
 Novos Casos : 0
 Casos Totais : 0
 Mortes : 0
 
 2020-04-19
-BA-Dário Meira
+PA-Igarapé-Miri
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-17
+MA-São Francisco do Brejão
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-06-22
+MG-São José da Varginha
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-09
+SP-Timburi
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-05
+CE-Guaiúba
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-06-09
+PR-Bom Sucesso do Sul
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-12
+SP-Cabrália Paulista
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-29
+MT-Juruena
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-06
+SE-Santo Amaro das Brotas
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-14
+MG-Datas
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-19
+MG-Carandaí
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-09
+RS-Vale Verde
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-06-17
+RS-Campos Borges
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-12
+RJ-Rio Claro
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-12
+PR-Marilena
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-26
+SE-Telha
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-01
+SP-Ilhabela
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-13
+AM-Itapiranga
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-30
+SP-Ribeirão do Sul
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-04
+PB-Borborema
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-24
+MG-Baependi
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-25
+SP-Pongaí
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-25
+MG-Wenceslau Braz
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-29
+GO-Rubiataba
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-07-14
+PR-Flor da Serra do Sul
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-03
+SC-Balneário Rincão
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-18
+MG-São José do Mantimento
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-06-17
+GO-Panamá
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-01
+RS-Entre-Ijuís
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-18
+PI-Água Branca
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-04
+RS-Butiá
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-25
+SP-Floreal
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-07
+PI-Francisco Macedo
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-06-16
+MT-Carlinda
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-11
+PB-Tenório
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-24
+BA-Novo Triunfo
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-06-27
+RS-Fagundes Varela
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-04
+PI-Arraial
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-24
+PR-Presidente Castelo Branco
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-31
+MT-São José dos Quatro Marcos
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-06-05
+MG-São Pedro dos Ferros
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-03
+PI-Jaicós
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-22
+CE-Orós
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-06-04
+PB-Poço Dantas
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-17
+SC-Jacinto Machado
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-14
+SP-Fernandópolis
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-06-17
+MS-Rochedo
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-13
+GO-Três Ranchos
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-01
+MG-Urucânia
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-15
+SC-Palma Sola
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-18
+PR-Mandaguaçu
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-30
+CE-Abaiara
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-05
+SP-Tanabi
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-27
+MG-Januária
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-06-14
+MG-Tarumirim
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-03-29
+PI-Nossa Senhora de Nazaré
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-09
+SP-Campos do Jordão
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-09
+RS-São João do Polêsine
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-07-09
+PI-João Costa
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-14
+MT-Sorriso
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-10
+PR-Mariluz
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-21
+GO-Bonópolis
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-09
+MG-Iturama
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-05
+MG-Rubim
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-05-16
+RS-Centenário
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-22
+SP-Itaí
+Novos Casos : 0
+Casos Totais : 0
+Mortes : 0
+
+2020-04-26
+RS-Ipiranga do Sul
 Novos Casos : 0
 Casos Totais : 0
 Mortes : 0
