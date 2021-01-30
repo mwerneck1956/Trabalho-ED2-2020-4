@@ -10,8 +10,10 @@
 using namespace std;
 
 
+//Função para obter n registros aleatório do CSV processado
 vector<CovidInfo> FileHandler::getNCovidInfos(int n){
   string date, state, city,code, dailyCases,totalCases , deaths,line;
+  //Abre o csv pré-processado
   ifstream arq("brazil_covid19_cities_processado.csv");
   int linesProcessed = 0;
   vector<CovidInfo> file;
@@ -27,6 +29,7 @@ vector<CovidInfo> FileHandler::getNCovidInfos(int n){
       getline(arq, dailyCases, ',');
       getline(arq, totalCases, ',');
       getline(arq, deaths, ',');
+      //Pula a primeira linha do arquivo , pois é o header informativo o que cada coluna significa
       if (linesProcessed >= 1)
       {
         //Criado objeto covid info e feito as transformações para int necessarias
@@ -36,6 +39,11 @@ vector<CovidInfo> FileHandler::getNCovidInfos(int n){
       linesProcessed ++;
     }    
   }
+  arq.close();
+  /*Apos ter salvo os dados do csv processado na memória utilizando o Vector 
+    passo para a etapa de geração de número aleatorios
+  */
+  //Funções/Variaveis para gerar os números aleatórios
   std::random_device device;
   std::mt19937 generator(device());
   std::uniform_int_distribution<int> distribution(0,file.size()-1);
@@ -66,6 +74,7 @@ vector<CovidInfo> FileHandler::getNCovidInfos(int n){
 
 }
 
+/*Função para armazenar os registros do csv brazil_covid19_cities.csv em um Array da classe CovidInfo*/
 vector<CovidInfo> FileHandler::csvHandler(string filename)
 {
 
@@ -88,6 +97,7 @@ vector<CovidInfo> FileHandler::csvHandler(string filename)
       getline(arq, cases, ',');
       getline(arq, deaths);
 
+      //Pula a primeira linha do arquivo , pois é o header informativo o que cada coluna significa
       if (line >= 1)
       {
         //Criado objeto covid info e feito as transformações para int necessarias

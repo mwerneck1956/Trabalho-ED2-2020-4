@@ -36,6 +36,7 @@ void CovidStatistics::push(CovidInfo* line){
   this->covidInfoList.push_back(*line);
 }
 
+//Gera o novo csv após o processamento , onde os dados são ordenados pelo número de casos.
 void CovidStatistics::dailyCasesTotalizers(vector<CovidInfo> covidInfoList){
     std::ofstream outfile("brazil_covid19_cities_processado.csv");
     int lastDayCases = 0 , dailyTotalCases = 0;
@@ -46,12 +47,14 @@ void CovidStatistics::dailyCasesTotalizers(vector<CovidInfo> covidInfoList){
         dailyTotalCases = 0;
         //Escrevendo cada dado em uma linha do csv gerado
         while(i < covidInfoList.size()){
+          //Pega os casos totais do ultimo dia para obter posteriormente os casos diários
           lastDayCases = i >= 1 ? covidInfoList.at(i - 1).cases : 0;
           dailyTotalCases = covidInfoList.at(i).cases;
           outfile << covidInfoList.at(i).date  << ",";
           outfile << covidInfoList.at(i).state << ",";
           outfile << covidInfoList.at(i).city << ",";
           outfile << covidInfoList.at(i).code << ",";
+          //Subtrai o total de casos com os casos do ultimo dia para obter os totais diarios
           outfile <<  dailyTotalCases - lastDayCases << ",";
           outfile << dailyTotalCases  <<",";
           outfile << covidInfoList.at(i).deaths << ",";

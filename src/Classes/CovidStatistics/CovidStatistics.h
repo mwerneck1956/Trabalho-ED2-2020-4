@@ -10,6 +10,10 @@
 
 using namespace std;
 
+/*Classe que lida com todos os processamento necessários
+  na estrutura de dados que armazena as informações de infecção 
+  sobre o covid
+*/
 class CovidStatistics
 {
 

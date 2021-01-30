@@ -17,9 +17,9 @@ private:
 public:
   //Função de processamento do csv
   vector<CovidInfo> csvHandler(string filename);
+  //Função para obter n registros aleatórios do arquivo processado
   vector<CovidInfo> getNCovidInfos(int n);
   void  printLine(string line);
-  //void  printFile(vector<string> file);
   
 
   

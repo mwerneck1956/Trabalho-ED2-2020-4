@@ -26,8 +26,9 @@ int main(int argc, char **argv)
       cout << "Opção invalida" << endl;
       cin >> option;
   }
+  //Execução do modulo de testes/preProcessamento/Estatistica
   while(option == 1){
-      test.execute(argv[1] != NULL ? argv[1] : "brazil_covid19_cities.csv");
+      test.Execute(argv[1] != NULL ? argv[1] : "brazil_covid19_cities.csv");
       cout << "-----------------------------------------------------------" << endl;
       cout << "Para rodar o programa novamente digite [1]" << endl;
       cout << "Para fechar o programa digite qualquer outro valor" <<endl;

@@ -9,6 +9,7 @@
 
 using namespace std;
 
+/*Classe para armazenar cada registro(linha) do CSV*/
 class CovidInfo
 {
 private:

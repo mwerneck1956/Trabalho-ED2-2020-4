@@ -15,6 +15,7 @@ Sorting::Sorting()
 {
 }
 
+//Função de intercalação, p = inicio do vetor, q = meio do vetor , r = final do vetor*/
 void Sorting::merge(vector<CovidInfo> &covidInfoList, int p, int q, int r)
 {
 
