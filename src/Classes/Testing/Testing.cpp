@@ -101,7 +101,6 @@ void Testing::PreProcessing(string filename, clock_t &processingTime)
   //Abre o arquivo de texto , desmembra o mesmo , e salva em um vector de CovidInfo
   vector<CovidInfo> processedFile = FileReader->csvHandler(filename != "" ? filename : "brazil_covid19_cities.csv");
 
-  cout << "Arquivo Desmembrado com Sucesso" << endl;
 
   //Ordenação do vetor por (Estado,Cidade) e data.
   sorting.shellSortStateCityDate(processedFile, processedFile.size());
@@ -109,10 +108,11 @@ void Testing::PreProcessing(string filename, clock_t &processingTime)
   //Geração do novo arquivo csv com os dados processados
   statistics.dailyCasesTotalizers(processedFile);
 
-  cout << "Arquivo pre-processado com sucesso!" << endl;
 
   clock_t tempo_termino = clock();
   processingTime = (tempo_termino - tempo_inicio) / ((float)CLOCKS_PER_SEC);
+
+  cout << "Arquivo pre-processado com sucesso em " << processingTime << " segundos!" << endl;
 
   //Para desalocar o vector da memória
   processedFile = vector<CovidInfo>();
@@ -151,7 +151,7 @@ void Testing::ExecuteSorting(int choice, vector<CovidInfo> *covidInfoSet)
 }
 
 //Função para selecionar a função desejada do sistema preProcessamento/Estatisticas/Testes
-int Testing::SelectFirstPhase()
+int Testing::SelectPhase()
 {
   int option;
 
@@ -162,8 +162,9 @@ int Testing::SelectFirstPhase()
   cout << "---------------------------------------------------------------------------------------------------------------------------------" << endl;
 
   cout << "Digite [1] para comecar o processamento do arquivo csv" << endl;
-  cout << "Digite [2] para pular o pre-processamento(Somente se ja tiver o arquivo pre-processado salvo) e ir direto para o modulo de testes" << endl;
+  cout << "Digite [2] ir para o modulo de testes(Somente se ja tiver o arquivo pre-processado salvo)" << endl;
   cout << "Digite [3] para ir para o modulo de estatisticas(Somente se ja tiver o arquivo pre-processado salvo)" << endl;
+  cout << "Digite [0] para sair do programa" << endl;
   cout << "---------------------------------------------------------------------------------------------------------------------------------" << endl;
 
   cin >> option;
@@ -212,35 +213,39 @@ void Testing::Execute(string filename)
   //Para utilizar os algoritmos de ordenação
   clock_t processing_time = clock();
 
-  int firstPhase = SelectFirstPhase();
-  //Pre processamento
-  if (firstPhase == 1)
-    this->PreProcessing(filename, processing_time);
-  //Modulo de Escolha do algoritmo para ordnar os dados e seleção dos registros aleatórios
-  else if (firstPhase == 2)
+  int phase = SelectPhase();
+  while (phase != 0)
   {
-    //Seleção dos registros aleatórios
-    vector<CovidInfo> processedCovidInfo = this->selectRandomCases();
+    if (phase == 1)
+      this->PreProcessing(filename, processing_time);
 
-    //Execução do algoritmo de ordenação sobre os registros aleatórios
-    this->ExecuteSorting(SelectSortMethod(), &processedCovidInfo);
-
-    //Escolha e escrita dependendo da saída escolhida pelo usuáriso (console ou txt)
-    int saida = this->SelectOut();
-    this->WriteOutFile(processedCovidInfo, saida);
-  }
-  //Modulo para geração das estatisticas
-  else
-  {
-    int m;
-    cout << "Digite o valor de M para o calculo das estatisticas" << endl;
-    cin >> m;
-    while (m < 5)
+    //Modulo de Escolha do algoritmo para ordernar os dados e seleção dos registros aleatórios
+    else if (phase == 2)
     {
-      cout << "Valor de M invalido digite novamente!" << endl;
-      cin >> m;
+      //Seleção dos registros aleatórios
+      vector<CovidInfo> processedCovidInfo = this->selectRandomCases();
+
+      //Execução do algoritmo de ordenação sobre os registros aleatórios
+      this->ExecuteSorting(SelectSortMethod(), &processedCovidInfo);
+
+      //Escolha e escrita dependendo da saída escolhida pelo usuáriso (console ou txt)
+      int saida = this->SelectOut();
+      this->WriteOutFile(processedCovidInfo, saida);
     }
-    this->StatisticalAnalysis(m);
+    //Modulo para geração das estatisticas
+    else
+    {
+      int m;
+      cout << "Digite o valor de M para o calculo das estatisticas" << endl;
+      cin >> m;
+      while (m < 5)
+      {
+        cout << "Valor de M invalido digite novamente!" << endl;
+        cin >> m;
+      }
+      this->StatisticalAnalysis(m);
+    }
+    phase = SelectPhase();
   }
 }
 

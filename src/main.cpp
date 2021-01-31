@@ -29,15 +29,9 @@ int main(int argc, char **argv)
     cin >> option;
   }
   //Execução do modulo de testes/preProcessamento/Estatistica
-  while (option == 1)
-  {
-    test.Execute(argv[1] != NULL ? argv[1] : "brazil_covid19_cities.csv");
-    cout << "-----------------------------------------------------------" << endl;
-    cout << "Para rodar o programa novamente digite [1]" << endl;
-    cout << "Para fechar o programa digite qualquer outro valor" << endl;
-    cout << "-----------------------------------------------------------" << endl;
-    cin >> option;
-  }
+  test.Execute(argv[1] != NULL ? argv[1] : "brazil_covid19_cities.csv");
+ 
+  
 
   return 0;
 }
