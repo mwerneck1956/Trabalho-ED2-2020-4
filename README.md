@@ -76,7 +76,7 @@ attrib +x compile.sh
 ./compile.sh
 ```
 
-4. Após a compilação , sera gerado o executável main , para executar o programa digite
+4. Após a compilação , sera gerado o executável , para executar o programa digite
 ```
 ./main ./brazil_covid_19_cities.csv (caminho do arquivo csv) 
 ```
