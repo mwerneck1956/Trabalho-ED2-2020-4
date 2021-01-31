@@ -156,8 +156,7 @@ int Testing::SelectPhase()
   int option;
 
   cout << "-------------------------------------------------------------------------------------------" << endl;
-  cout << "Processamento dos Dados" << endl
-       << endl;
+  cout << "Processamento dos Dados" << endl;
   cout << "O Arquivo processado sera salvo no arquivo :  brazil_covid19_cities_processado.csv" << endl;
   cout << "---------------------------------------------------------------------------------------------------------------------------------" << endl;
 
