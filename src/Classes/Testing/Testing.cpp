@@ -5,6 +5,7 @@
 #include "../Sorting/Sorting.h"
 #include <iostream>
 #include <fstream>
+#include <iomanip>
 #include <stdlib.h>
 #include <stdio.h>
 #include <ctime>
@@ -134,7 +135,7 @@ void Testing::ExecuteSorting(int choice, vector<CovidInfo> *covidInfoSet)
     sorting.shellSortCases(*covidInfoSet, covidInfoSet->size(), comparisons, swaps);
     break;
   case 3:
-    sorting.quicksortXD(*covidInfoSet, 0, covidInfoSet->size(), comparisons, swaps);
+    sorting.quicksortCases(*covidInfoSet, 0, covidInfoSet->size(), comparisons, swaps);
     break;
   default:
     break;
@@ -220,10 +221,10 @@ void Testing::Execute(string filename)
   {
     //Seleção dos registros aleatórios
     vector<CovidInfo> processedCovidInfo = this->selectRandomCases();
-    
+
     //Execução do algoritmo de ordenação sobre os registros aleatórios
     this->ExecuteSorting(SelectSortMethod(), &processedCovidInfo);
-    
+
     //Escolha e escrita dependendo da saída escolhida pelo usuáriso (console ou txt)
     int saida = this->SelectOut();
     this->WriteOutFile(processedCovidInfo, saida);
@@ -231,252 +232,146 @@ void Testing::Execute(string filename)
   //Modulo para geração das estatisticas
   else
   {
-    int m = 5;
+    int m;
     cout << "Digite o valor de M para o calculo das estatisticas" << endl;
     cin >> m;
-    this->estatisticaDePobre(m);
+    while (m < 5)
+    {
+      cout << "Valor de M invalido digite novamente!" << endl;
+      cin >> m;
+    }
+    this->StatisticalAnalysis(m);
   }
 }
 
-//Algoritmo para gerar as estatisticas
-void Testing::estatisticaDePobre(int M)
+//Função que irá printar os resultados das estatisticas da analise
+void Testing::PrintStatistic(int M, int N[], float time[], int swaps[], int comparisons[], int algorithm, ofstream &statisticsResults)
 {
+  //As variaveis que irão armazenar as médias são inicializadas com 0
+  float timeAvg[5] = {0, 0, 0, 0, 0};
+  float swapsAvg[5] = {0, 0, 0, 0, 0};
+  float comparisonsAvg[5] = {0, 0, 0, 0, 0};
+
+  //É feito uma string de vetor select para demonstrar qual algoritmo foi calculado
+  string select[3] = {"MergeSort", "ShellSort", "QuickSort"};
+
+  //Um loop é iniciado para os 5 valores diferentes de N[i], 10000, 50000, 100000, 500000, 1000000
+  for (int j = 0; j < 5; j++)
+  {
+    //São calculados as estatisticas médias de cada N[i] diferente para cada algoritmo
+    timeAvg[j] = time[j] / M;
+    comparisonsAvg[j] = comparisons[j] / M;
+    swapsAvg[j] = swaps[j] / M;
+
+    //As informações são imprimidas em um arquivo .txt
+    statisticsResults << "Os resultados do algoritmo " << select[algorithm] << " para um vetor randomico de tamanho " << N[j] << " foram " << endl;
+    statisticsResults << "Media de tempo dos " << M << " conjuntos: " << timeAvg[j] << endl;
+    statisticsResults << "Media de comparacoes dos " << M << " conjuntos: " << comparisonsAvg[j] << endl;
+    statisticsResults << "Media de trocas dos " << M << " conjuntos: " << swapsAvg[j] << endl
+                      << endl;
+  }
+  statisticsResults << "-------------------------------------------------------------------------------" << endl;
+}
+
+//Algoritmo que ira realizar a analise estatistica
+void Testing::StatisticalAnalysis(int M)
+{
+  //são inicializados as variáveis para o tempo
   clock_t startTime = 0, finalTime;
 
+  //é inicializado o vetor N que têm os tamanhos especificados no trabalho para os testes
   int N[5] = {10000, 50000, 100000, 500000, 1000000};
 
+  //vetores que armazenarão os tempos para cada N diferente para cada algoritmo diferente
   float mergeTime[5] = {0, 0, 0, 0, 0};
   float quickTime[5] = {0, 0, 0, 0, 0};
   float shellTime[5] = {0, 0, 0, 0, 0};
 
-  int mergeComparisons[5] = {0, 0, 0, 0, 0};
-  int comparisonsQuick[5] = {0, 0, 0, 0, 0};
-  int comparisonsShell[5] = {0, 0, 0, 0, 0};
+  //vetores que armazenarão o número de comparações e trocas de cada iteração para os três diferentes algotimos
+  int comparisons[5] = {0, 0, 0, 0, 0};
+  int swaps[5] = {0, 0, 0, 0, 0};
 
-  int mergeSwaps[5] = {0, 0, 0, 0, 0};
-  int swapsQuick[5] = {0, 0, 0, 0, 0};
-  int swapsShell[5] = {0, 0, 0, 0, 0};
+  //contadores que irão armazenar o somátorio do número de comparações para os M conjuntos diferentes de cada algoritmo
+  int counterComparisonsQuick[5] = {0, 0, 0, 0, 0};
+  int counterComparisonsShell[5] = {0, 0, 0, 0, 0};
+  int counterComparisonsMerge[5] = {0, 0, 0, 0, 0};
 
-  float timeAvgMerge[5] = {0, 0, 0, 0, 0};
-  float timeAvgQuick[5] = {0, 0, 0, 0, 0};
-  float timeAvgShell[5] = {0, 0, 0, 0, 0};
-
-  int comparisonsAvgMerge[5] = {0, 0, 0, 0, 0};
-  int comparisonsAvgQuick[5] = {0, 0, 0, 0, 0};
-  int comparisonsAvgShell[5] = {0, 0, 0, 0, 0};
-
-  int swapsAvgMerge[5] = {0, 0, 0, 0, 0};
-  int swapsAvgQuick[5] = {0, 0, 0, 0, 0};
-  int swapsAvgShell[5] = {0, 0, 0, 0, 0};
-
-  int contadorSwapsShell[5] = {0, 0, 0, 0, 0};
-  int contadorComparacoesShell[5] = {0, 0, 0, 0, 0};
-
-  int contadorSwapsMerge[5] = {0, 0, 0, 0, 0};
-  int contadorComparacoesMerge[5] = {0, 0, 0, 0, 0};
-
-  int contadorSwapsQuick[5] = {0, 0, 0, 0, 0};
-  int contadorComparacoesQuick[5] = {0, 0, 0, 0, 0};
+  //contadores que irão armazenar o somátorio do número de trocas para os M conjuntos diferentes de cada algoritmo
+  int counterSwapsShell[5] = {0, 0, 0, 0, 0};
+  int counterSwapsMerge[5] = {0, 0, 0, 0, 0};
+  int counterSwapsQuick[5] = {0, 0, 0, 0, 0};
 
   Sorting *Sort = new Sorting();
   FileHandler *File = new FileHandler();
 
+  //loop para os 5 diferentes valores possíveis de N
   for (int i = 0; i < 5; i++)
   {
+    cout << "------------------------------------" << endl;
+    cout << "Iteracoes de " << N[i] << endl;
+    //loop para os M conjuntos de vetores diferentes
     for (int j = 0; j < M; j++)
     {
+      //É criado um vetor notSorted com registros aleatórios com tamanho N
       vector<CovidInfo> notSorted = File->getNCovidInfos(N[i]);
+      //É criado também um vetor toSort que irá receber notSorted para manter desorganizado
       vector<CovidInfo> toSort = notSorted;
 
-      mergeComparisons[i] = 0;
-      mergeSwaps[i] = 0;
+      //é zerado as comparações e swaps para permitir que esses vetores funcionem para os três algoritmos
+      comparisons[i] = 0;
+      swaps[i] = 0;
       startTime = clock();
-      Sort->mergeSortCases(toSort, 0, N[i] - 1, mergeComparisons[i], mergeSwaps[i]);
+      Sort->mergeSortCases(toSort, 0, N[i] - 1, comparisons[i], swaps[i]);
       finalTime = clock();
       float totalTime = (finalTime - startTime) / (float)CLOCKS_PER_SEC;
-      contadorSwapsMerge[i] += mergeSwaps[i];
-      contadorComparacoesMerge[i] += mergeComparisons[i];
+      counterSwapsMerge[i] += swaps[i];
+      counterComparisonsMerge[i] += comparisons[i];
       mergeTime[i] += totalTime;
-      vector<CovidInfo>().swap(toSort);
+      //são feitos todos e incrementos após chamar a função de ordenação e então limpa o vetor toSort
+      toSort.clear();
+      toSort.shrink_to_fit();
 
+      //é feito a mesma coisa dos dois comentários anteriores para os dois algoritmos seguintes
       toSort = notSorted;
-      comparisonsShell[i] = 0;
-      swapsShell[i] = 0;
+      comparisons[i] = 0;
+      swaps[i] = 0;
       startTime = clock();
-      Sort->shellSortCases(toSort, N[i] - 1, comparisonsShell[i], swapsShell[i]);
+      Sort->shellSortCases(toSort, N[i] - 1, comparisons[i], swaps[i]);
       finalTime = clock();
       totalTime = (finalTime - startTime) / (float)CLOCKS_PER_SEC;
-      contadorSwapsShell[i] += swapsShell[i];
-      contadorComparacoesShell[i] += comparisonsShell[i];
+      counterSwapsShell[i] += swaps[i];
+      counterComparisonsShell[i] += comparisons[i];
       shellTime[i] += totalTime;
-      vector<CovidInfo>().swap(toSort);
+      toSort.clear();
+      toSort.shrink_to_fit();
 
       toSort = notSorted;
-      comparisonsQuick[i] = 0;
-      swapsQuick[i] = 0;
+      comparisons[i] = 0;
+      swaps[i] = 0;
       startTime = clock();
-      Sort->quicksortXD(toSort, 0, N[i] - 1, comparisonsQuick[i], swapsQuick[i]);
+      Sort->quicksortCases(toSort, 0, N[i] - 1, comparisons[i], swaps[i]);
       finalTime = clock();
       totalTime = (finalTime - startTime) / (float)CLOCKS_PER_SEC;
-      contadorSwapsQuick[i] += swapsQuick[i];
-      contadorComparacoesQuick[j] += comparisonsQuick[i];
+      counterSwapsQuick[i] += swaps[i];
+      counterComparisonsQuick[i] += comparisons[i];
       quickTime[i] += totalTime;
+      toSort.clear();
+      toSort.shrink_to_fit();
 
+      //o vetor notSorted é limpado
       notSorted.clear();
       notSorted.shrink_to_fit();
-      toSort.clear();
-      toSort.shrink_to_fit();
+
+      cout << j + 1 << "º "
+           << "M "
+           << "de " << N[i] << " feito..." << endl;
     }
+    cout << "------------------------------------" << endl;
   }
-
-  for (int j = 0; j < 5; j++)
-  {
-    timeAvgShell[j] = shellTime[j] / M;
-    comparisonsAvgShell[j] = contadorComparacoesShell[j] / M;
-    swapsAvgShell[j] = contadorSwapsShell[j] / M;
-    cout << "Os resultados do algoritmo Shellsort para um vetor randomico de tamanho " << N[j] << " foram " << endl;
-    cout << "Media de tempo dos " << M << " conjuntos: " << timeAvgShell[j] << endl;
-    cout << "Media de comparacoes dos " << M << " conjuntos: " << comparisonsAvgShell[j] << endl;
-    cout << "Media de trocas dos " << M << " conjuntos: " << swapsAvgShell[j] << endl
-         << endl;
-  }
-  cout << "-------------------------------------------------------------------------------" << endl;
-
-  for (int j = 0; j < 5; j++)
-  {
-    timeAvgMerge[j] = mergeTime[j] / M;
-    comparisonsAvgMerge[j] = contadorComparacoesMerge[j] / M;
-    swapsAvgMerge[j] = contadorComparacoesMerge[j] / M;
-
-    cout << "Os resultados do algoritmo MergeSort para um vetor randomico de tamanho " << N[j] << " foram " << endl;
-    cout << "Media de tempo dos " << M << " conjuntos: " << timeAvgMerge[j] << endl;
-    cout << "Media de comparacoes dos " << M << " conjuntos: " << comparisonsAvgMerge[j] << endl;
-    cout << "Media de trocas dos " << M << " conjuntos: " << swapsAvgMerge[j] << endl
-         << endl;
-  }
-
-  cout << "-------------------------------------------------------------------------------" << endl;
-
-  for (int j = 0; j < 5; j++)
-  {
-    timeAvgQuick[j] = quickTime[j] / M;
-    comparisonsAvgQuick[j] = contadorComparacoesQuick[j] / M;
-    swapsAvgQuick[j] = contadorSwapsQuick[j] / M;
-    cout << "Os resultados do algoritmo QuickSort para um vetor randomico de tamanho " << N[j] << " foram " << endl;
-    cout << "Media de tempo dos " << M << " conjuntos: " << timeAvgQuick[j] << endl;
-    cout << "Media de comparacoes dos " << M << " conjuntos: " << comparisonsAvgQuick[j] << endl;
-    cout << "Media de trocas dos " << M << " conjuntos: " << swapsAvgQuick[j] << endl
-         << endl;
-  }
-  cout << "-------------------------------------------------------------------------------" << endl;
-  //CriarArquivoSaida(Resultados);
+  //ofstream para o arquivo de saída em .txt e os prints que sairão em satisticsResults.txt
+  ofstream statisticsResults("statisticsResults.txt");
+  PrintStatistic(M, N, mergeTime, counterSwapsMerge, counterComparisonsMerge, 0, statisticsResults);
+  PrintStatistic(M, N, shellTime, counterSwapsShell, counterComparisonsShell, 1, statisticsResults);
+  PrintStatistic(M, N, quickTime, counterSwapsQuick, counterComparisonsQuick, 2, statisticsResults);
+  cout << "Arquivo de Texto statisticsResults.txt Gerado com sucesso!" << endl;
 }
-
-/* 
-
-
-
-void Testing::StatisticalAnalysis(int M)
-{
-  ofstream exit;
-  float timeAvgSort[5] = {0, 0, 0, 0, 0};
-  int comparisonsAvgSort[5] = {0, 0, 0, 0, 0};
-  int swapsAvgSort[5] = {0, 0, 0, 0, 0};
-  clock_t startTime = 0, finalTime;
-
-  int N[5] = {10000, 50000, 100000, 500000, 1000000};
-
-  float sortTime[5] = {0, 0, 0, 0, 0};
-
-  int sortComparisons[5] = {0, 0, 0, 0, 0};
-  int sortSwaps[5] = {0, 0, 0, 0, 0};
-
-  Sorting *Sort = new Sorting();
-  FileHandler *File = new FileHandler();
-
-  for (int i = 0; i < 5; i++)
-  {
-    for (int j = 0; j < M; j++)
-    {
-      vector<CovidInfo> toSort = File->getNCovidInfos(N[i]);
-
-      startTime = clock();
-      Sort->shellSortCases(toSort, N[i] - 1, sortComparisons[i], sortSwaps[i]);
-      finalTime = clock();
-      float totalTime = (finalTime - startTime) / (float)CLOCKS_PER_SEC;
-
-      sortSwaps[i] += sortSwaps[i];
-      sortComparisons[i] += sortComparisons[i];
-      sortTime[i] += totalTime;
-
-      vector<CovidInfo>().swap(toSort);
-      /*notSorted.clear();
-      notSorted.shrink_to_fit();
-      toSort.clear();
-      toSort.shrink_to_fit();
-    }
-  }
-
-  cout << "-------------------------------------------------------------------------------" << endl;
-
-  int saidaSelecionada = SelectOut();
-  
-
-  /*for(int i = 0; i < 5; i++)
-    Exit(M, N[i], algoritmoSelecionado, saidaSelecionada, sortTime[i], sortComparisons[i], sortSwaps[i]);
-
-    string nomeAlgoritmo;
-
-  /*if (saidaSelecionada == 10)
-    exit.open("saida.txt", ios::app);
-
-    algoritmoSelecionado == 1 ? nomeAlgoritmo = "MergeSort" : algoritmoSelecionado == 2 ? nomeAlgoritmo = "ShellSort" : nomeAlgoritmo = "QuickSort";
-
-  for (int i = 0; i < 5; i++)
-  {
-    timeAvgSort[i] = sortTime[i] / 5;
-    comparisonsAvgSort[i] = sortComparisons[i] / 5;
-    swapsAvgSort[i] = sortSwaps[i] / 5;
-
-    if (saidaSelecionada == 10)
-    {
-
-      exit << "Os resultados do algoritmo " << nomeAlgoritmo << " para um vetor randomico de tamanho " << N[i] << " foram: " << endl;
-      exit << "Media de tempo dos " << M << " conjuntos: " << timeAvgSort[i] << endl;
-      exit << "Media de comparacoes dos " << M << " conjuntos: " << comparisonsAvgSort[i] << endl;
-      exit << "Media de trocas dos " << M << " conjuntos: " << swapsAvgSort[i] << endl;
-
-      exit << "-------------------------------------------------------------------------------" << endl;
-    }
-
-    else
-    {
-  for (int i = 0; i < 5; i++)
-  {
-    timeAvgSort[i] = sortTime[i] / 5;
-    comparisonsAvgSort[i] = sortComparisons[i] / 5;
-    swapsAvgSort[i] = sortSwaps[i] / 5;
-    cout << "Tempo: " << i << sortTime[i] << endl;
-    cout << "Comparacoes: " << i << sortComparisons[i] << endl;
-    cout << "Trocas: " << i << sortSwaps[i] << endl;
-    cout << "Os resultados do algoritmo " << nomeAlgoritmo << " para um vetor randomico de tamanho " << N[i] << " foram: " << endl;
-    cout << "Media de tempo dos " << M << " conjuntos: " << timeAvgSort[i] << endl;
-    cout << "Media de comparacoes dos " << M << " conjuntos: " << comparisonsAvgSort[i] << endl;
-    cout << "Media de trocas dos " << M << " conjuntos: " << swapsAvgSort[i] << endl;
-
-    cout << "-------------------------------------------------------------------------------" << endl;
-  }
-  //}
-  //}
-
-  exit.close();
-
-  cout << "-------------------------------------------------------------------------------" << endl;
-}
-
-
-
-
-
-
-*/

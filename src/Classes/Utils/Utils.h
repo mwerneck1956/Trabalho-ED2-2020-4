@@ -9,11 +9,9 @@ using namespace std;
 class Utils
 {
 private:
-
-public: 
+public:
   Utils();
   void ClearScreen();
-  
 };
 
 #endif

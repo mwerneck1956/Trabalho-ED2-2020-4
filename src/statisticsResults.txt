@@ -1,0 +1,78 @@
+Os resultados do algoritmo MergeSort para um vetor randomico de tamanho 10000 foram 
+Media de tempo dos 5 conjuntos: 0.0352216
+Media de comparacoes dos 5 conjuntos: 120487
+Media de trocas dos 5 conjuntos: 133601
+
+Os resultados do algoritmo MergeSort para um vetor randomico de tamanho 50000 foram 
+Media de tempo dos 5 conjuntos: 0.193787
+Media de comparacoes dos 5 conjuntos: 718365
+Media de trocas dos 5 conjuntos: 784447
+
+Os resultados do algoritmo MergeSort para um vetor randomico de tamanho 100000 foram 
+Media de tempo dos 5 conjuntos: 0.405735
+Media de comparacoes dos 5 conjuntos: 1.5371e+06
+Media de trocas dos 5 conjuntos: 1.66891e+06
+
+Os resultados do algoritmo MergeSort para um vetor randomico de tamanho 500000 foram 
+Media de tempo dos 5 conjuntos: 2.51701
+Media de comparacoes dos 5 conjuntos: 8.83767e+06
+Media de trocas dos 5 conjuntos: 9.47569e+06
+
+Os resultados do algoritmo MergeSort para um vetor randomico de tamanho 1000000 foram 
+Media de tempo dos 5 conjuntos: 6.17106
+Media de comparacoes dos 5 conjuntos: 1.86749e+07
+Media de trocas dos 5 conjuntos: 1.99514e+07
+
+-------------------------------------------------------------------------------
+Os resultados do algoritmo ShellSort para um vetor randomico de tamanho 10000 foram 
+Media de tempo dos 5 conjuntos: 0.0132922
+Media de comparacoes dos 5 conjuntos: 196844
+Media de trocas dos 5 conjuntos: 196844
+
+Os resultados do algoritmo ShellSort para um vetor randomico de tamanho 50000 foram 
+Media de tempo dos 5 conjuntos: 0.0953986
+Media de comparacoes dos 5 conjuntos: 1.3796e+06
+Media de trocas dos 5 conjuntos: 1.3796e+06
+
+Os resultados do algoritmo ShellSort para um vetor randomico de tamanho 100000 foram 
+Media de tempo dos 5 conjuntos: 0.200387
+Media de comparacoes dos 5 conjuntos: 2.82966e+06
+Media de trocas dos 5 conjuntos: 2.82966e+06
+
+Os resultados do algoritmo ShellSort para um vetor randomico de tamanho 500000 foram 
+Media de tempo dos 5 conjuntos: 1.34562
+Media de comparacoes dos 5 conjuntos: 1.65037e+07
+Media de trocas dos 5 conjuntos: 1.65037e+07
+
+Os resultados do algoritmo ShellSort para um vetor randomico de tamanho 1000000 foram 
+Media de tempo dos 5 conjuntos: 3.20752
+Media de comparacoes dos 5 conjuntos: 3.48876e+07
+Media de trocas dos 5 conjuntos: 3.48876e+07
+
+-------------------------------------------------------------------------------
+Os resultados do algoritmo QuickSort para um vetor randomico de tamanho 10000 foram 
+Media de tempo dos 5 conjuntos: 0.0059396
+Media de comparacoes dos 5 conjuntos: 168787
+Media de trocas dos 5 conjuntos: 45008
+
+Os resultados do algoritmo QuickSort para um vetor randomico de tamanho 50000 foram 
+Media de tempo dos 5 conjuntos: 0.0347736
+Media de comparacoes dos 5 conjuntos: 937316
+Media de trocas dos 5 conjuntos: 270603
+
+Os resultados do algoritmo QuickSort para um vetor randomico de tamanho 100000 foram 
+Media de tempo dos 5 conjuntos: 0.0750982
+Media de comparacoes dos 5 conjuntos: 2.0398e+06
+Media de trocas dos 5 conjuntos: 600869
+
+Os resultados do algoritmo QuickSort para um vetor randomico de tamanho 500000 foram 
+Media de tempo dos 5 conjuntos: 0.469204
+Media de comparacoes dos 5 conjuntos: 1.08036e+07
+Media de trocas dos 5 conjuntos: 3.67416e+06
+
+Os resultados do algoritmo QuickSort para um vetor randomico de tamanho 1000000 foram 
+Media de tempo dos 5 conjuntos: 1.11162
+Media de comparacoes dos 5 conjuntos: 2.29019e+07
+Media de trocas dos 5 conjuntos: 7.84769e+06
+
+-------------------------------------------------------------------------------

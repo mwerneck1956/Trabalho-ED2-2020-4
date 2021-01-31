@@ -10,6 +10,7 @@ CovidInfo::CovidInfo()
 {
 }
 
+//Para o arquivo não processado
 CovidInfo::CovidInfo(string date, string state, string city, int code, int cases, int deaths)
 {
 
@@ -36,7 +37,6 @@ CovidInfo::CovidInfo(string date, string state, string city, int code, int cases
 
 CovidInfo::~CovidInfo()
 {
-
 }
 
 void CovidInfo::printInfo()
