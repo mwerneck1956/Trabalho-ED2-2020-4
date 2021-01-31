@@ -53,7 +53,6 @@ chmod +x compile.sh
 4. Após a compilação , sera gerado o executável main , para executar o programa digite
 ```
 ./main ./brazil_covid_19_cities.csv (caminho do arquivo csv) 
-./brazil_covid19_cities.csv
 ```
 5. Por fim sera informado se a ação ocorreu com sucesso ou erro
 
@@ -77,9 +76,9 @@ attrib +x compile.sh
 ./compile.sh
 ```
 
-4. Sera pedido para informar o caminho do arquivo .csv para processamento
+4. Após a compilação , sera gerado o executável main , para executar o programa digite
 ```
-Digite o caminho do arquivo csv : 
-./brazil_covid19_cities.csv
+./main ./brazil_covid_19_cities.csv (caminho do arquivo csv) 
 ```
 5. Por fim sera informado se a ação ocorreu com sucesso ou erro
+
