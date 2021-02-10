@@ -17,7 +17,7 @@ Sorting::Sorting()
 void Sorting::shellSortStateCityDate(vector<CovidInfo> &covidInfoList, int n)
 {
     //é calculado o valor do gap
-    int i = (n - 1) / 2;
+    int i = n / 2;
     //são criadas as váriaveis que irão regular as repetições
     int chave, k;
     //aux irá inicializar com o vetor de covidInfoList de indice i
